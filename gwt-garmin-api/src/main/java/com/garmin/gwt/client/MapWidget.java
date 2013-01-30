@@ -1,4 +1,4 @@
-package com.google.gwt.maps.client;
+package com.garmin.gwt.client;
 
 /*
  * #%L
@@ -60,7 +60,7 @@ import com.google.gwt.maps.client.streetview.StreetViewPanoramaImpl;
 import com.google.gwt.user.client.DOM;
 import com.google.gwt.user.client.ui.Widget;
 
-public class MapWidget extends MVCObjectWidget<MapImpl> {
+public class DeviceControlImpl	 {
 
   /**
    * added controls, must remove them when finished

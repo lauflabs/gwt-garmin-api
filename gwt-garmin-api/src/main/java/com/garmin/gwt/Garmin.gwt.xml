@@ -17,17 +17,11 @@
   limitations under the License.
   #L%
   -->
-<!DOCTYPE module PUBLIC "//gwt-module/" "http://google-web-toolkit.googlecode.com/svn/tags/1.6.2/distro-source/core/src/gwt-module.dtd">
+<!DOCTYPE module PUBLIC "//gwt-module/" "http://google-web-toolkit.googlecode.com/svn/tags/2.5.0/distro-source/core/src/gwt-module.dtd">
 <module rename-to='maps'>
 
 	<!-- GWT Core -->
 	<inherits name='com.google.gwt.user.User' />
-
-	<!-- Load the api with -->
-	<inherits name='com.google.gwt.ajaxloader.AjaxLoader' />
-
-	<!-- -->
-	<inherits name="com.google.gwt.i18n.I18N" />
 
 	<!-- translate the client to javascript -->
 	<source path='client' />
