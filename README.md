@@ -6,7 +6,7 @@ GWT implementation allowing access to Garmin running watch API's
 Disclaimer
 ==========
 
-Garmin is a trademark of Garmin Ltd. This library is afiliated in any way with Garmin Ltd.
+Garmin is a trademark of Garmin Ltd. This library is **NOT** afiliated in any way with Garmin Ltd.
 
 Official API Docs
 =================
