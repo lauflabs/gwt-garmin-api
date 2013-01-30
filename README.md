@@ -18,6 +18,7 @@ Garmin is a trademark of Garmin Ltd. This library is **NOT** afiliated in any wa
 Official API Docs
 =================
 See [Garmin Docs](http://developer.garmin.com/web/communicator-api/documentation/)
+See Garmin [reference JS implementation](http://developer.garmin.com/web/communicator-api/documentation/symbols/src/)
 
 
 Just Started
