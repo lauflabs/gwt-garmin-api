@@ -3,6 +3,15 @@ gwt-garmin-api
 
 GWT implementation allowing access to Garmin running watch API's
 
+Disclaimer
+==========
+
+Garmin is a trademark of Garmin Ltd. This library is afiliated in any way with Garmin Ltd.
+
+Official API Docs
+=================
+See [Garmin Docs](http://developer.garmin.com/web/communicator-api/documentation/)
+
 
 Just Started
 ============
