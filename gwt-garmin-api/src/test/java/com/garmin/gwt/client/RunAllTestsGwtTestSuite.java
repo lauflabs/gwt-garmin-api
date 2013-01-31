@@ -1,4 +1,4 @@
-package com.google.gwt.maps.client;
+package com.garmin.gwt.client;
 
 /*
  * #%L
@@ -31,7 +31,6 @@ import junit.framework.TestSuite;
 
 import com.google.gwt.junit.client.GWTTestCase;
 import com.google.gwt.junit.tools.GWTTestSuite;
-import com.google.gwt.maps.client.main.LoadApiGwtTest;
 
 public class RunAllTestsGwtTestSuite extends GWTTestSuite {
 
@@ -40,17 +39,9 @@ public class RunAllTestsGwtTestSuite extends GWTTestSuite {
   public static TestSuite suite() throws Exception {
     GWTTestSuite suite = new GWTTestSuite();
 
-    // be sure the libs get loaded at the beginning b/c they won't want to
-    // add the libs during
-    suite.addTestSuite(LoadApiGwtTest.class);
-
     // don't run these twice
     ArrayList<String> ignoreTestList = new ArrayList<String>();
-    ignoreTestList.add(LoadApiGwtTest.class.getName());
     ignoreTestList.add(AbstractMapsGWTTestHelper.class.getName());
-
-    // make sure this test is run first to prime all library loads
-    suite.addTestSuite(LoadApiGwtTest.class);
 
     for (Class<? extends GWTTestCase> clazz : getClasses("com.google.gwt.maps.client")) {
       if (!ignoreTestList.contains(clazz.getName())) {

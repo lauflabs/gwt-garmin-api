@@ -1,4 +1,4 @@
-package com.google.gwt.maps.client;
+package com.garmin.gwt.client;
 
 /*
  * #%L
@@ -20,12 +20,8 @@ package com.google.gwt.maps.client;
  * #L%
  */
 
-import java.util.ArrayList;
-import java.util.Arrays;
-
+import com.garmin.gwt.client.base.LatLng;
 import com.google.gwt.junit.client.GWTTestCase;
-import com.google.gwt.maps.client.LoadApi.LoadLibrary;
-import com.google.gwt.maps.client.base.LatLng;
 
 /**
  * Common actions taken when testing maps code
@@ -35,28 +31,9 @@ import com.google.gwt.maps.client.base.LatLng;
  */
 public abstract class AbstractMapsGWTTestHelper extends GWTTestCase {
 
-  private final String MODULE_NAME = "com.google.gwt.maps.MapsForTests";
+  private final String MODULE_NAME = "com.garmin.gwt.Garmin";
   private int asyncDelayMs = 30000;
   private final double equalsEpsilon = 1e-3;
-  private boolean sensor = false;
-
-  /**
-   * Runs the test with libraries defined by the {@link #getLibraries()} override loaded and fails if not complete by
-   * {@link #getAsyncDelayMs()}.<br>
-   * <br>
-   * <b>NOTE:</b> You must call {@link #finishTest()} or test will fail.
-   * 
-   * @param test code to run
-   */
-  public final void asyncLibTest(Runnable test) {
-    // handle the nulls
-    LoadLibrary[] libs = getLibraries();
-    if (libs == null) {
-      libs = new LoadLibrary[] {};
-    }
-    asyncLibTest(test, libs);
-  }
-
   /**
    * Runs the test with the given libraries loaded and fails if not complete by {@link #getAsyncDelayMs()}.<br>
    * <br>
@@ -65,13 +42,9 @@ public abstract class AbstractMapsGWTTestHelper extends GWTTestCase {
    * @param test code to run
    * @param libs libraries to have loaded
    */
-  public final void asyncLibTest(Runnable test, LoadLibrary... libs) {
+  public final void asyncLibTest(Runnable test) {
     // pack
-    ArrayList<LoadLibrary> loadLibraries = new ArrayList<LoadLibrary>();
-    loadLibraries.addAll(Arrays.asList(libs));
-
-    // run
-    LoadApi.go(test, loadLibraries, isSensor());
+    test.run();
 
     // ensure expiration is does not reach finishTest()
     delayTest();
@@ -90,33 +63,13 @@ public abstract class AbstractMapsGWTTestHelper extends GWTTestCase {
     return asyncDelayMs;
   }
 
-  /**
-   * Returns the libraries that will be loaded before the test is run if the no library method overload is called.
-   * 
-   * @return
-   */
-  public abstract LoadLibrary[] getLibraries();
-
   @Override
   public String getModuleName() {
     return MODULE_NAME;
   }
 
-  /**
-   * Is the test with run as with a device sensor
-   * 
-   * @return
-   */
-  public final boolean isSensor() {
-    return sensor;
-  }
-
   public final void setAsyncDelayMs(int asyncDelayMs) {
     this.asyncDelayMs = asyncDelayMs;
-  }
-
-  public final void setSensor(boolean sensor) {
-    this.sensor = sensor;
   }
 
   public final double getEqualsEpsilon() {
@@ -135,13 +88,8 @@ public abstract class AbstractMapsGWTTestHelper extends GWTTestCase {
     assert expected != null : "Point1 cannot be null in assertLatLngEquals()";
     assert actual != null : "Point2 cannot be null in assertLatLngEquals()";
 
-    // assertEquals("Latitude not equal within epsilon", expected.getLatitude(), actual.getLatitude(),
-    // getEqualsEpsilon());
-    // assertEquals("Longitude not equal within epsilon", expected.getLongitude(), actual.getLongitude(),
-    // getEqualsEpsilon());
-
-    assertEquals(Double.doubleToLongBits(expected.getLatitude()), Double.doubleToLongBits(actual.getLatitude()));
-    assertEquals(Double.doubleToLongBits(expected.getLongitude()), Double.doubleToLongBits(actual.getLongitude()));
+    assertEquals("Latitude not equal within epsilon", expected.getLatitude(), actual.getLatitude(),getEqualsEpsilon());
+    assertEquals("Longitude not equal within epsilon", expected.getLongitude(), actual.getLongitude(),getEqualsEpsilon());
   }
 
 }

@@ -1,4 +1,4 @@
-package com.google.gwt.maps.client;
+package com.garmin.gwt.client;
 
 /*
  * #%L
@@ -20,17 +20,11 @@ package com.google.gwt.maps.client;
  * #L%
  */
 
-import com.google.gwt.maps.client.LoadApi.LoadLibrary;
 
 /**
  * Example of how a test could be run.
  */
 public class SandboxGwtTest extends AbstractMapsGWTTestHelper {
-
-  @Override
-  public LoadLibrary[] getLibraries() {
-    return new LoadLibrary[] { LoadLibrary.GEOMETRY, LoadLibrary.PANORAMIO, LoadLibrary.PLACES, LoadLibrary.WEATHER };
-  }
 
   protected void runSomething() {
     assertTrue(true);

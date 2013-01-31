@@ -1,4 +1,4 @@
-package com.google.gwt.maps.client;
+package com.garmin.gwt.client;
 
 /*
  * #%L

@@ -1,4 +1,4 @@
-package com.garmin.gwt.client.base;
+package com.garmin.gwt.client.events;
 
 /*
  * #%L
@@ -20,34 +20,10 @@ package com.garmin.gwt.client.base;
  * #L%
  */
 
+import com.google.gwt.event.shared.EventHandler;
 
-/**
- * A point on a two-dimensional plane. <br>
- */
-public class LatLng {
-	
-	/**
-	 * @param latitude
-	 * @param longitude
-	 */
-	public LatLng(double latitude, double longitude) {
-		super();
-		this.latitude = latitude;
-		this.longitude = longitude;
-	}
-	private double latitude;
-	private double longitude;
-	
-	/**
-	 * @return the latitude
-	 */
-	public final double getLatitude() {
-		return latitude;
-	}
-	/**
-	 * @return the longitude
-	 */
-	public final double getLongitude() {
-		return longitude;
-	}	
+public interface GarminEventHandler<E> extends EventHandler {
+  
+  public void onEvent(E event);
+  
 }

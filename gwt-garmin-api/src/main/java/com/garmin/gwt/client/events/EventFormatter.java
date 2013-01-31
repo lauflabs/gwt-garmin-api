@@ -1,4 +1,4 @@
-package com.garmin.gwt.client.base;
+package com.garmin.gwt.client.events;
 
 /*
  * #%L
@@ -22,32 +22,14 @@ package com.garmin.gwt.client.base;
 
 
 /**
- * A point on a two-dimensional plane. <br>
+ * interface createEvent in {@link MapHandlerRegistration} using generics
+ * 
+ * @param <E>
  */
-public class LatLng {
-	
-	/**
-	 * @param latitude
-	 * @param longitude
-	 */
-	public LatLng(double latitude, double longitude) {
-		super();
-		this.latitude = latitude;
-		this.longitude = longitude;
-	}
-	private double latitude;
-	private double longitude;
-	
-	/**
-	 * @return the latitude
-	 */
-	public final double getLatitude() {
-		return latitude;
-	}
-	/**
-	 * @return the longitude
-	 */
-	public final double getLongitude() {
-		return longitude;
-	}	
+@SuppressWarnings("rawtypes")
+// is ugly, but is a cyclic generic type, so suppressed
+public interface EventFormatter<E extends GarminEvent> {
+  
+  public E createEvent(Object data);
+  
 }

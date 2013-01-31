@@ -1,4 +1,4 @@
-package com.google.gwt.maps.client.testutil;
+package com.garmin.gwt.client.testutil;
 
 /*
  * #%L
@@ -34,7 +34,7 @@ public abstract class AbstractGwtTestUtil extends GWTTestCase {
 
   @Override
   public String getModuleName() {
-    return "com.google.gwt.maps.MapsForTests";
+    return "com.google.gwt.Garmin";
   }
 
 }
