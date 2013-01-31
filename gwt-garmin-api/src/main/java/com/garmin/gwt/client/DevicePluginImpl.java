@@ -20,47 +20,58 @@ package com.garmin.gwt.client;
  * #L%
  */
 
+import java.util.HashMap;
+
+import javax.naming.InitialContext;
+
+import com.google.gwt.core.client.JavaScriptObject;
 import com.google.gwt.dom.client.Element;
 
 /**
- * Creates a new map inside of the given HTML container, which is typically a DIV element <br>
+ * Wraps the ActiveX/Netscape plugin that should be installed on your machine in order to talk to a Garmin Device.
  * <br>
- * See <a href= "https://developers.google.com/maps/documentation/javascript/reference#Map" >Map API Doc</a>
+ * See <a href=
+ * "http://developer.garmin.com/web/communicator-api/documentation/symbols/Garmin.DevicePlugin.html"
+ * >PluginDevice API Doc</a>
  */
-public class DevicePluginImpl {
+public class DevicePluginImpl implements DevicePlugin {
 
-  /**
-   * Creates a new map inside of the given HTML container, which is typically a DIV element.
-   */
-  protected DevicePluginImpl() {
-  }
+	CommunicatorPlugin plugin;
+	
+	/**
+	 * Creates a new map inside of the given HTML container, which is typically
+	 * a DIV element.
+	 */
+	public DevicePluginImpl() {
+		initialize();
+	}
+	
+	/**
+	 * Get the plugin object and validate 
+	 * @throws Exception 
+	 */
+	private void initialize() {
+		plugin = CommunicatorPlugin.newInstance();
+	}
+		
+	@Override
+	public boolean unlock(HashMap<String, String> pathKeysPair) {
+		// TODO Auto-generated method stub
+		return false;
+	}
 
-  /**
-   * Creates a new map inside of the given HTML container, which is typically a DIV element.
-   * 
-   * @param element - map dom element container, like a div
-   * @param options - {@link MapOptions}
-   * @return {@link Garmin}
-   */
-  public final static DevicePluginImpl newInstance(Element element) {
-    return createJso(element);
-  }
+	@Override
+	public boolean isUnlocked() {
+		// TODO Auto-generated method stub
+		return false;
+	}
 
-  /**
-   * private native method
-   * 
-   * @param id - dom element id
-   * @param {@link MapOptions}
-   */
-  private final static native DevicePluginImpl createJso(Element element) /*-{
-    return new $wnd.google.maps.Map(element);
-  }-*/;
-
-  /**
-   * Get map's containing element
-   */
-  public final native Element getDiv() /*-{
-    return this.getDiv();
-  }-*/;
+	@Override
+	public String getPluginVersionString() {
+		//String[] versionParts = plugin.getPluginVersion();	
+		//return versionParts[0] + "." + versionParts[1] + "." + versionParts[2] + "." + versionParts[3];
+		
+		return plugin.getVersionXml();
+	}
 
 }

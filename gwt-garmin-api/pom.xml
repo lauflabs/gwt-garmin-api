@@ -9,6 +9,7 @@
 
     <artifactId>gwt-garmin-api</artifactId>
     <name>GWT Garmin API - Core API</name>
+    <packaging>jar</packaging>
 
     <build>
         <resources>
