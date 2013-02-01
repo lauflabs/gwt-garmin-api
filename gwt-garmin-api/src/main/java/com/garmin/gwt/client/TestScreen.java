@@ -42,12 +42,11 @@ public class TestScreen implements EntryPoint {
 	 * Show basic controls to test functionality
 	 */
 	private void loadScreen() {
-		HTML html = new HTML("Shit's working!<br/>");
+		HTML html = new HTML("Feature test!<br/>");
 		addWidget(html);
 
-		Button button = new Button("Find Plugin!");
+		Button button = new Button("Plugin Version!");
 		button.addClickHandler(new ClickHandler() {
-
 			@Override
 			public void onClick(ClickEvent event) {
 				doPluginMagic();
@@ -61,7 +60,7 @@ public class TestScreen implements EntryPoint {
 		DevicePlugin plugin = new DevicePluginImpl();
 		String version = plugin.getPluginVersionString();
 		
-		Window.alert("Installed plugin version is: "+version);		
+		Window.alert("Installed plugin version: "+version);		
 		
 		
 	}

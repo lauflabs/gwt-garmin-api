@@ -26,6 +26,9 @@ import javax.naming.InitialContext;
 
 import com.google.gwt.core.client.JavaScriptObject;
 import com.google.gwt.dom.client.Element;
+import com.google.gwt.xml.client.Document;
+import com.google.gwt.xml.client.Node;
+import com.google.gwt.xml.client.XMLParser;
 
 /**
  * Wraps the ActiveX/Netscape plugin that should be installed on your machine in order to talk to a Garmin Device.
@@ -65,13 +68,33 @@ public class DevicePluginImpl implements DevicePlugin {
 		// TODO Auto-generated method stub
 		return false;
 	}
+	
+	public String[] getPluginVersion() {
+		
+		String versionXml = plugin.getVersionXml();
+		Document dom = XMLParser.parse(versionXml);
+		
+		String[] versions = new String[4];
+		
+		Node vMajorNode = dom.getElementsByTagName("VersionMajor").item(0);
+		versions[0] = ((com.google.gwt.xml.client.Element)vMajorNode).getFirstChild().getNodeValue();
+		
+	    Node vMinorNode = dom.getElementsByTagName("VersionMinor").item(0);
+	    versions[1] = ((com.google.gwt.xml.client.Element)vMinorNode).getFirstChild().getNodeValue();
+		
+		Node bMajorNode = dom.getElementsByTagName("BuildMajor").item(0);
+		versions[2] = ((com.google.gwt.xml.client.Element)bMajorNode).getFirstChild().getNodeValue();
+		
+		Node bMinorNode = dom.getElementsByTagName("BuildMinor").item(0);
+		versions[3] = ((com.google.gwt.xml.client.Element)bMinorNode).getFirstChild().getNodeValue();
+
+		return versions;
+	}
 
 	@Override
 	public String getPluginVersionString() {
-		//String[] versionParts = plugin.getPluginVersion();	
-		//return versionParts[0] + "." + versionParts[1] + "." + versionParts[2] + "." + versionParts[3];
-		
-		return plugin.getVersionXml();
+		String[] versionParts = getPluginVersion();	
+		return versionParts[0] + "." + versionParts[1] + "." + versionParts[2] + "." + versionParts[3];
 	}
 
 }

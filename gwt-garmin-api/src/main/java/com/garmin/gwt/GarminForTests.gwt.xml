@@ -22,6 +22,7 @@
 
 	<!-- Inherit the core Web Toolkit stuff. -->
 	<inherits name='com.google.gwt.user.User' />
+	<inherits name="com.google.gwt.xml.XML" />
 
 	<!-- Inherit the default GWT style sheet. -->
 
