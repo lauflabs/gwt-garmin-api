@@ -10,10 +10,14 @@ While the existing JS Communicator Plugin API is extensive, this library seeks t
 
 Additional features meant assist in the parsing of XML, files, and display of buttons, lists and maps can be achieved with various other libraries, and as such is not in the initial purview of this library.
 
+Getting Started
+===============
+See [Getting Started Doc](https://github.com/lauflabs/gwt-garmin-api/wiki/Getting-Started)
+
 Disclaimer
 ==========
 
-Garmin is a trademark of Garmin Ltd. This library is **NOT** afiliated in any way with Garmin Ltd.
+Garmin is a trademark of Garmin Ltd. This library is **NOT** affiliated in any way with Garmin Ltd.
 
 Official API Docs
 =================
