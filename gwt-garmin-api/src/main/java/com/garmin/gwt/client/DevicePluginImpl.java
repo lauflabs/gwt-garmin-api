@@ -22,10 +22,7 @@ package com.garmin.gwt.client;
 
 import java.util.HashMap;
 
-import javax.naming.InitialContext;
-
-import com.google.gwt.core.client.JavaScriptObject;
-import com.google.gwt.dom.client.Element;
+import com.garmin.gwt.client.base.Version;
 import com.google.gwt.xml.client.Document;
 import com.google.gwt.xml.client.Node;
 import com.google.gwt.xml.client.XMLParser;
@@ -40,7 +37,10 @@ import com.google.gwt.xml.client.XMLParser;
 public class DevicePluginImpl implements DevicePlugin {
 
 	CommunicatorPlugin plugin;
-	
+
+	private static final Version LATEST_VERSION = new Version(3,0,1,0);
+	private static final Version REQUIRED_VERSION = new Version(3,0,0,0);
+
 	/**
 	 * Creates a new map inside of the given HTML container, which is typically
 	 * a DIV element.
@@ -48,15 +48,15 @@ public class DevicePluginImpl implements DevicePlugin {
 	public DevicePluginImpl() {
 		initialize();
 	}
-	
+
 	/**
-	 * Get the plugin object and validate 
-	 * @throws Exception 
+	 * Get the plugin object and validate
+	 * @throws Exception
 	 */
 	private void initialize() {
 		plugin = CommunicatorPlugin.newInstance();
 	}
-		
+
 	@Override
 	public boolean unlock(HashMap<String, String> pathKeysPair) {
 		// TODO Auto-generated method stub
@@ -68,33 +68,43 @@ public class DevicePluginImpl implements DevicePlugin {
 		// TODO Auto-generated method stub
 		return false;
 	}
-	
-	public String[] getPluginVersion() {
-		
+
+	@Override
+	public Version getPluginVersion() {
+
 		String versionXml = plugin.getVersionXml();
 		Document dom = XMLParser.parse(versionXml);
-		
-		String[] versions = new String[4];
-		
-		Node vMajorNode = dom.getElementsByTagName("VersionMajor").item(0);
-		versions[0] = ((com.google.gwt.xml.client.Element)vMajorNode).getFirstChild().getNodeValue();
-		
-	    Node vMinorNode = dom.getElementsByTagName("VersionMinor").item(0);
-	    versions[1] = ((com.google.gwt.xml.client.Element)vMinorNode).getFirstChild().getNodeValue();
-		
-		Node bMajorNode = dom.getElementsByTagName("BuildMajor").item(0);
-		versions[2] = ((com.google.gwt.xml.client.Element)bMajorNode).getFirstChild().getNodeValue();
-		
-		Node bMinorNode = dom.getElementsByTagName("BuildMinor").item(0);
-		versions[3] = ((com.google.gwt.xml.client.Element)bMinorNode).getFirstChild().getNodeValue();
 
-		return versions;
+		int[] versions = new int[4];
+		String[] tags = new String[]{"VersionMajor","VersionMinor","BuildMajor","BuildMinor"};
+
+		int n=0;
+		for(String tag : tags) {
+			Node node = dom.getElementsByTagName(tag).item(0);
+			versions[n] = Integer.parseInt( ((com.google.gwt.xml.client.Element)node).getFirstChild().getNodeValue() );
+			n++;
+		}
+		return new Version(versions);
 	}
 
 	@Override
 	public String getPluginVersionString() {
-		String[] versionParts = getPluginVersion();	
-		return versionParts[0] + "." + versionParts[1] + "." + versionParts[2] + "." + versionParts[3];
+		return getPluginVersion().toString();
+	}
+
+	@Override
+	public String getVersionXml() {
+		return plugin.getVersionXml();
+	}
+
+	@Override
+	public Version getLatestPluginVersion() {
+		return LATEST_VERSION;
+	}
+
+	@Override
+	public Version getRequiredPluginVersion() {
+		return REQUIRED_VERSION;
 	}
 
 }

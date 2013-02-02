@@ -22,9 +22,11 @@ package com.garmin.gwt.client;
 
 import java.util.HashMap;
 
+import com.garmin.gwt.client.base.Version;
+
 /**
  * @author Joseph Lust
- *
+ * 
  */
 public interface DevicePlugin {
 
@@ -34,30 +36,74 @@ public interface DevicePlugin {
 	 * <code>{{'http://myDomain.com/', 'xxx'},{'http://www.myDomain.com/', 'yyy'}}</code>
 	 * See documentation site for more info on getting a key. <br/>
 	 * <br/>
+	 * 
 	 * @version Minimum plugin version 2.0.0.4
-	 * @param pathKeysPair baseURL and key pairs  
+	 * @param pathKeysPair
+	 *            baseURL and key pairs
 	 * @return true if successfully unlocked or undefined otherwise
 	 */
-	boolean unlock( HashMap<String,String> pathKeysPair );
-	
+	boolean unlock(HashMap<String, String> pathKeysPair);
+
 	/**
 	 * Returns true if the plug-in is unlocked.
+	 * 
 	 * @return unlock state
 	 */
 	boolean isUnlocked();
-	
+
 	/**
-	 * Gets a string of the version number for the plugin the user has currently installed.<br>
+	 * Gets a string of the version number for the plugin the user has currently
+	 * installed.<br>
 	 * 
-	 * @return  A string of the format "versionMajor.versionMinor.buildMajor.buildMinor"<br>
-	 * i.e.: <code>2.0.0.4</code>
+	 * @return A string of the format
+	 *         "versionMajor.versionMinor.buildMajor.buildMinor"<br>
+	 *         i.e.: <code>2.0.0.4</code>
 	 */
 	String getPluginVersionString();
-	
 
-/*	void startFindDevices();
-	
-	void cancelFindDevices();
-	
-	void finishFindDevices();*/
+	/**
+	 * Returns metadata information about the plugin version in raw XML form.
+	 * 
+	 * @return XML block
+	 */
+	String getVersionXml();
+
+	/**
+	 * Gets the version number for the plugin the user has currently installed.<br>
+	 * <ul>
+	 * <li>0 - VersionMajor</li>
+	 * <li>1 - VersionMinor</li>
+	 * <li>2 - BuildMajor</li>
+	 * <li>3 - BuildMajor</li>
+	 * </ul>
+	 * 
+	 * @return four element array
+	 */
+	Version getPluginVersion();
+
+	/**
+	 * Get the latest version.<br>
+	 * Used in place of static <code>LATEST_VERSION</code> access
+	 * in JS APIto adhere to Java interface best practices.
+	 * 
+	 * @return latest plugin version
+	 */
+	Version getLatestPluginVersion();
+
+	/**
+	 * Get the latest version.<br>
+	 * Used in place of static <code>REQUIRED_VERSION</code> access
+	 * in JS APIto adhere to Java interface best practices.
+	 * 
+	 * @return required plugin version
+	 */
+	Version getRequiredPluginVersion();
+
+	/*
+	 * void startFindDevices();
+	 * 
+	 * void cancelFindDevices();
+	 * 
+	 * void finishFindDevices();
+	 */
 }

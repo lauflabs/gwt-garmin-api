@@ -32,9 +32,12 @@ import com.google.gwt.user.client.ui.Widget;
 public class TestScreen implements EntryPoint {
 
 	private final String testContainer = "content";
+	final DevicePlugin plugin = new DevicePluginImpl();
 
 	@Override
 	public void onModuleLoad() {
+
+
 		loadScreen();
 	}
 
@@ -42,27 +45,58 @@ public class TestScreen implements EntryPoint {
 	 * Show basic controls to test functionality
 	 */
 	private void loadScreen() {
-		HTML html = new HTML("Feature test!<br/>");
+		HTML html = new HTML("Version Feature Tests<br/>");
 		addWidget(html);
 
-		Button button = new Button("Plugin Version!");
+		Button button = new Button("Plugin Version");
 		button.addClickHandler(new ClickHandler() {
 			@Override
 			public void onClick(ClickEvent event) {
-				doPluginMagic();
+				String version = plugin.getPluginVersionString();
+				Window.alert("Installed plugin version: "+version);
 			}
 		});
 		addWidget(button);
 
-	}
-	
-	private void doPluginMagic() {
-		DevicePlugin plugin = new DevicePluginImpl();
-		String version = plugin.getPluginVersionString();
-		
-		Window.alert("Installed plugin version: "+version);		
-		
-		
+		button = new Button("Plugin Version XML");
+		button.addClickHandler(new ClickHandler() {
+			@Override
+			public void onClick(ClickEvent event) {
+				String version = plugin.getVersionXml();
+				Window.alert("Installed plugin version: "+version);
+			}
+		});
+		addWidget(button);
+
+		button = new Button("Plugin Version Array");
+		button.addClickHandler(new ClickHandler() {
+			@Override
+			public void onClick(ClickEvent event) {
+				int[] versions = plugin.getPluginVersion().toArray();
+				String version = "["+versions[0]+","+versions[1]+","+versions[2]+","+versions[3]+"]";
+				Window.alert(version);
+			}
+		});
+		addWidget(button);
+
+		button = new Button("Plugin Latest Version");
+		button.addClickHandler(new ClickHandler() {
+			@Override
+			public void onClick(ClickEvent event) {
+				Window.alert(plugin.getLatestPluginVersion().toString());
+			}
+		});
+		addWidget(button);
+
+		button = new Button("Plugin Required Version");
+		button.addClickHandler(new ClickHandler() {
+			@Override
+			public void onClick(ClickEvent event) {
+				Window.alert(plugin.getRequiredPluginVersion().toString());
+			}
+		});
+		addWidget(button);
+
 	}
 
 	/**
