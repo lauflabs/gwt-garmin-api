@@ -20,8 +20,7 @@ package com.garmin.gwt.client;
  * #L%
  */
 
-import java.util.HashMap;
-
+import com.garmin.gwt.client.base.KeyPair;
 import com.garmin.gwt.client.base.Version;
 import com.google.gwt.xml.client.Document;
 import com.google.gwt.xml.client.Node;
@@ -37,6 +36,8 @@ import com.google.gwt.xml.client.XMLParser;
 public class DevicePluginImpl implements DevicePlugin {
 
 	CommunicatorPlugin plugin;
+
+	private boolean isUnlocked;
 
 	private static final Version LATEST_VERSION = new Version(3,0,1,0);
 	private static final Version REQUIRED_VERSION = new Version(3,0,0,0);
@@ -55,18 +56,6 @@ public class DevicePluginImpl implements DevicePlugin {
 	 */
 	private void initialize() {
 		plugin = CommunicatorPlugin.newInstance();
-	}
-
-	@Override
-	public boolean unlock(HashMap<String, String> pathKeysPair) {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
-	public boolean isUnlocked() {
-		// TODO Auto-generated method stub
-		return false;
 	}
 
 	@Override
@@ -107,4 +96,37 @@ public class DevicePluginImpl implements DevicePlugin {
 		return REQUIRED_VERSION;
 	}
 
+	@Override
+	public boolean unlock(KeyPair[] keyPairs) {
+		// sanity check
+		if(isUnlocked()) {
+			return true;
+		}
+		// try pairs
+		for(KeyPair pair : keyPairs) {
+			if(plugin.unlock(pair)) {
+				isUnlocked = true;
+				return isUnlocked;
+			}
+		}
+		// try defaults
+		KeyPair[] localPairs = new KeyPair[]{
+				new KeyPair("file:///","cb1492ae040612408d87cc53e3f7ff3c"),
+				new KeyPair("http://localhost","45517b532362fc3149e4211ade14c9b2"),
+				new KeyPair("http://127.0.0.1","40cd4860f7988c53b15b8491693de133")
+		};
+		for(KeyPair pair : localPairs) {
+			if(plugin.unlock(pair)) {
+				isUnlocked = true;
+				return isUnlocked;
+			}
+		}
+		// bupkis
+		return isUnlocked;
+	}
+
+	@Override
+	public boolean isUnlocked() {
+		return isUnlocked;
+	}
 }

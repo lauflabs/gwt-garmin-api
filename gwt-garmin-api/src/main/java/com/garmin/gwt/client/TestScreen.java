@@ -20,6 +20,7 @@ package com.garmin.gwt.client;
  * #L%
  */
 
+import com.garmin.gwt.client.base.KeyPair;
 import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
@@ -36,7 +37,6 @@ public class TestScreen implements EntryPoint {
 
 	@Override
 	public void onModuleLoad() {
-
 
 		loadScreen();
 	}
@@ -93,6 +93,17 @@ public class TestScreen implements EntryPoint {
 			@Override
 			public void onClick(ClickEvent event) {
 				Window.alert(plugin.getRequiredPluginVersion().toString());
+			}
+		});
+		addWidget(button);
+
+		button = new Button("Unlock");
+		button.addClickHandler(new ClickHandler() {
+			@Override
+			public void onClick(ClickEvent event) {
+				plugin.unlock(new KeyPair[]{});
+				String message = (plugin.isUnlocked()) ? "Unlocked!" : "Still LOCKED!";
+				Window.alert(message);
 			}
 		});
 		addWidget(button);

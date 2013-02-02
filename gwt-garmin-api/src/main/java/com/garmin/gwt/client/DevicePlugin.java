@@ -20,8 +20,7 @@ package com.garmin.gwt.client;
  * #L%
  */
 
-import java.util.HashMap;
-
+import com.garmin.gwt.client.base.KeyPair;
 import com.garmin.gwt.client.base.Version;
 
 /**
@@ -32,20 +31,19 @@ public interface DevicePlugin {
 
 	/**
 	 * Unlocks the GpsControl object to be used at the given web address.<br>
-	 * More than one set of path-key pairs my be passed in, for example:<br>
-	 * <code>{{'http://myDomain.com/', 'xxx'},{'http://www.myDomain.com/', 'yyy'}}</code>
+	 * More than one set of path-key pairs my be passed in.<br>
 	 * See documentation site for more info on getting a key. <br/>
 	 * <br/>
 	 * 
 	 * @version Minimum plugin version 2.0.0.4
-	 * @param pathKeysPair
-	 *            baseURL and key pairs
-	 * @return true if successfully unlocked or undefined otherwise
+	 * @param kayPairs
+	 *            array of {@link KeyPair}
+	 * @return whether unlock was successful
 	 */
-	boolean unlock(HashMap<String, String> pathKeysPair);
+	boolean unlock(KeyPair[] kayPairs);
 
 	/**
-	 * Returns true if the plug-in is unlocked.
+	 * Returns true if the plugin is unlocked.
 	 * 
 	 * @return unlock state
 	 */
@@ -83,8 +81,8 @@ public interface DevicePlugin {
 
 	/**
 	 * Get the latest version.<br>
-	 * Used in place of static <code>LATEST_VERSION</code> access
-	 * in JS APIto adhere to Java interface best practices.
+	 * Used in place of static <code>LATEST_VERSION</code> access in JS APIto
+	 * adhere to Java interface best practices.
 	 * 
 	 * @return latest plugin version
 	 */
@@ -92,8 +90,8 @@ public interface DevicePlugin {
 
 	/**
 	 * Get the latest version.<br>
-	 * Used in place of static <code>REQUIRED_VERSION</code> access
-	 * in JS APIto adhere to Java interface best practices.
+	 * Used in place of static <code>REQUIRED_VERSION</code> access in JS APIto
+	 * adhere to Java interface best practices.
 	 * 
 	 * @return required plugin version
 	 */
