@@ -108,6 +108,24 @@ public class TestScreen implements EntryPoint {
 		});
 		addWidget(button);
 
+		button = new Button("Get Progress XML");
+		button.addClickHandler(new ClickHandler() {
+			@Override
+			public void onClick(ClickEvent event) {
+				Window.alert(plugin.getProgressXml());
+			}
+		});
+		addWidget(button);
+
+		button = new Button("Get Progress");
+		button.addClickHandler(new ClickHandler() {
+			@Override
+			public void onClick(ClickEvent event) {
+				Window.alert(plugin.getProgress().toString());
+			}
+		});
+		addWidget(button);
+
 	}
 
 	/**

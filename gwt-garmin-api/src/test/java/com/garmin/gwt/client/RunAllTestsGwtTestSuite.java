@@ -42,7 +42,7 @@ public class RunAllTestsGwtTestSuite extends GWTTestSuite {
 
 		// don't run these twice
 		ArrayList<String> ignoreTestList = new ArrayList<String>();
-		ignoreTestList.add(AbstractMapsGWTTestHelper.class.getName());
+		ignoreTestList.add(AbstractGarminGWTTestHelper.class.getName());
 
 		for (Class<? extends GWTTestCase> clazz : getClasses(TARGET_PACKAGE)) {
 			if (!ignoreTestList.contains(clazz.getName())) {

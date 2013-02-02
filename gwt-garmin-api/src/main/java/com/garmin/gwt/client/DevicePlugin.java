@@ -21,6 +21,7 @@ package com.garmin.gwt.client;
  */
 
 import com.garmin.gwt.client.base.KeyPair;
+import com.garmin.gwt.client.base.TransferProgress;
 import com.garmin.gwt.client.base.Version;
 
 /**
@@ -96,6 +97,20 @@ public interface DevicePlugin {
 	 * @return required plugin version
 	 */
 	Version getRequiredPluginVersion();
+
+	/**
+	 * Get the status/progress of the current state or transfer.
+	 * 
+	 * @return XML describing the ambient plugin progress state
+	 */
+	String getProgressXml();
+
+	/**
+	 * Get the status/progress of the current state or transfer
+	 * 
+	 * @return XML values parsed into a TransferProgress object
+	 */
+	TransferProgress getProgress();
 
 	/*
 	 * void startFindDevices();

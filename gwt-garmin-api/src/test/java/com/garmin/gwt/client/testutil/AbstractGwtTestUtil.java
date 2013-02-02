@@ -23,18 +23,18 @@ package com.garmin.gwt.client.testutil;
 import com.google.gwt.junit.client.GWTTestCase;
 
 /**
- * Test template for testing GMaps objects.
+ * Test template for testing api objects.
  * 
  * @author Joseph Lust
  */
 public abstract class AbstractGwtTestUtil extends GWTTestCase {
 
-  public static final int ASYNC_DELAY_MS = 5000;
-  public static final boolean HAS_SENSOR = false;
+	public static final int ASYNC_DELAY_MS = 5000;
+	public static final boolean HAS_SENSOR = false;
 
-  @Override
-  public String getModuleName() {
-    return "com.google.gwt.Garmin";
-  }
+	@Override
+	public String getModuleName() {
+		return "com.garmin.gwt.Garmin";
+	}
 
 }

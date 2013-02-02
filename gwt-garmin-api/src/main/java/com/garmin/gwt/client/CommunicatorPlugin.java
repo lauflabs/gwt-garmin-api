@@ -129,6 +129,15 @@ public final class CommunicatorPlugin extends JavaScriptObject {
 	 */
 	private final native boolean unlockImpl(String url, String key) /*-{
 		var state = this.Unlock(url, key);
-		return (state===1 || state===true); // API says boolean, is really a number! Added 'true' to future proof
+		return (state === 1 || state === true); // API says boolean, is really a number! Added 'true' to future proof
+	}-*/;
+
+	/**
+	 * Get the status/progress of the current state or transfer.
+	 * 
+	 * @return The XML describing the current progress state of the plug-in.
+	 */
+	public final native String getProgressXml() /*-{
+		return this.ProgressXml;
 	}-*/;
 }

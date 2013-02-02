@@ -28,126 +28,97 @@ package com.garmin.gwt.client.events;
  */
 public enum GarminEventType {
 
-  ANIMATION_CHANGED,
+	/**
+	 *  called when starting to search for devices. the object returned is {controller: this}
+	 */
+	START_FIND_DEVICES("onStartFindDevices"),
 
-  BOUNDS_CHANGED,
+	/**
+	 *  is called when the controller is told to cancel finding devices {controller: this}
+	 */
+	CANCEL_FIND_DEVICES("onCancelFindDevices"),
 
-  CENTER_CHANGED,
+	/**
+	 *  called when the devices are found. the object returned is {controller: this}
+	 */
+	FINISH_FIND_DEVICES("onFinishFindDevices"),
 
-  CHANNELNUMBER_CHANGED,
+	/**
+	 * called when an exception occurs in a method object passed back is {msg: exception}
+	 */
+	EXCEPTION("onException"),
 
-  CIRCLECOMPLETE,
+	/**
+	 * called when the device is lazy loaded, but finds no devices, yet still attempts a read/write action {controller: this}
+	 */
+	INTERACTION_WITH_NO_DEVICE("onInteractionWithNoDevice"),
 
-  CLICK,
+	/**
+	 * called when the controller is about to start reading from the device {controller: this}
+	 */
+	START_READ_FROM_DEVICE("onStartReadFromDevice"),
 
-  CLICKABLE_CHANGED,
+	/**
+	 * called when the controller is done reading the device. the read is either a success or failure, which is communicated via json. object passed back contains {success:this.garminPlugin.GpsTransferSucceeded, controller: this}
+	 */
+	FINISH_READ_FROM_DEVICE("onFinishReadFromDevice"),
 
-  CLOSECLICK,
+	/**
+	 * called when the controller is waiting for input from the user about the device. object passed back contains: {message: this.garminPlugin.MessageBoxXml, controller: this}
+	 */
+	WAITING_READ_FROM_DEVICE("onWaitingReadFromDevice"),
 
-  CONTENT_CHANGED,
+	/**
+	 * called when the controller is still reading information from the device. in this case the message is a percent complete/ {progress: this.getDeviceStatus(), controller: this}
+	 */
+	PROGRESS_READ_FROM_DEVICE("onProgressReadFromDevice"),
 
-  CURSOR_CHANGED,
+	/**
+	 * called when the controller is told to cancel reading from the device {controller: this}
+	 */
+	CANCEL_READ_FROM_DEVICE("onCancelReadFromDevice"),
 
-  DBLCLICK,
+	/**
+	 * called when the controller is done writing to the device. the write is either a success or failure, which is communicated via json. object passed back contains {success:this.garminPlugin.GpsTransferSucceeded, controller: this}
+	 */
+	FINISH_WRITE_TO_DEVICE("onFinishWriteToDevice"),
 
-  DEFAULTVIEWPORT_CHANGED,
+	/**
+	 * called when the controller is waiting for input from the user about the device. object passed back contains: {message: this.garminPlugin.MessageBoxXml, controller: this}
+	 */
+	WAITING_WRITE_TO_DEVICE("onWaitingWriteToDevice"),
 
-  DIRECTIONS_CHANGED,
+	/**
+	 * called when the controller is still writing information to the device. in this case the message is a percent complete/ {progress: this.getDeviceStatus(), controller: this}
+	 */
+	PROGRESS_WRITE_TO_DEVICE("onProgressWriteToDevice"),
 
-  DOMREADY,
+	/**
+	 * called when the controller is told to cancel writing to the device {controller: this}
+	 */
+	CANCEL_WRITE_TO_DEVICE("onCancelWriteToDevice");
 
-  DRAG,
+	private String callbackMethod;
 
-  DRAGEND,
+	/**
+	 * Types of event
+	 * @param callbackMethod expected name of method underlying API will call on event
+	 */
+	private GarminEventType(String callbackMethod) {
+		this.callbackMethod = callbackMethod;
+	}
 
-  DRAGGABLE_CHANGED,
+	public String value() {
+		return name().toLowerCase();
+	}
 
-  DRAGSTART,
+	public static GarminEventType fromValue(String type) {
+		return valueOf(type.toUpperCase());
+	}
 
-  FLAT_CHANGED,
+	@Override
+	public String toString() {
+		return name().toLowerCase();
+	}
 
-  FORMAT_CHANGED,
-
-  HEADING_CHANGED,
-
-  ICON_CHANGED,
-
-  IDLE,
-
-  INSERT_AT,
-
-  LINKS_CHANGED,
-
-  MAP_CHANGED,
-
-  MAPTYPEID_CHANGED,
-
-  MARKERCOMPLETE,
-
-  MOUSEDOWN,
-
-  MOUSEMOVE,
-
-  MOUSEOUT,
-
-  MOUSEOVER,
-
-  MOUSEUP,
-
-  OVERLAYCOMPLETE,
-
-  PANO_CHANGED,
-
-  PLACE_CHANGED,
-
-  POLYGONCOMPLETE,
-
-  POLYLINECOMPLETE,
-
-  POSITION_CHANGED,
-
-  POV_CHANGED,
-
-  PROJECTION_CHANGED,
-
-  RADIUS_CHANGED,
-
-  RECTANGLECOMPLETE,
-
-  REMOVE_AT,
-
-  RESIZE,
-
-  RIGHTCLICK,
-
-  SET_AT,
-
-  SHADOW_CHANGED,
-
-  SHAPE_CHANGED,
-
-  TILESLOADED,
-
-  TITLE_CHANGED,
-
-  TILT_CHANGED,
-
-  VISIBLE_CHANGED,
-
-  ZINDEX_CHANGED,
-
-  ZOOM_CHANGED;
-
-  public String value() {
-    return name().toLowerCase();
-  }
-
-  public static GarminEventType fromValue(String type) {
-    return valueOf(type.toUpperCase());
-  }
-
-  public String toString() {
-    return name().toLowerCase();
-  }
-  
 }

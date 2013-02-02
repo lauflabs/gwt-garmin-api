@@ -24,7 +24,7 @@ package com.garmin.gwt.client;
 /**
  * Example of how a test could be run.
  */
-public class SandboxGwtTest extends AbstractMapsGWTTestHelper {
+public class SandboxGwtTest extends AbstractGarminGWTTestHelper {
 
   protected void runSomething() {
     assertTrue(true);

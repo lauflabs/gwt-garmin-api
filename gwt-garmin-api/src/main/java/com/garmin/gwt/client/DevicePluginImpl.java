@@ -21,6 +21,7 @@ package com.garmin.gwt.client;
  */
 
 import com.garmin.gwt.client.base.KeyPair;
+import com.garmin.gwt.client.base.TransferProgress;
 import com.garmin.gwt.client.base.Version;
 import com.google.gwt.xml.client.Document;
 import com.google.gwt.xml.client.Node;
@@ -128,5 +129,15 @@ public class DevicePluginImpl implements DevicePlugin {
 	@Override
 	public boolean isUnlocked() {
 		return isUnlocked;
+	}
+
+	@Override
+	public String getProgressXml() {
+		return plugin.getProgressXml();
+	}
+
+	@Override
+	public TransferProgress getProgress() {
+		return new TransferProgress(plugin.getProgressXml());
 	}
 }

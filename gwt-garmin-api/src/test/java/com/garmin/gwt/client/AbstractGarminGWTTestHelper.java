@@ -29,7 +29,7 @@ import com.google.gwt.junit.client.GWTTestCase;
  * @author Joseph Lust
  * 
  */
-public abstract class AbstractMapsGWTTestHelper extends GWTTestCase {
+public abstract class AbstractGarminGWTTestHelper extends GWTTestCase {
 
   private final String MODULE_NAME = "com.garmin.gwt.Garmin";
   private int asyncDelayMs = 30000;
