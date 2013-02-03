@@ -1,4 +1,4 @@
-[![Build Status](https://buildhive.cloudbees.com/job/twistedpair/job/gwt-test-utils/badge/icon)](https://buildhive.cloudbees.com/job/twistedpair/job/gwt-test-utils/)
+[![Build Status](https://buildhive.cloudbees.com/job/lauflabs/job/gwt-garmin-api/badge/icon)](https://buildhive.cloudbees.com/job/lauflabs/job/gwt-garmin-api/)
 
 gwt-garmin-api
 ==============
