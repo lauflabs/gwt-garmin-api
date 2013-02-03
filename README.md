@@ -1,3 +1,5 @@
+[![Build Status](https://buildhive.cloudbees.com/job/twistedpair/job/gwt-test-utils/badge/icon)](https://buildhive.cloudbees.com/job/twistedpair/job/gwt-test-utils/)
+
 gwt-garmin-api
 ==============
 
