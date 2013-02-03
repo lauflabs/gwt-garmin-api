@@ -10,11 +10,17 @@ While the existing JS Communicator Plugin API is extensive, this library seeks t
 * Ability to read tracks/points from a device
 * Ability to write tracks/points to a device
 
-Additional features meant assist in the parsing of XML, files, and display of buttons, lists and maps can be achieved with various other libraries, and as such is not in the initial purview of this library.
+Additional features meant to assist in the parsing of XML, files, and display of buttons, lists and maps can be achieved with various other libraries, and are beyond the purview of this library.
+
+Demo
+====
+Visit the **[Live Showcase](http://lauflabs.github.com/gwt-garmin-api/showcase/showcase.html)** to instantly testdrive the API with your device
+
 
 Getting Started
 ===============
 See [Getting Started Doc](https://github.com/lauflabs/gwt-garmin-api/wiki/Getting-Started)
+Explore the [JavaDocs](http://lauflabs.github.com/gwt-garmin-api/javadoc/snapshot/) for minutiae
 
 Disclaimer
 ==========
