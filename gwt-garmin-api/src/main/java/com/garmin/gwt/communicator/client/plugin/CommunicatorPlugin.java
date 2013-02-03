@@ -22,6 +22,7 @@ package com.garmin.gwt.communicator.client.plugin;
 
 import com.garmin.gwt.communicator.client.base.KeyPair;
 import com.garmin.gwt.communicator.client.exception.UnsupportedBrowserException;
+import com.garmin.gwt.communicator.client.util.BrowserDetect;
 import com.google.gwt.core.client.JavaScriptObject;
 import com.google.gwt.core.shared.GWT;
 import com.google.gwt.dom.client.Element;
@@ -75,6 +76,7 @@ public final class CommunicatorPlugin extends JavaScriptObject {
 	}
 
 	public final static CommunicatorPlugin newInstance() {
+		BrowserDetect.insertScript();
 		insertObject();
 
 		CommunicatorPlugin plugin = createJso().cast();

@@ -1,4 +1,4 @@
-package com.garmin.gwt.testing;
+package com.garmin.gwt.communicator.testing;
 
 /*
  * #%L
