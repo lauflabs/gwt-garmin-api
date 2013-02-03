@@ -20,6 +20,7 @@ package com.garmin.gwt.client;
  * #L%
  */
 
+import com.garmin.gwt.client.base.Device;
 import com.garmin.gwt.client.base.KeyPair;
 import com.garmin.gwt.client.base.TransferProgress;
 import com.garmin.gwt.client.base.Version;
@@ -111,6 +112,51 @@ public interface DevicePlugin {
 	 * @return XML values parsed into a TransferProgress object
 	 */
 	TransferProgress getProgress();
+
+	/**
+	 * Initiates a find GPS devices action on the plugin.<br>
+	 * Poll with {@link #finishFindDevices()} to determine when the plugin has
+	 * completed this action.<br>
+	 * Use {@link #getDeviceXmlString()} to inspect XML contents for and array
+	 * of Device nodes.<br/>
+	 * 
+	 * @since 2.0.0.4
+	 */
+	void startFindDevices();
+
+	/**
+	 * Cancel the current find devices interaction.
+	 * 
+	 * @since 2.0.0.4
+	 */
+	void cancelFindDevices();
+
+	/**
+	 * Get state of last find devices action
+	 * 
+	 * @since 2.0.0.4
+	 * @return true if completed finding devices otherwise false.
+	 */
+	boolean finishFindDevices();
+
+	/**
+	 * Returns information about the number of devices connected to this machine
+	 * as well as the names of those devices. Refer to the Devices element in
+	 * the <a href="http://www.garmin.com/xmlschemas/GarminPluginAPIV1.xsd">
+	 * GarminPluginAPIV1 schema</a> for what is included. The XML returned
+	 * should contain a 'Device' element with 'DisplayName' and 'Number' if
+	 * there is a device actually connected.
+	 * 
+	 * @return XML, potentially empty if no devices found
+	 */
+	String getDevicesXml();
+
+	/**
+	 * Parses {@link #getDevicesXml()} values into a Device array
+	 * 
+	 * @return empty array if no devices found
+	 */
+	Device[] getDevices();
 
 	/*
 	 * void startFindDevices();

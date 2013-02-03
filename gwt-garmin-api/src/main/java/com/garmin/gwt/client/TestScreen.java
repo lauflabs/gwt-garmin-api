@@ -20,10 +20,15 @@ package com.garmin.gwt.client;
  * #L%
  */
 
+import com.garmin.gwt.client.base.Device;
+import com.garmin.gwt.client.base.DevicesPluginRequest;
 import com.garmin.gwt.client.base.KeyPair;
+import com.garmin.gwt.client.base.RequestCallback;
+import com.garmin.gwt.client.base.TransferProgress;
 import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
+import com.google.gwt.user.client.Timer;
 import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.HTML;
@@ -33,7 +38,12 @@ import com.google.gwt.user.client.ui.Widget;
 public class TestScreen implements EntryPoint {
 
 	private final String testContainer = "content";
+
 	final DevicePlugin plugin = new DevicePluginImpl();
+
+	final KeyPair key = new KeyPair("https://lauflabs.github.com",
+			"3f287910143193d31f568d4d7d87cb4a");
+	final KeyPair[] keys = new KeyPair[]{key};
 
 	@Override
 	public void onModuleLoad() {
@@ -53,7 +63,7 @@ public class TestScreen implements EntryPoint {
 			@Override
 			public void onClick(ClickEvent event) {
 				String version = plugin.getPluginVersionString();
-				Window.alert("Installed plugin version: "+version);
+				Window.alert("Installed plugin version: " + version);
 			}
 		});
 		addWidget(button);
@@ -63,7 +73,7 @@ public class TestScreen implements EntryPoint {
 			@Override
 			public void onClick(ClickEvent event) {
 				String version = plugin.getVersionXml();
-				Window.alert("Installed plugin version: "+version);
+				Window.alert("Installed plugin version: " + version);
 			}
 		});
 		addWidget(button);
@@ -73,7 +83,8 @@ public class TestScreen implements EntryPoint {
 			@Override
 			public void onClick(ClickEvent event) {
 				int[] versions = plugin.getPluginVersion().toArray();
-				String version = "["+versions[0]+","+versions[1]+","+versions[2]+","+versions[3]+"]";
+				String version = "[" + versions[0] + "," + versions[1] + ","
+						+ versions[2] + "," + versions[3] + "]";
 				Window.alert(version);
 			}
 		});
@@ -101,8 +112,9 @@ public class TestScreen implements EntryPoint {
 		button.addClickHandler(new ClickHandler() {
 			@Override
 			public void onClick(ClickEvent event) {
-				plugin.unlock(new KeyPair[]{});
-				String message = (plugin.isUnlocked()) ? "Unlocked!" : "Still LOCKED!";
+				plugin.unlock(new KeyPair[] {});
+				String message = (plugin.isUnlocked()) ? "Unlocked!"
+						: "Still LOCKED!";
 				Window.alert(message);
 			}
 		});
@@ -126,6 +138,85 @@ public class TestScreen implements EntryPoint {
 		});
 		addWidget(button);
 
+		button = new Button("Device list XML");
+		button.addClickHandler(new ClickHandler() {
+			@Override
+			public void onClick(ClickEvent event) {
+				testReadFromDeviceXml();
+			}
+		});
+		addWidget(button);
+
+		button = new Button("Device list");
+		button.addClickHandler(new ClickHandler() {
+			@Override
+			public void onClick(ClickEvent event) {
+				testReadFromDevice();
+			}
+		});
+		addWidget(button);
+
+	}
+
+	private void testReadFromDeviceXml() {
+		// unlock plugin
+		if(!plugin.unlock(keys) ) {
+			Window.alert("failed to unlock plugin!");
+		}
+
+		// get list of devices
+		plugin.startFindDevices();
+
+		final Timer poller = new Timer() {
+			@Override
+			public void run() {
+				if(plugin.finishFindDevices()) {
+					this.cancel();
+					String deviceXml = plugin.getDevicesXml();
+					displayDevicesXml( deviceXml );
+				}
+			}
+		};
+		poller.scheduleRepeating(200);
+	}
+
+	private void testReadFromDevice() {
+		// unlock plugin
+		if(!plugin.unlock(keys) ) {
+			Window.alert("failed to unlock plugin!");
+		}
+
+		DevicesPluginRequest request = new DevicesPluginRequest(plugin, new RequestCallback<Device[]>() {
+
+			@Override
+			public void onSuccess(Device[] result) {
+				displayDevices(result);
+			}
+
+			@Override
+			public void onCancel() {
+				// clean up
+			}
+
+			@Override
+			public void onProgress(TransferProgress progress) {
+				// show progress
+			}
+
+		});
+		request.startRequest();
+	}
+
+	private void displayDevicesXml(String xml) {
+		Window.alert(xml);
+	}
+
+	private void displayDevices(Device[] devices) {
+		String out = "";
+		for(Device d : devices) {
+			out += d.toString() + "\n";
+		}
+		Window.alert(out);
 	}
 
 	/**

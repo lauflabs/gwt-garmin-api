@@ -20,9 +20,11 @@ package com.garmin.gwt.client;
  * #L%
  */
 
+import com.garmin.gwt.client.base.Device;
 import com.garmin.gwt.client.base.KeyPair;
 import com.garmin.gwt.client.base.TransferProgress;
 import com.garmin.gwt.client.base.Version;
+import com.garmin.gwt.client.util.PluginUtils;
 import com.google.gwt.xml.client.Document;
 import com.google.gwt.xml.client.Node;
 import com.google.gwt.xml.client.XMLParser;
@@ -138,6 +140,33 @@ public class DevicePluginImpl implements DevicePlugin {
 
 	@Override
 	public TransferProgress getProgress() {
-		return new TransferProgress(plugin.getProgressXml());
+		return PluginUtils.parseProgressXml(plugin.getProgressXml());
+	}
+
+	/*** Get actual information about/from the devices ***/
+
+	@Override
+	public void startFindDevices() {
+		plugin.startFindDevices();
+	}
+
+	@Override
+	public void cancelFindDevices() {
+		plugin.cancelFindDevices();
+	}
+
+	@Override
+	public boolean finishFindDevices() {
+		return plugin.finishFindDevices();
+	}
+
+	@Override
+	public String getDevicesXml() {
+		return plugin.devicesXmlString();
+	}
+
+	@Override
+	public Device[] getDevices() {
+		return PluginUtils.parseDeviceXml(plugin.devicesXmlString());
 	}
 }
