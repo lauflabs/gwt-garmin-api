@@ -14,7 +14,7 @@ Additional features meant to assist in the parsing of XML, files, and display of
 
 Demo
 ====
-Visit the **[Live Showcase](http://lauflabs.github.com/gwt-garmin-api/showcase/showcase.html)** to instantly testdrive the API with your device
+Visit the **[Live Showcase](http://lauflabs.github.com/gwt-garmin-api/showcase/)** to instantly testdrive the API with your device
 
 
 Getting Started
