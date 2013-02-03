@@ -1,10 +1,10 @@
-package com.garmin.gwt.testing;
+package com.garmin.gwt.communicator.client.exception;
 
 /*
  * #%L
- * GWT Maps API V3 - Showcase
+ * GWT Garmin API - Core API
  * %%
- * Copyright (C) 2011 - 2012 GWT Maps API V3
+ * Copyright (C) 2012 - 2013 GWT Garmin API
  * %%
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,8 +21,19 @@ package com.garmin.gwt.testing;
  */
 
 /**
- * Blank class for maven to play with for setup
+ * The CommunicatorPlugin is note supported by this browser
+ * 
+ * @author Joseph Lust
+ *
  */
-public class Test {
-	// NOOP
+public final class UnsupportedBrowserException extends RuntimeException {
+
+	private static final long serialVersionUID = 1L;
+
+	/**
+	 * @param message
+	 */
+	public UnsupportedBrowserException(String message) {
+		super(message);
+	}
 }

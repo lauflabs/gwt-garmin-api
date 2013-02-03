@@ -1,8 +1,8 @@
-package com.garmin.gwt.testing;
+package com.garmin.gwt.communicator.client.base;
 
 /*
  * #%L
- * GWT Maps API V3 - Showcase
+ * GWT Maps API V3 - Core API
  * %%
  * Copyright (C) 2011 - 2012 GWT Maps API V3
  * %%
@@ -20,9 +20,34 @@ package com.garmin.gwt.testing;
  * #L%
  */
 
+
 /**
- * Blank class for maven to play with for setup
+ * A point on a two-dimensional plane. <br>
  */
-public class Test {
-	// NOOP
+public class LatLng {
+	
+	/**
+	 * @param latitude
+	 * @param longitude
+	 */
+	public LatLng(double latitude, double longitude) {
+		super();
+		this.latitude = latitude;
+		this.longitude = longitude;
+	}
+	private double latitude;
+	private double longitude;
+	
+	/**
+	 * @return the latitude
+	 */
+	public final double getLatitude() {
+		return latitude;
+	}
+	/**
+	 * @return the longitude
+	 */
+	public final double getLongitude() {
+		return longitude;
+	}	
 }

@@ -1,10 +1,10 @@
-package com.garmin.gwt.testing;
+package com.garmin.gwt.communicator.client.request;
 
 /*
  * #%L
- * GWT Maps API V3 - Showcase
+ * GWT Garmin API - Core API
  * %%
- * Copyright (C) 2011 - 2012 GWT Maps API V3
+ * Copyright (C) 2012 - 2013 GWT Garmin API
  * %%
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,8 +21,29 @@ package com.garmin.gwt.testing;
  */
 
 /**
- * Blank class for maven to play with for setup
+ * General asynchronous callbacks for a plugin request
+ * 
+ * @author Joseph Lust
+ * 
+ * @param <T>
  */
-public class Test {
-	// NOOP
+public interface RequestCallback<T> {
+
+	/**
+	 * Called on successful completion of the request with the payload
+	 * @param result
+	 */
+	void onSuccess(T result);
+
+	/**
+	 * Called if the request is cancelled
+	 */
+	void onCancel();
+
+	/**
+	 * Method will be called every 200ms until cancelled or complete
+	 * 
+	 * @param progress
+	 */
+	void onProgress(TransferProgress progress);
 }
