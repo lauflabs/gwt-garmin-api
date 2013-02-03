@@ -42,6 +42,7 @@ public class DevicePluginImpl implements DevicePlugin {
 
 	private boolean isUnlocked;
 
+	//TODO: not a fan of these values hardcoded in the garmin reference impl
 	private static final Version LATEST_VERSION = new Version(3,0,1,0);
 	private static final Version REQUIRED_VERSION = new Version(3,0,0,0);
 

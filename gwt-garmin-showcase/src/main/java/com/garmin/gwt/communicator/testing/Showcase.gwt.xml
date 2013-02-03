@@ -28,7 +28,6 @@
 
 	<!-- I'm using JSON for debugging -->
 	<inherits name="com.garmin.gwt.communicator.Communicator" />
-	
 
 	<!-- Specify the app entry point class. -->
 	<entry-point class='com.garmin.gwt.communicator.testing.client.Showcase' />

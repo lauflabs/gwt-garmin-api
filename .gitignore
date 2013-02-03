@@ -1,6 +1,8 @@
 # All output target folders
 **/target/*
 
+# maven bin folders
+**/bin/*
 # temp tomcat server folders
 **/tomcat/*
 

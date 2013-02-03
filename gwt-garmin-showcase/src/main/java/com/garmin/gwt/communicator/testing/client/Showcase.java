@@ -23,11 +23,11 @@ package com.garmin.gwt.communicator.testing.client;
 import com.garmin.gwt.communicator.client.base.Device;
 import com.garmin.gwt.communicator.client.base.KeyPair;
 import com.garmin.gwt.communicator.client.plugin.DevicePlugin;
-import com.garmin.gwt.communicator.client.plugin.DevicePluginImpl;
 import com.garmin.gwt.communicator.client.request.DevicesPluginRequest;
 import com.garmin.gwt.communicator.client.request.RequestCallback;
 import com.garmin.gwt.communicator.client.request.TransferProgress;
 import com.google.gwt.core.client.EntryPoint;
+import com.google.gwt.core.shared.GWT;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.user.client.Timer;
@@ -41,7 +41,7 @@ public class Showcase implements EntryPoint {
 
 	private final String testContainer = "content";
 
-	final DevicePlugin plugin = new DevicePluginImpl();
+	final DevicePlugin plugin = GWT.create(DevicePlugin.class);
 
 	// keys are public and url bound, no need to conceal
 	final KeyPair key = new KeyPair("https://lauflabs.github.com",
@@ -51,7 +51,39 @@ public class Showcase implements EntryPoint {
 	@Override
 	public void onModuleLoad() {
 
-		loadScreen();
+		// small delay to allow the page to parse the plugin
+		final Timer delay = new Timer() {
+			@Override
+			public void run() {
+				conditionallyLoadScreen();
+			}
+		};
+		delay.schedule(300);
+	}
+
+	private void conditionallyLoadScreen() {
+		boolean hasPlugin = pluginDetect();
+		if(hasPlugin) {
+			loadScreen();
+		}
+		else {
+			installPluginScreen();
+		}
+	}
+
+	private void installPluginScreen() {
+		HTML html = new HTML("<b>:(</b> Garmin Communicator is <b>NOT</b> <u>installed</u> OR is not <u>enabled</u>.<br/>Please visit the <a target='_blank' href=\"http://www.garmin.com/products/communicator/\">Garmin Communicator Site</a> to install<br>OR click the browser prompt to allow the plugin to load for this site");
+		addWidget(html);
+	}
+
+	private boolean pluginDetect() {
+		try {
+			return plugin.unlock(keys);
+		}
+		catch(Exception e) {
+			return false;
+		}
+
 	}
 
 	/**

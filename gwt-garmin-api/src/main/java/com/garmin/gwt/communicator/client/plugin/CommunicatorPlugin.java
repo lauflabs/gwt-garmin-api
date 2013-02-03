@@ -75,6 +75,10 @@ public final class CommunicatorPlugin extends JavaScriptObject {
 		GWT.log("Inserting FF object into IE object");
 	}
 
+	/**
+	 * Create a new instance through browser detection and DOM object insertion
+	 * @return plugin, or throws HtmlTagNotFoundException
+	 */
 	public final static CommunicatorPlugin newInstance() {
 		BrowserDetect.insertScript();
 		insertObject();
