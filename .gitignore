@@ -1,14 +1,20 @@
 # All output target folders
 **/target/*
+target/*
+
+# Eclipse
+.project
+.classpath
 
 # maven bin folders
 **/bin/*
+
 # temp tomcat server folders
 **/tomcat/*
 
 # GWT temps
 **/gwt-unitCache/*
-
+gwt-unitCache/
 # Any eclipse settings files
 **/.settings/*
 
@@ -17,5 +23,6 @@
 
 # Compiled classes folders
 **/classes/*
+
 runpartner-web-site/.project
 .settings/
