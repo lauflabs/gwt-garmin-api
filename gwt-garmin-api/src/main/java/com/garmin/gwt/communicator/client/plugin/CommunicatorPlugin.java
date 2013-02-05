@@ -77,6 +77,7 @@ public final class CommunicatorPlugin extends JavaScriptObject {
 
 	/**
 	 * Create a new instance through browser detection and DOM object insertion
+	 * 
 	 * @return plugin, or throws HtmlTagNotFoundException
 	 */
 	public final static CommunicatorPlugin newInstance() {
@@ -153,8 +154,8 @@ public final class CommunicatorPlugin extends JavaScriptObject {
 	 * Initiates a find Gps devices action on the plugin.<br>
 	 * Poll with {@link #finishFindDevices()} to determine when the plugin has
 	 * completed this action.<br>
-	 * Use {@link #devicesXmlString()} to inspect XML contents for and array
-	 * of Device nodes.<br/>
+	 * Use {@link #devicesXmlString()} to inspect XML contents for and array of
+	 * Device nodes.<br/>
 	 * 
 	 * @since 2.0.0.4
 	 */
@@ -180,7 +181,7 @@ public final class CommunicatorPlugin extends JavaScriptObject {
 	public final native boolean finishFindDevices() /*-{
 
 		var state = this.FinishFindDevices();
-		return (state===1 || state===true); // API says boolean, is really a number! Added 'true' to future proof
+		return (state === 1 || state === true); // API says boolean, is really a number! Added 'true' to future proof
 	}-*/;
 
 	/**
@@ -197,4 +198,54 @@ public final class CommunicatorPlugin extends JavaScriptObject {
 		return this.DevicesXmlString();
 	}-*/;
 
+	/**
+	 * This is the GpsXml information from the device. Typically called after a
+	 * read operation.
+	 */
+	public final native String gpsXml() /*-{
+		return this.GpsXml;
+	}-*/;
+
+	/**
+	 * Initiates the read from the GPS device connected. Use finishReadFromGps
+	 * and getGpsProgressXml to determine when the plugin is done with this
+	 * operation. Also, use getGpsXml to extract the actual data from the
+	 * device. <br/>
+	 * 
+	 * @since 2.0.0.4
+	 * @param deviceNumber
+	 *            deviceNumber assigned by plugin
+	 */
+	public final native void startReadFromGps(int deviceNumber) /*-{
+		this.StartReadFromGps(deviceNumber)
+	}-*/;
+
+	/**
+	 * Cancels the current read from the device.
+	 * 
+	 * @since 2.0.0.4
+	 */
+	public final native void cancelReadFromGps() /*-{
+		this.CancelReadFromGps()
+	}-*/;
+
+	/**
+	 * Indicates the status of the read process. It will return an integer know
+	 * as the completion state. The purpose is to show the user information
+	 * about what is happening to the plugin while it is servicing your request.
+	 * Used after startReadFromGps().
+	 * 
+	 * @since 2.0.0.4
+	 * @return Completion state - The completion state can be one of the
+	 *         following: <br/>
+	 *         <ul>
+	 *         <li>0 idle</li>
+	 *         <li>1 working</li>
+	 *         <li>2 waiting</li>
+	 *         <li>3 finished</li>
+	 *         </ul>
+	 */
+	public final native int finishReadFromGps() /*-{
+		return this.FinishReadFromGps();
+	}-*/;
 }

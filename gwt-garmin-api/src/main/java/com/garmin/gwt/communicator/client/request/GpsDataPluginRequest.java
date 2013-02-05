@@ -26,17 +26,19 @@ import com.garmin.gwt.communicator.client.plugin.DevicePlugin;
 
 
 /**
- * General handler for callbacks get array of attached devices.<br>
+ * Fetch the GPS data from the device<br>
  * <b>NOTE:</b> Once created, the request will start.
  * 
  * @author Joseph Lust
  * 
  */
-public final class DevicesPluginRequest extends AbstractPluginRequest<Device[]> {
+public final class GpsDataPluginRequest extends AbstractPluginRequest<String> {
 
+	Device targetDevice;
 
-	public DevicesPluginRequest(DevicePlugin plugin, RequestCallback<Device[]> callback) {
+	public GpsDataPluginRequest(DevicePlugin plugin, Device targetDevice, RequestCallback<String> callback) {
 		super();
+		this.targetDevice = targetDevice;
 		setPlugin(plugin);
 		setCallback(callback);
 		startRequest(); // DON'T override...
@@ -45,27 +47,28 @@ public final class DevicesPluginRequest extends AbstractPluginRequest<Device[]> 
 	@Override
 	protected void startRequest() {
 		setRunning(true);
-		getPlugin().startFindDevices();
+		// TODO: catch error if user has since removed this device?
+		getPlugin().startReadFromGps(targetDevice.getNumber());
 		getTimer().scheduleRepeating(POLLING_INTERVAL_MS);
 	}
 
 	@Override
 	protected boolean finishRequest() {
-		return getPlugin().finishFindDevices();
+		int status = getPlugin().finishReadFromGps();
+		return (status==3);
 	}
 
 	@Override
 	public void cancelRequest() {
 		if(isRunning()) {
-			getPlugin().cancelFindDevices();
+			getPlugin().cancelReadFromGps();
 			getTimer().cancel();
 		}
 	}
 
 	@Override
-	protected Device[] getRequestResult() {
+	protected String getRequestResult() {
 		setRunning(false);
-		return getPlugin().getDevices();
+		return getPlugin().getGpsXml();
 	}
-
 }

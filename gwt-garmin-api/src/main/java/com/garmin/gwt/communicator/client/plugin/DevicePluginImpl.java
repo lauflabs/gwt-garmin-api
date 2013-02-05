@@ -170,4 +170,24 @@ public class DevicePluginImpl implements DevicePlugin {
 	public Device[] getDevices() {
 		return PluginUtils.parseDeviceXml(plugin.devicesXmlString());
 	}
+
+	@Override
+	public String getGpsXml() {
+		return plugin.gpsXml();
+	}
+
+	@Override
+	public void startReadFromGps(int deviceNumber) {
+		plugin.startReadFromGps(deviceNumber);
+	}
+
+	@Override
+	public void cancelReadFromGps() {
+		plugin.cancelReadFromGps();
+	}
+
+	@Override
+	public int finishReadFromGps() {
+		return plugin.finishReadFromGps();
+	}
 }

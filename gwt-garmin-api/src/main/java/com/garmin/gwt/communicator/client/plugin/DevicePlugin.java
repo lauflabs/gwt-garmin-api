@@ -146,6 +146,7 @@ public interface DevicePlugin {
 	 * should contain a 'Device' element with 'DisplayName' and 'Number' if
 	 * there is a device actually connected.
 	 * 
+	 * @since 2.0.0.4
 	 * @return XML, potentially empty if no devices found
 	 */
 	String getDevicesXml();
@@ -157,11 +158,46 @@ public interface DevicePlugin {
 	 */
 	Device[] getDevices();
 
-	/*
-	 * void startFindDevices();
-	 * 
-	 * void cancelFindDevices();
-	 * 
-	 * void finishFindDevices();
+	/**
+	 * This is the GpsXml information from the device. Typically called after a
+	 * read operation.
 	 */
+	String getGpsXml();
+
+	/**
+	 * Initiates the read from the GPS device connected. Use finishReadFromGps
+	 * and getGpsProgressXml to determine when the plugin is done with this
+	 * operation. Also, use getGpsXml to extract the actual data from the
+	 * device. <br/>
+	 * 
+	 * @since 2.0.0.4
+	 * @param deviceNumber
+	 *            deviceNumber assigned by plugin
+	 */
+	void startReadFromGps(int deviceNumber);
+
+	/**
+	 * Cancels the current read from the device.
+	 * 
+	 * @since 2.0.0.4
+	 */
+	void cancelReadFromGps();
+
+	/**
+	 * Indicates the status of the read process. It will return an integer know
+	 * as the completion state. The purpose is to show the user information
+	 * about what is happening to the plugin while it is servicing your request.
+	 * Used after startReadFromGps().
+	 * 
+	 * @since 2.0.0.4
+	 * @return Completion state - The completion state can be one of the
+	 *         following: <br/>
+	 *         <ul>
+	 *         <li>0 idle</li>
+	 *         <li>1 working</li>
+	 *         <li>2 waiting</li>
+	 *         <li>3 finished</li>
+	 *         </ul>
+	 */
+	int finishReadFromGps();
 }

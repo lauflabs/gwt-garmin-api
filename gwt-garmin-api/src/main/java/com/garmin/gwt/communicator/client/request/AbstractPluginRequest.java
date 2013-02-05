@@ -35,7 +35,7 @@ public abstract class AbstractPluginRequest<T> {
 
 	private boolean isRunning;
 
-	public final static int POLLING_INTERVAL_MS = 200;
+	public final static int POLLING_INTERVAL_MS = 250;
 
 	private RequestCallback<T> callback;
 
@@ -45,9 +45,12 @@ public abstract class AbstractPluginRequest<T> {
 		public void run() {
 
 			if (finishRequest()) {
-				this.cancel();
+				this.cancel(); // timer scope
 				plugin.getDevices();
 				callback.onSuccess(getRequestResult());
+			}
+			else {
+				callback.onProgress(plugin.getProgress());
 			}
 		}
 	};

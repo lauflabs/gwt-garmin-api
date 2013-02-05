@@ -24,6 +24,7 @@ import com.garmin.gwt.communicator.client.base.Device;
 import com.garmin.gwt.communicator.client.base.KeyPair;
 import com.garmin.gwt.communicator.client.plugin.DevicePlugin;
 import com.garmin.gwt.communicator.client.request.DevicesPluginRequest;
+import com.garmin.gwt.communicator.client.request.GpsDataPluginRequest;
 import com.garmin.gwt.communicator.client.request.RequestCallback;
 import com.garmin.gwt.communicator.client.request.TransferProgress;
 import com.google.gwt.core.client.EntryPoint;
@@ -35,10 +36,12 @@ import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.HTML;
 import com.google.gwt.user.client.ui.RootPanel;
+import com.google.gwt.user.client.ui.TextArea;
 import com.google.gwt.user.client.ui.Widget;
 
 public class Showcase implements EntryPoint {
 
+	private TextArea console;
 	private final String testContainer = "content";
 
 	final DevicePlugin plugin = GWT.create(DevicePlugin.class);
@@ -92,6 +95,9 @@ public class Showcase implements EntryPoint {
 	private void loadScreen() {
 		HTML html = new HTML("Version Feature Tests<br/>");
 		addWidget(html);
+
+		console = new TextArea();
+		addWidget(console);
 
 		Button button = new Button("Plugin Version");
 		button.addClickHandler(new ClickHandler() {
@@ -191,6 +197,15 @@ public class Showcase implements EntryPoint {
 		});
 		addWidget(button);
 
+		button = new Button("Get Gpx XML Data");
+		button.addClickHandler(new ClickHandler() {
+			@Override
+			public void onClick(ClickEvent event) {
+				testReadGpsData();
+			}
+		});
+		addWidget(button);
+
 	}
 
 	private void testReadFromDeviceXml() {
@@ -208,7 +223,7 @@ public class Showcase implements EntryPoint {
 				if(plugin.finishFindDevices()) {
 					this.cancel();
 					String deviceXml = plugin.getDevicesXml();
-					displayDevicesXml( deviceXml );
+					displayToConsole( deviceXml );
 				}
 			}
 		};
@@ -242,8 +257,37 @@ public class Showcase implements EntryPoint {
 		});
 	}
 
-	private void displayDevicesXml(String xml) {
-		Window.alert(xml);
+	private void testReadGpsData() {
+		// unlock plugin
+		if(!plugin.unlock(keys) ) {
+			Window.alert("failed to unlock plugin!");
+		}
+
+		Device targetDevice = new Device("Foo", 0);
+
+		// save reference if you want to cancel()
+		new GpsDataPluginRequest(plugin, targetDevice, new RequestCallback<String>() {
+
+			@Override
+			public void onSuccess(String result) {
+				displayToConsole(result);
+			}
+
+			@Override
+			public void onCancel() {
+				displayToConsole("Error reading GPS xml data!");
+			}
+
+			@Override
+			public void onProgress(TransferProgress progress) {
+				displayToConsole("Loading GPS data "+progress.getPercentage());
+			}
+
+		});
+	}
+
+	private void displayToConsole(String msg) {
+		console.setText(msg);
 	}
 
 	private void displayDevices(Device[] devices) {
