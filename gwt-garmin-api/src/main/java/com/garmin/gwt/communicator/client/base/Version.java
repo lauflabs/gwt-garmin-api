@@ -62,6 +62,17 @@ public final class Version {
 	}
 
 	/**
+	 * Returns <code>true</code> if 'this' version is older than the 'target' version.<br>
+	 * Returns true if the versions are equal.
+	 * @param target
+	 * @return true if this version is older
+	 */
+	public final boolean isVersionOlderThan(Version target) {
+		// throw NPE on NULL input
+		return toDouble()<target.toDouble();
+	}
+
+	/**
 	 * @return the versionMajor
 	 */
 	public final int getVersionMajor() {
@@ -98,6 +109,14 @@ public final class Version {
 	public String toString() {
 		return versionMajor + "." + versionMinor + "." + buildMajor + "."
 				+ buildMinor;
+	}
+
+	/**
+	 * Assumes no versions are greater than 1000, which is not likely
+	 * @return
+	 */
+	public double toDouble() {
+		return (versionMajor*1e9)+(versionMinor*1e6)+(buildMajor*1e3)+buildMinor;
 	}
 
 	/**

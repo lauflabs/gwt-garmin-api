@@ -24,6 +24,7 @@ import com.garmin.gwt.communicator.client.base.Device;
 import com.garmin.gwt.communicator.client.base.KeyPair;
 import com.garmin.gwt.communicator.client.plugin.DevicePlugin;
 import com.garmin.gwt.communicator.client.request.DevicesPluginRequest;
+import com.garmin.gwt.communicator.client.request.FitnessDataPluginRequest;
 import com.garmin.gwt.communicator.client.request.GpsDataPluginRequest;
 import com.garmin.gwt.communicator.client.request.RequestCallback;
 import com.garmin.gwt.communicator.client.request.TransferProgress;
@@ -161,6 +162,10 @@ public class Showcase implements EntryPoint {
 		});
 		addWidget(button);
 
+		HTML html2 = new HTML("<br/>Load Data Tests<br/>");
+		addWidget(html2);
+
+
 		button = new Button("Get Progress XML");
 		button.addClickHandler(new ClickHandler() {
 			@Override
@@ -197,11 +202,20 @@ public class Showcase implements EntryPoint {
 		});
 		addWidget(button);
 
-		button = new Button("Get Gpx XML Data");
+		button = new Button("Get Gps Data XML");
 		button.addClickHandler(new ClickHandler() {
 			@Override
 			public void onClick(ClickEvent event) {
 				testReadGpsData();
+			}
+		});
+		addWidget(button);
+
+		button = new Button("Get Fitness Data XML");
+		button.addClickHandler(new ClickHandler() {
+			@Override
+			public void onClick(ClickEvent event) {
+				testReadFitnessData();
 			}
 		});
 		addWidget(button);
@@ -281,6 +295,35 @@ public class Showcase implements EntryPoint {
 			@Override
 			public void onProgress(TransferProgress progress) {
 				displayToConsole("Loading GPS data "+progress.getPercentage());
+			}
+
+		});
+	}
+
+	private void testReadFitnessData() {
+		// unlock plugin
+		if(!plugin.unlock(keys) ) {
+			Window.alert("failed to unlock plugin!");
+		}
+
+		Device targetDevice = new Device("Foo", 0);
+
+		// save reference if you want to cancel()
+		new FitnessDataPluginRequest(plugin, targetDevice, "training" ,new RequestCallback<String>() {
+
+			@Override
+			public void onSuccess(String result) {
+				displayToConsole(result);
+			}
+
+			@Override
+			public void onCancel() {
+				displayToConsole("Error reading Fitness xml data!");
+			}
+
+			@Override
+			public void onProgress(TransferProgress progress) {
+				displayToConsole("Loading Fitness data "+progress.getPercentage());
 			}
 
 		});

@@ -20,6 +20,7 @@ package com.garmin.gwt.communicator.client.plugin;
  * #L%
  */
 
+import com.garmin.gwt.communicator.client.base.FinishStatusType;
 import com.garmin.gwt.communicator.client.base.KeyPair;
 import com.garmin.gwt.communicator.client.exception.UnsupportedBrowserException;
 import com.garmin.gwt.communicator.client.util.BrowserDetect;
@@ -210,7 +211,7 @@ public final class CommunicatorPlugin extends JavaScriptObject {
 	 * Initiates the read from the GPS device connected. Use finishReadFromGps
 	 * and getGpsProgressXml to determine when the plugin is done with this
 	 * operation. Also, use getGpsXml to extract the actual data from the
-	 * device. <br/>
+	 * device.
 	 * 
 	 * @since 2.0.0.4
 	 * @param deviceNumber
@@ -236,16 +237,69 @@ public final class CommunicatorPlugin extends JavaScriptObject {
 	 * Used after startReadFromGps().
 	 * 
 	 * @since 2.0.0.4
-	 * @return Completion state - The completion state can be one of the
-	 *         following: <br/>
-	 *         <ul>
-	 *         <li>0 idle</li>
-	 *         <li>1 working</li>
-	 *         <li>2 waiting</li>
-	 *         <li>3 finished</li>
-	 *         </ul>
-	 */
-	public final native int finishReadFromGps() /*-{
-		return this.FinishReadFromGps();
+	 * @return Completion state
+	 **/
+	public final native FinishStatusType finishReadFromGps() /*-{
+		var state = this.FinishReadFromGps();
+		return @com.garmin.gwt.communicator.client.base.FinishStatusType::fromOrdinal(I)(state);
 	}-*/;
+
+	/**
+	 * Start the asynchronous ReadFitnessData operation. <br/>
+	 * 
+	 * @version 2.1.0.3 for FitnessHistory type
+	 * @version 2.2.0.1 for FitnessWorkouts, FitnessUserProfile, FitnessCourses
+	 * 
+	 * @param deviceNumber
+	 *            assigned by the plugin.
+	 * @param dataTypeName
+	 *            a fitness datatype from the <a
+	 *            href="http://developer.garmin.com/schemas/device/v2">Garmin
+	 *            Device XML</a> retrieved with getDeviceDescriptionXml
+	 */
+	public final native void startReadFitnessData(int deviceNumber,
+			String dataTypeName) /*-{
+		this.StartReadFitnessData(deviceNumber, dataTypeName);
+	}-*/;
+
+	/**
+	 * Cancel the asynchronous ReadFitnessData operation. <br/>
+	 * 
+	 * @since 2.1.0.3 for FitnessHistory type <br/>
+	 * @since 2.2.0.1 for FitnessWorkouts, FitnessUserProfile, FitnessCourses
+	 **/
+	public final native void cancelReadFitnessData() /*-{
+		this.CancelReadFitnessData();
+	}-*/;
+
+	/**
+	 * Poll for completion of the asynchronous ReadFitnessData operation. <br/>
+	 * <br/>
+	 * If the CompletionState is eMessageWaiting, call MessageBoxXml to get a
+	 * description of the message box to be displayed to the user, and then call
+	 * RespondToMessageBox with the value of the selected button to resume
+	 * operation.
+	 * 
+	 * @since 2.1.0.3 for FitnessHistory type
+	 * @since 2.2.0.1 for FitnessWorkouts, FitnessUserProfile, FitnessCourses
+	 * @return Completion state
+	 **/
+	public final native FinishStatusType finishReadFitnessData() /*-{
+		var state = this.FinishReadFitnessData();
+		return @com.garmin.gwt.communicator.client.base.FinishStatusType::fromOrdinal(I)(state);
+	}-*/;
+
+	/**
+	 * This is the fitness data XML information from the device. Typically
+	 * called after a ReadFitnessData operation. <br/>
+	 * Schemas for the TrainingCenterDatabase format are available at <a
+	 * href="http://developer.garmin.com/schemas/tcx/v2/"
+	 * >http://developer.garmin.com/schemas/tcx/v2/</a><br/>
+	 * 
+	 * @since 2.1.0.3
+	 **/
+	public final native String getTcdXml() /*-{
+		return this.TcdXml;
+	}-*/;
+
 }

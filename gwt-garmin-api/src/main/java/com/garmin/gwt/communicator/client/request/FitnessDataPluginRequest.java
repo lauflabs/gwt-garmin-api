@@ -20,33 +20,35 @@ package com.garmin.gwt.communicator.client.request;
  * #L%
  */
 
-
 import com.garmin.gwt.communicator.client.base.Device;
 import com.garmin.gwt.communicator.client.base.FinishStatusType;
 import com.garmin.gwt.communicator.client.plugin.DevicePlugin;
 
-
 /**
- * Fetch the GPS data from the device<br>
+ * Fetch the fitness data from the device<br>
  * <b>NOTE:</b> Once created, the request will start.
  * 
  * @author Joseph Lust
  * 
  */
-public final class GpsDataPluginRequest extends AbstractPluginRequest<String> {
+public final class FitnessDataPluginRequest extends
+AbstractPluginRequest<String> {
 
 	Device targetDevice;
+	String fitnessDataType;
 
 	/**
-	 * Fetch GPS data from the Communicator Plugin.<br>
+	 * Fetch fitness data from the Communicator Plugin.<br>
 	 * <b>Note:</b> Depending on how much data is on the user device, it may
 	 * take a while to download it all.
 	 * 
 	 * @param plugin DevicePlugin instance in use
 	 * @param targetDevice from {@link DevicePlugin}
+	 * @param fitnessDataType
 	 * @param callback
 	 */
-	public GpsDataPluginRequest(DevicePlugin plugin, Device targetDevice, RequestCallback<String> callback) {
+	public FitnessDataPluginRequest(DevicePlugin plugin, Device targetDevice,
+			String fitnessDataType, RequestCallback<String> callback) {
 		super();
 		this.targetDevice = targetDevice;
 		setPlugin(plugin);
@@ -58,19 +60,19 @@ public final class GpsDataPluginRequest extends AbstractPluginRequest<String> {
 	protected void startRequest() {
 		setRunning(true);
 		// TODO: catch error if user has since removed this device?
-		getPlugin().startReadFromGps(targetDevice);
+		getPlugin().startReadFitnessData(targetDevice, fitnessDataType);
 		getTimer().scheduleRepeating(POLLING_INTERVAL_MS);
 	}
 
 	@Override
 	protected boolean finishRequest() {
-		FinishStatusType status = getPlugin().finishReadFromGps();
+		FinishStatusType status = getPlugin().finishReadFitnessData();
 		return FinishStatusType.FINISHED.equals(status);
 	}
 
 	@Override
 	public void cancelRequest() {
-		if(isRunning()) {
+		if (isRunning()) {
 			getPlugin().cancelReadFromGps();
 			getTimer().cancel();
 		}
@@ -79,6 +81,6 @@ public final class GpsDataPluginRequest extends AbstractPluginRequest<String> {
 	@Override
 	protected String getRequestResult() {
 		setRunning(false);
-		return getPlugin().getGpsXml();
+		return getPlugin().getTcdXml();
 	}
 }
