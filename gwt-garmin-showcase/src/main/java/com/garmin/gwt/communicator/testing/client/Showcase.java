@@ -48,8 +48,8 @@ public class Showcase implements EntryPoint {
 	final DevicePlugin plugin = GWT.create(DevicePlugin.class);
 
 	// keys are public and url bound, no need to conceal
-	final KeyPair key = new KeyPair("https://lauflabs.github.com",
-			"3f287910143193d31f568d4d7d87cb4a");
+	final KeyPair key = new KeyPair("http://lauflabs.github.com",
+			"f7fca95a7c1ef1fe41f0a46e39c59d22");
 	final KeyPair[] keys = new KeyPair[]{key};
 
 	@Override
