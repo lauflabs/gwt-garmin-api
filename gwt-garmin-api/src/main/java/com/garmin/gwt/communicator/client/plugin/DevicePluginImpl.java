@@ -26,7 +26,7 @@ import com.garmin.gwt.communicator.client.base.KeyPair;
 import com.garmin.gwt.communicator.client.base.Version;
 import com.garmin.gwt.communicator.client.exception.UnsupportedPluginFeatureException;
 import com.garmin.gwt.communicator.client.request.TransferProgress;
-import com.garmin.gwt.communicator.client.util.PluginUtils;
+import com.garmin.gwt.communicator.client.util.ParseUtils;
 import com.google.gwt.xml.client.Document;
 import com.google.gwt.xml.client.Node;
 import com.google.gwt.xml.client.XMLParser;
@@ -157,7 +157,7 @@ public class DevicePluginImpl implements DevicePlugin {
 
 	@Override
 	public TransferProgress getProgress() {
-		return PluginUtils.parseProgressXml(plugin.getProgressXml());
+		return ParseUtils.parseProgressXml(plugin.getProgressXml());
 	}
 
 	/*** Get actual information about/from the devices ***/
@@ -184,7 +184,7 @@ public class DevicePluginImpl implements DevicePlugin {
 
 	@Override
 	public Device[] getDevices() {
-		return PluginUtils.parseDeviceXml(plugin.devicesXmlString());
+		return ParseUtils.parseDeviceXml(plugin.devicesXmlString());
 	}
 
 	@Override
@@ -194,7 +194,7 @@ public class DevicePluginImpl implements DevicePlugin {
 
 	@Override
 	public void startReadFromGps(Device device) {
-		plugin.startReadFromGps(device.getNumber());
+		plugin.startReadFromGps(device.getDeviceNumber());
 	}
 
 	@Override
@@ -215,7 +215,7 @@ public class DevicePluginImpl implements DevicePlugin {
 					formatVersionSupportMessage(pluginVersion,
 							"does not support reading this type of fitness data"));
 		}
-		plugin.startReadFitnessData(device.getNumber(), dataTypeName);
+		plugin.startReadFitnessData(device.getDeviceNumber(), dataTypeName);
 	}
 
 	@Override
@@ -246,5 +246,10 @@ public class DevicePluginImpl implements DevicePlugin {
 	private String formatVersionSupportMessage(Version version, String message) {
 		return "Your Communicator Plug-in version (" + version.toString()
 				+ ") " + message + ".";
+	}
+
+	@Override
+	public String getDeviceDescriptionXml(Device device) {
+		return plugin.deviceDescriptionXml(device.getDeviceNumber());
 	}
 }

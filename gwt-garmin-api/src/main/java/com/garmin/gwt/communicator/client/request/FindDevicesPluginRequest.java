@@ -23,19 +23,20 @@ package com.garmin.gwt.communicator.client.request;
 
 import com.garmin.gwt.communicator.client.base.Device;
 import com.garmin.gwt.communicator.client.plugin.DevicePlugin;
+import com.garmin.gwt.communicator.client.util.ParseUtils;
 
 
 /**
- * General handler for callbacks get array of attached devices.<br>
+ * Fetches the available attached devices and returns via callback.
  * <b>NOTE:</b> Once created, the request will start.
  * 
  * @author Joseph Lust
  * 
  */
-public final class DevicesPluginRequest extends AbstractPluginRequest<Device[]> {
+public final class FindDevicesPluginRequest extends AbstractPluginRequest<Device[]> {
 
 
-	public DevicesPluginRequest(DevicePlugin plugin, RequestCallback<Device[]> callback) {
+	public FindDevicesPluginRequest(DevicePlugin plugin, RequestCallback<Device[]> callback) {
 		super();
 		setPlugin(plugin);
 		setCallback(callback);
@@ -65,7 +66,24 @@ public final class DevicesPluginRequest extends AbstractPluginRequest<Device[]> 
 	@Override
 	protected Device[] getRequestResult() {
 		setRunning(false);
-		return getPlugin().getDevices();
+		Device[] devices = getPlugin().getDevices();
+		return addDeviceDescriptionDetails(devices);
+	}
+
+	/**
+	 * Call {@link DevicePlugin#getDeviceDescriptionXml(Device)} for each Device.
+	 * @param devices
+	 * @return EMPTY array EMPTY array provided
+	 */
+	private Device[] addDeviceDescriptionDetails(Device[] devices) {
+		Device[] devicesOut = new Device[devices.length];
+		int n=0;
+		for(Device device : devices) {
+			String xml = getPlugin().getDeviceDescriptionXml(device);
+			devicesOut[n] = ParseUtils.parseDeviceDescriptionXml(device, xml);
+			n++;
+		}
+		return devicesOut;
 	}
 
 }

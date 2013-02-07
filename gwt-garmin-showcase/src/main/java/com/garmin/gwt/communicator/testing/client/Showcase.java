@@ -23,7 +23,7 @@ package com.garmin.gwt.communicator.testing.client;
 import com.garmin.gwt.communicator.client.base.Device;
 import com.garmin.gwt.communicator.client.base.KeyPair;
 import com.garmin.gwt.communicator.client.plugin.DevicePlugin;
-import com.garmin.gwt.communicator.client.request.DevicesPluginRequest;
+import com.garmin.gwt.communicator.client.request.FindDevicesPluginRequest;
 import com.garmin.gwt.communicator.client.request.FitnessDataPluginRequest;
 import com.garmin.gwt.communicator.client.request.GpsDataPluginRequest;
 import com.garmin.gwt.communicator.client.request.RequestCallback;
@@ -33,7 +33,6 @@ import com.google.gwt.core.shared.GWT;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.user.client.Timer;
-import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.HTML;
 import com.google.gwt.user.client.ui.RootPanel;
@@ -105,7 +104,7 @@ public class Showcase implements EntryPoint {
 			@Override
 			public void onClick(ClickEvent event) {
 				String version = plugin.getPluginVersionString();
-				Window.alert("Installed plugin version: " + version);
+				displayToConsole("Installed plugin version: " + version);
 			}
 		});
 		addWidget(button);
@@ -115,7 +114,7 @@ public class Showcase implements EntryPoint {
 			@Override
 			public void onClick(ClickEvent event) {
 				String version = plugin.getVersionXml();
-				Window.alert("Installed plugin version: " + version);
+				displayToConsole("Installed plugin version: " + version);
 			}
 		});
 		addWidget(button);
@@ -127,7 +126,7 @@ public class Showcase implements EntryPoint {
 				int[] versions = plugin.getPluginVersion().toArray();
 				String version = "[" + versions[0] + "," + versions[1] + ","
 						+ versions[2] + "," + versions[3] + "]";
-				Window.alert(version);
+				displayToConsole(version);
 			}
 		});
 		addWidget(button);
@@ -136,7 +135,7 @@ public class Showcase implements EntryPoint {
 		button.addClickHandler(new ClickHandler() {
 			@Override
 			public void onClick(ClickEvent event) {
-				Window.alert(plugin.getLatestPluginVersion().toString());
+				displayToConsole(plugin.getLatestPluginVersion().toString());
 			}
 		});
 		addWidget(button);
@@ -145,7 +144,7 @@ public class Showcase implements EntryPoint {
 		button.addClickHandler(new ClickHandler() {
 			@Override
 			public void onClick(ClickEvent event) {
-				Window.alert(plugin.getRequiredPluginVersion().toString());
+				displayToConsole(plugin.getRequiredPluginVersion().toString());
 			}
 		});
 		addWidget(button);
@@ -157,7 +156,7 @@ public class Showcase implements EntryPoint {
 				plugin.unlock(new KeyPair[] {});
 				String message = (plugin.isUnlocked()) ? "Unlocked!"
 						: "Still LOCKED!";
-				Window.alert(message);
+				displayToConsole(message);
 			}
 		});
 		addWidget(button);
@@ -170,7 +169,7 @@ public class Showcase implements EntryPoint {
 		button.addClickHandler(new ClickHandler() {
 			@Override
 			public void onClick(ClickEvent event) {
-				Window.alert(plugin.getProgressXml());
+				displayToConsole(plugin.getProgressXml());
 			}
 		});
 		addWidget(button);
@@ -179,7 +178,7 @@ public class Showcase implements EntryPoint {
 		button.addClickHandler(new ClickHandler() {
 			@Override
 			public void onClick(ClickEvent event) {
-				Window.alert(plugin.getProgress().toString());
+				displayToConsole(plugin.getProgress().toString());
 			}
 		});
 		addWidget(button);
@@ -189,6 +188,15 @@ public class Showcase implements EntryPoint {
 			@Override
 			public void onClick(ClickEvent event) {
 				testReadFromDeviceXml();
+			}
+		});
+		addWidget(button);
+
+		button = new Button("Device descriptsion XML");
+		button.addClickHandler(new ClickHandler() {
+			@Override
+			public void onClick(ClickEvent event) {
+				testReadDeviceDescriptionXml();
 			}
 		});
 		addWidget(button);
@@ -225,7 +233,7 @@ public class Showcase implements EntryPoint {
 	private void testReadFromDeviceXml() {
 		// unlock plugin
 		if(!plugin.unlock(keys) ) {
-			Window.alert("failed to unlock plugin!");
+			displayToConsole("failed to unlock plugin!");
 		}
 
 		// get list of devices
@@ -244,14 +252,21 @@ public class Showcase implements EntryPoint {
 		poller.scheduleRepeating(200);
 	}
 
-	private void testReadFromDevice() {
+	private void testReadDeviceDescriptionXml() {
 		// unlock plugin
 		if(!plugin.unlock(keys) ) {
-			Window.alert("failed to unlock plugin!");
+			displayToConsole("failed to unlock plugin!");
 		}
 
+		Device fooDevice = new Device("Foo Device", 0);
+		String deviceXml = plugin.getDeviceDescriptionXml(fooDevice);
+		displayToConsole( deviceXml );
+	}
+
+	private void testReadFromDevice() {
+
 		// save reference if you want to cancel()
-		new DevicesPluginRequest(plugin, new RequestCallback<Device[]>() {
+		new FindDevicesPluginRequest(plugin, new RequestCallback<Device[]>() {
 
 			@Override
 			public void onSuccess(Device[] result) {
@@ -265,17 +280,13 @@ public class Showcase implements EntryPoint {
 
 			@Override
 			public void onProgress(TransferProgress progress) {
-				// show progress
+				displayToConsole("Loading Device data "+progress.getPercentage());
 			}
 
 		});
 	}
 
 	private void testReadGpsData() {
-		// unlock plugin
-		if(!plugin.unlock(keys) ) {
-			Window.alert("failed to unlock plugin!");
-		}
 
 		Device targetDevice = new Device("Foo", 0);
 
@@ -301,10 +312,6 @@ public class Showcase implements EntryPoint {
 	}
 
 	private void testReadFitnessData() {
-		// unlock plugin
-		if(!plugin.unlock(keys) ) {
-			Window.alert("failed to unlock plugin!");
-		}
 
 		Device targetDevice = new Device("Foo", 0);
 
@@ -338,7 +345,7 @@ public class Showcase implements EntryPoint {
 		for(Device d : devices) {
 			out += d.toString() + "\n";
 		}
-		Window.alert(out);
+		displayToConsole(out);
 	}
 
 	/**

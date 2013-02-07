@@ -153,7 +153,24 @@ public interface DevicePlugin {
 	String getDevicesXml();
 
 	/**
-	 * Parses {@link #getDevicesXml()} values into a Device array
+	 * Returns information about the specified Device indicated by the device
+	 * Number. See the {@link #devicesXmlString} for available devices. Refer to
+	 * the <a href=
+	 * "http://developer.garmin.com/schemas/device/v2/xmlspy/index.html#Link04DDFE88"
+	 * >Devices_t</a> element in the Device XML schema for what is included in
+	 * the XML.
+	 * 
+	 * @since 2.0.0.4
+	 * 
+	 * @param Device object with deviceNumber
+	 * @return XML string with detailed device info, error if deviceNumber is invalid
+	 **/
+	String getDeviceDescriptionXml(Device device);
+
+	/**
+	 * Parses {@link #getDevicesXml} values into a Device array, then calls
+	 * {@link #getDeviceDescriptionXml} to get the complete description of each
+	 * Device.
 	 * 
 	 * @return empty array if no devices found
 	 */

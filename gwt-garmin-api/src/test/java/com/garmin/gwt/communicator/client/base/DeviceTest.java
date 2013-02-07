@@ -23,8 +23,6 @@ package com.garmin.gwt.communicator.client.base;
 import junit.framework.Assert;
 import junit.framework.TestCase;
 
-import com.garmin.gwt.communicator.client.base.Device;
-
 /**
  * Test Device POJO
  * 
@@ -40,6 +38,58 @@ public class DeviceTest extends TestCase {
 		Device device = new Device(mockName, mockNumber);
 
 		Assert.assertEquals("Failed getter", mockName, device.getDisplayName());
-		Assert.assertEquals("Failed getter", mockNumber, device.getNumber());
+		Assert.assertEquals("Failed getter", mockNumber, device.getDeviceNumber());
+	}
+
+	public void testAccessors_complex() {
+
+		String registrationCode = "9VGRRHV";
+		String unlockCode	 =  "6VFQ8C5RZEUFVCTSW9AJAQ488";
+
+		// model information
+		String partNumber = "006-B0450-00";
+		long softwareVersion = 290;
+		long id = 3600980071L;
+		String description = "Forerunner305 Software Version 2.90";
+		String extensions = "";
+
+		Model model = new Model(partNumber, softwareVersion, description, extensions);
+
+		String displayName = "Foo name";
+		int deviceNumber = 5;
+
+		// genesis
+		Device device = new Device(displayName, deviceNumber, model, id, registrationCode, unlockCode);
+
+		Assert.assertEquals("Failed getter", displayName, device.getDisplayName());
+		Assert.assertEquals("Failed getter", deviceNumber, device.getDeviceNumber());
+		Assert.assertEquals("Failed getter", model, device.getModel());
+		Assert.assertEquals("Failed getter", id, device.getId());
+		Assert.assertEquals("Failed getter", registrationCode, device.getRegistrationCode());
+		Assert.assertEquals("Failed getter", unlockCode, device.getUnlockCode());
+	}
+
+	public void testAccessors_toString() {
+
+		String registrationCode = "9VGRRHV";
+		String unlockCode	 =  "6VFQ8C5RZEUFVCTSW9AJAQ488";
+
+		// model information
+		String partNumber = "006-B0450-00";
+		long softwareVersion = 290;
+		long id = 3600980071L;
+		String description = "Forerunner305 Software Version 2.90";
+		String extensions = "";
+
+		Model model = new Model(partNumber, softwareVersion, description, extensions);
+
+		String displayName = "Foo name";
+		int deviceNumber = 5;
+
+		// genesis
+		Device device = new Device(displayName, deviceNumber, model, id, registrationCode, unlockCode);
+
+		String expected = "Device [displayName=Foo name, deviceNumber=5, model=Model [partNumber=006-B0450-00, softwareVersion=290.0, description=Forerunner305 Software Version 2.90, extensions=], id=3.600980071E9, registrationCode=9VGRRHV, unlockCode=6VFQ8C5RZEUFVCTSW9AJAQ488]";
+		Assert.assertEquals("Failed toString() creation", expected, device.toString());
 	}
 }

@@ -29,17 +29,48 @@ package com.garmin.gwt.communicator.client.base;
 public class Device {
 
 	private String displayName;
-	private int number;
-	private String softwareVersion;
+	private int deviceNumber;
+
+	private Model model;
+
+	private long id;// too big for int
+	private String registrationCode;
+	private String unlockCode;
+
+	protected Device() {
+
+	}
 
 	/**
+	 * Create basic Device POJO
 	 * @param displayName
-	 * @param number
+	 * @param deviceNumber
 	 */
-	public Device(String displayName, int number) {
+	public Device(final String displayName, final int number) {
 		super();
 		this.displayName = displayName;
-		this.number = number;
+		deviceNumber = number;
+	}
+
+	/**
+	 * Create complex Device POJO
+	 * @param displayName
+	 * @param deviceNumber
+	 * @param model
+	 * @param id
+	 * @param registrationCode
+	 * @param unlockCode
+	 */
+	public Device(String displayName, int deviceNumber, Model model, long id,
+			String registrationCode, String unlockCode) {
+		//TODO use a builder pattern?
+		super();
+		this.displayName = displayName;
+		this.deviceNumber = deviceNumber;
+		this.model = model;
+		this.id = id;
+		this.registrationCode = registrationCode;
+		this.unlockCode = unlockCode;
 	}
 
 	/**
@@ -50,10 +81,44 @@ public class Device {
 	}
 
 	/**
-	 * @return the number
+	 * @return the deviceNumber
 	 */
-	public final int getNumber() {
-		return number;
+	public final int getDeviceNumber() {
+		return deviceNumber;
+	}
+
+	/**
+	 * @return the model
+	 */
+	public final Model getModel() {
+		return model;
+	}
+
+	/**
+	 * Gets the ID, i.e.<code>3498411727</code><br>
+	 * <b>NOTE:</b> will be 0 if not present on the XML description
+	 * @return the id, or ZERO
+	 */
+	public final long getId() {
+		return id;
+	}
+
+	/**
+	 * Gets the registration code, i.e.<code>3VGWRH2</code><br>
+	 * <b>NOTE:</b> will EMPTY if not present on the XML description
+	 * @return the registrationCode, or EMPTY
+	 */
+	public final String getRegistrationCode() {
+		return registrationCode;
+	}
+
+	/**
+	 * Gets the unlock code, i.e.<code>62FQ8C5RZEUFVCTUY9AJAQ477</code><br>
+	 * <b>NOTE:</b> will EMPTY if not present on the XML description
+	 * @return the unlockCode, or EMPTY
+	 */
+	public final String getUnlockCode() {
+		return unlockCode;
 	}
 
 	/* (non-Javadoc)
@@ -61,8 +126,21 @@ public class Device {
 	 */
 	@Override
 	public String toString() {
-		return "Device [displayName=" + displayName + ", number=" + number
-				+ ", softwareVersion=" + softwareVersion + "]";
+		return "Device ["
+				+ (displayName != null ? "displayName=" + displayName + ", "
+						: "")
+						+ "deviceNumber="
+						+ deviceNumber
+						+ ", "
+						+ (model != null ? "model=" + model + ", " : "")
+						+ "id="
+						+ id
+						+ ", "
+						+ (registrationCode != null ? "registrationCode="
+								+ registrationCode + ", " : "")
+								+ (unlockCode != null ? "unlockCode=" + unlockCode : "") + "]";
 	}
+
+
 
 }

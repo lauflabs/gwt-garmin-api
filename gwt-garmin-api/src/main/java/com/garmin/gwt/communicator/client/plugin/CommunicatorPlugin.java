@@ -200,6 +200,24 @@ public final class CommunicatorPlugin extends JavaScriptObject {
 	}-*/;
 
 	/**
+	 * Returns information about the specified Device indicated by the device
+	 * Number. See the {@link #devicesXmlString} for available devices. Refer to
+	 * the <a href=
+	 * "http://developer.garmin.com/schemas/device/v2/xmlspy/index.html#Link04DDFE88"
+	 * >Devices_t</a> element in the Device XML schema for what is included in
+	 * the XML.
+	 * 
+	 * @since 2.0.0.4
+	 * 
+	 * @param deviceNumber
+	 *            number assigned by the plugin
+	 * @return XML string with detailed device info, error if deviceNumber is invalid
+	 **/
+	public final native String deviceDescriptionXml(int deviceNumber) /*-{
+		return this.DeviceDescription(deviceNumber)
+	}-*/;
+
+	/**
 	 * This is the GpsXml information from the device. Typically called after a
 	 * read operation.
 	 */
