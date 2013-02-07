@@ -24,7 +24,7 @@
               http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
 	version="2.5" xmlns="http://java.sun.com/xml/ns/javaee">
 
-	<!-- Servlets -->
+	<!-- Servlets 
 	<servlet>
 		<servlet-name>KmlGenerator</servlet-name>
 		<servlet-class>com.google.gwt.maps.testing.server.servlets.KmlGenerator</servlet-class>
@@ -33,7 +33,8 @@
 		<servlet-name>KmlGenerator</servlet-name>
 		<url-pattern>/kmlgenerator</url-pattern>
 	</servlet-mapping>
-
+	-->
+	
 	<!-- Default page to serve -->
 	<welcome-file-list>
 		<welcome-file>showcase.html</welcome-file>

@@ -50,7 +50,7 @@
                     <strict>true</strict>
                     <style>${gwt.style}</style>
                     <compileSourcesArtifacts>
-                        <compileSourcesArtifact>com.lauflabs.garmin:Garmin</compileSourcesArtifact>
+                        <compileSourcesArtifact>com.garmin.gwt.communicator:Communicator</compileSourcesArtifact>
                     </compileSourcesArtifacts>
                 </configuration>
                 <executions>
