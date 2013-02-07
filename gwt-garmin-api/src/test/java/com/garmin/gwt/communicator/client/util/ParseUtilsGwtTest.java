@@ -40,7 +40,7 @@ public class ParseUtilsGwtTest extends AbstractGarminGWTTest {
 
 		mockDevice = ParseUtils.parseDeviceDescriptionXml(mockDevice, mockXml);
 
-		String expected = "Device [displayName=Foo Description, deviceNumber=2, model=Model [partNumber=006-B1430-00, softwareVersion=290.0, description=Forerunner305 Software Version 2.90, extensions=], id=3.600980071E9, registrationCode=, unlockCode=]";
+		String expected = "Device [displayName=Foo Description, deviceNumber=2, model=Model [partNumber=006-B1430-00, softwareVersion=290, description=Forerunner305 Software Version 2.90, extensions=], id=3600980071, registrationCode=, unlockCode=]";
 		Assert.assertEquals("Incorrectly parsed device description XML", expected,mockDevice.toString());
 	}
 
@@ -50,7 +50,7 @@ public class ParseUtilsGwtTest extends AbstractGarminGWTTest {
 
 		mockDevice = ParseUtils.parseDeviceDescriptionXml(mockDevice, mockXml);
 
-		String expected = "Device [displayName=Foo Description, deviceNumber=2, model=Model [partNumber=006-B0851-00, softwareVersion=610.0, description=nüvi 255, extensions=null], id=3.493891722E9, registrationCode=9HHRRUY, unlockCode=6VFQ8CHJIK3FVCTSW9AJAQ488]";
+		String expected = "Device [displayName=Foo Description, deviceNumber=2, model=Model [partNumber=006-B0851-00, softwareVersion=610, description=nüvi 255, extensions=null], id=3493891722, registrationCode=9HHRRUY, unlockCode=6VFQ8CHJIK3FVCTSW9AJAQ488]";
 		Assert.assertEquals("Incorrectly parsed device description XML", expected,mockDevice.toString());
 	}
 

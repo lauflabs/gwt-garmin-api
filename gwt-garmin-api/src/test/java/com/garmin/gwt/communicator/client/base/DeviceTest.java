@@ -89,7 +89,7 @@ public class DeviceTest extends TestCase {
 		// genesis
 		Device device = new Device(displayName, deviceNumber, model, id, registrationCode, unlockCode);
 
-		String expected = "Device [displayName=Foo name, deviceNumber=5, model=Model [partNumber=006-B0450-00, softwareVersion=290.0, description=Forerunner305 Software Version 2.90, extensions=], id=3.600980071E9, registrationCode=9VGRRHV, unlockCode=6VFQ8C5RZEUFVCTSW9AJAQ488]";
+		String expected = "Device [displayName=Foo name, deviceNumber=5, model=Model [partNumber=006-B0450-00, softwareVersion=290, description=Forerunner305 Software Version 2.90, extensions=], id=3600980071, registrationCode=9VGRRHV, unlockCode=6VFQ8C5RZEUFVCTSW9AJAQ488]";
 		Assert.assertEquals("Failed toString() creation", expected, device.toString());
 	}
 }
