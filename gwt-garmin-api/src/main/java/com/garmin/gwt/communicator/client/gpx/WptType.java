@@ -8,10 +8,30 @@
 
 package com.garmin.gwt.communicator.client.gpx;
 
-import java.math.BigDecimal;
+/*
+ * #%L
+ * GWT Garmin API - Core API
+ * %%
+ * Copyright (C) 2012 - 2013 GWT Garmin API
+ * %%
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * 
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ * #L%
+ */
+
 import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
+
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
@@ -87,11 +107,11 @@ import javax.xml.datatype.XMLGregorianCalendar;
 })
 public class WptType {
 
-    protected BigDecimal ele;
+    protected double ele;
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar time;
-    protected BigDecimal magvar;
-    protected BigDecimal geoidheight;
+    protected double magvar;
+    protected double geoidheight;
     protected String name;
     protected String cmt;
     protected String desc;
@@ -102,26 +122,26 @@ public class WptType {
     protected String fix;
     @XmlSchemaType(name = "nonNegativeInteger")
     protected BigInteger sat;
-    protected BigDecimal hdop;
-    protected BigDecimal vdop;
-    protected BigDecimal pdop;
-    protected BigDecimal ageofdgpsdata;
+    protected double hdop;
+    protected double vdop;
+    protected double pdop;
+    protected double ageofdgpsdata;
     protected Integer dgpsid;
     protected ExtensionsType extensions;
     @XmlAttribute(name = "lat", required = true)
-    protected BigDecimal lat;
+    protected double lat;
     @XmlAttribute(name = "lon", required = true)
-    protected BigDecimal lon;
+    protected double lon;
 
     /**
      * Gets the value of the ele property.
      * 
      * @return
      *     possible object is
-     *     {@link BigDecimal }
+     *     {@link double }
      *     
      */
-    public BigDecimal getEle() {
+    public double getEle() {
         return ele;
     }
 
@@ -130,10 +150,10 @@ public class WptType {
      * 
      * @param value
      *     allowed object is
-     *     {@link BigDecimal }
+     *     {@link double }
      *     
      */
-    public void setEle(BigDecimal value) {
+    public void setEle(double value) {
         this.ele = value;
     }
 
@@ -166,10 +186,10 @@ public class WptType {
      * 
      * @return
      *     possible object is
-     *     {@link BigDecimal }
+     *     {@link double }
      *     
      */
-    public BigDecimal getMagvar() {
+    public double getMagvar() {
         return magvar;
     }
 
@@ -178,10 +198,10 @@ public class WptType {
      * 
      * @param value
      *     allowed object is
-     *     {@link BigDecimal }
+     *     {@link double }
      *     
      */
-    public void setMagvar(BigDecimal value) {
+    public void setMagvar(double value) {
         this.magvar = value;
     }
 
@@ -190,10 +210,10 @@ public class WptType {
      * 
      * @return
      *     possible object is
-     *     {@link BigDecimal }
+     *     {@link double }
      *     
      */
-    public BigDecimal getGeoidheight() {
+    public double getGeoidheight() {
         return geoidheight;
     }
 
@@ -202,10 +222,10 @@ public class WptType {
      * 
      * @param value
      *     allowed object is
-     *     {@link BigDecimal }
+     *     {@link double }
      *     
      */
-    public void setGeoidheight(BigDecimal value) {
+    public void setGeoidheight(double value) {
         this.geoidheight = value;
     }
 
@@ -435,10 +455,10 @@ public class WptType {
      * 
      * @return
      *     possible object is
-     *     {@link BigDecimal }
+     *     {@link double }
      *     
      */
-    public BigDecimal getHdop() {
+    public double getHdop() {
         return hdop;
     }
 
@@ -447,10 +467,10 @@ public class WptType {
      * 
      * @param value
      *     allowed object is
-     *     {@link BigDecimal }
+     *     {@link double }
      *     
      */
-    public void setHdop(BigDecimal value) {
+    public void setHdop(double value) {
         this.hdop = value;
     }
 
@@ -459,10 +479,10 @@ public class WptType {
      * 
      * @return
      *     possible object is
-     *     {@link BigDecimal }
+     *     {@link double }
      *     
      */
-    public BigDecimal getVdop() {
+    public double getVdop() {
         return vdop;
     }
 
@@ -471,10 +491,10 @@ public class WptType {
      * 
      * @param value
      *     allowed object is
-     *     {@link BigDecimal }
+     *     {@link double }
      *     
      */
-    public void setVdop(BigDecimal value) {
+    public void setVdop(double value) {
         this.vdop = value;
     }
 
@@ -483,10 +503,10 @@ public class WptType {
      * 
      * @return
      *     possible object is
-     *     {@link BigDecimal }
+     *     {@link double }
      *     
      */
-    public BigDecimal getPdop() {
+    public double getPdop() {
         return pdop;
     }
 
@@ -495,10 +515,10 @@ public class WptType {
      * 
      * @param value
      *     allowed object is
-     *     {@link BigDecimal }
+     *     {@link double }
      *     
      */
-    public void setPdop(BigDecimal value) {
+    public void setPdop(double value) {
         this.pdop = value;
     }
 
@@ -507,10 +527,10 @@ public class WptType {
      * 
      * @return
      *     possible object is
-     *     {@link BigDecimal }
+     *     {@link double }
      *     
      */
-    public BigDecimal getAgeofdgpsdata() {
+    public double getAgeofdgpsdata() {
         return ageofdgpsdata;
     }
 
@@ -519,10 +539,10 @@ public class WptType {
      * 
      * @param value
      *     allowed object is
-     *     {@link BigDecimal }
+     *     {@link double }
      *     
      */
-    public void setAgeofdgpsdata(BigDecimal value) {
+    public void setAgeofdgpsdata(double value) {
         this.ageofdgpsdata = value;
     }
 
@@ -579,10 +599,10 @@ public class WptType {
      * 
      * @return
      *     possible object is
-     *     {@link BigDecimal }
+     *     {@link double }
      *     
      */
-    public BigDecimal getLat() {
+    public double getLat() {
         return lat;
     }
 
@@ -591,10 +611,10 @@ public class WptType {
      * 
      * @param value
      *     allowed object is
-     *     {@link BigDecimal }
+     *     {@link double }
      *     
      */
-    public void setLat(BigDecimal value) {
+    public void setLat(double value) {
         this.lat = value;
     }
 
@@ -603,10 +623,10 @@ public class WptType {
      * 
      * @return
      *     possible object is
-     *     {@link BigDecimal }
+     *     {@link double }
      *     
      */
-    public BigDecimal getLon() {
+    public double getLon() {
         return lon;
     }
 
@@ -615,10 +635,10 @@ public class WptType {
      * 
      * @param value
      *     allowed object is
-     *     {@link BigDecimal }
+     *     {@link double }
      *     
      */
-    public void setLon(BigDecimal value) {
+    public void setLon(double value) {
         this.lon = value;
     }
 

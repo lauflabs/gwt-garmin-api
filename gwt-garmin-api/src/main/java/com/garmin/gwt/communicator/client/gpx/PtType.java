@@ -8,7 +8,26 @@
 
 package com.garmin.gwt.communicator.client.gpx;
 
-import java.math.BigDecimal;
+/*
+ * #%L
+ * GWT Garmin API - Core API
+ * %%
+ * Copyright (C) 2012 - 2013 GWT Garmin API
+ * %%
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * 
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ * #L%
+ */
+
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
@@ -50,23 +69,23 @@ import javax.xml.datatype.XMLGregorianCalendar;
 })
 public class PtType {
 
-    protected BigDecimal ele;
+    protected double ele;
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar time;
     @XmlAttribute(name = "lat", required = true)
-    protected BigDecimal lat;
+    protected double lat;
     @XmlAttribute(name = "lon", required = true)
-    protected BigDecimal lon;
+    protected double lon;
 
     /**
      * Gets the value of the ele property.
      * 
      * @return
      *     possible object is
-     *     {@link BigDecimal }
+     *     {@link double }
      *     
      */
-    public BigDecimal getEle() {
+    public double getEle() {
         return ele;
     }
 
@@ -75,10 +94,10 @@ public class PtType {
      * 
      * @param value
      *     allowed object is
-     *     {@link BigDecimal }
+     *     {@link double }
      *     
      */
-    public void setEle(BigDecimal value) {
+    public void setEle(double value) {
         this.ele = value;
     }
 
@@ -111,10 +130,10 @@ public class PtType {
      * 
      * @return
      *     possible object is
-     *     {@link BigDecimal }
+     *     {@link double }
      *     
      */
-    public BigDecimal getLat() {
+    public double getLat() {
         return lat;
     }
 
@@ -123,10 +142,10 @@ public class PtType {
      * 
      * @param value
      *     allowed object is
-     *     {@link BigDecimal }
+     *     {@link double }
      *     
      */
-    public void setLat(BigDecimal value) {
+    public void setLat(double value) {
         this.lat = value;
     }
 
@@ -135,10 +154,10 @@ public class PtType {
      * 
      * @return
      *     possible object is
-     *     {@link BigDecimal }
+     *     {@link double }
      *     
      */
-    public BigDecimal getLon() {
+    public double getLon() {
         return lon;
     }
 
@@ -147,10 +166,10 @@ public class PtType {
      * 
      * @param value
      *     allowed object is
-     *     {@link BigDecimal }
+     *     {@link double }
      *     
      */
-    public void setLon(BigDecimal value) {
+    public void setLon(double value) {
         this.lon = value;
     }
 
