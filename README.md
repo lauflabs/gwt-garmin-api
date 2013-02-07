@@ -12,6 +12,11 @@ While the existing JS Communicator Plugin API is extensive, this library seeks t
 
 Additional features meant to assist in the parsing of XML, files, and display of buttons, lists and maps can be achieved with various other libraries, and are beyond the purview of this library.
 
+Tested with:
+* Forerunner
+* Nüvi
+* Edge
+
 Demo
 ====
 Visit the **[Live Showcase](http://lauflabs.github.com/gwt-garmin-api/showcase/)** to instantly testdrive the API with your device
