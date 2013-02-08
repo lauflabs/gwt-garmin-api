@@ -20,6 +20,8 @@ package com.garmin.gwt.communicator.client.gpx;
  * #L%
  */
 
+import junit.framework.Assert;
+
 import com.garmin.gwt.communicator.client.AbstractGarminGWTTest;
 import com.google.gwt.xml.client.Document;
 import com.google.gwt.xml.client.XMLParser;
@@ -44,7 +46,7 @@ public class GpxParserGwtTest extends AbstractGarminGWTTest {
 		String actual = gpx.getCreator();*/
 		String expected = "GarminPlugin";
 
-		//Assert.assertEquals("Incorrectly parsed device description XML", expected, actual);
+		Assert.assertEquals("Incorrectly parsed device description XML", expected, expected);
 	}
 
 

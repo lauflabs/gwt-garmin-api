@@ -25,7 +25,7 @@ import com.garmin.gwt.communicator.client.objs.TestParserFactory;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.junit.client.GWTTestCase;
 
-public class TestParserFactoryTest extends GWTTestCase {
+public class TestParserFactoryGwtTest extends GWTTestCase {
 
 	private TestParserFactory p;
 
