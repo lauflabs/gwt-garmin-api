@@ -74,7 +74,7 @@ import javax.xml.bind.annotation.XmlType;
     "trk",
     "extensions"
 })
-public class GpxType {
+public class Gpx {
 
     protected MetadataType metadata;
     protected List<WptType> wpt;

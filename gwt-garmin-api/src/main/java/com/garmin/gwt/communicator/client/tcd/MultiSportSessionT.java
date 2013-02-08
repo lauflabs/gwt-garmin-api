@@ -35,7 +35,7 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
-import javax.xml.datatype.XMLGregorianCalendar;
+import java.util.Date;
 
 
 /**
@@ -71,7 +71,7 @@ public class MultiSportSessionT {
 
     @XmlElement(name = "Id", required = true)
     @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar id;
+    protected Date id;
     @XmlElement(name = "FirstSport", required = true)
     protected FirstSportT firstSport;
     @XmlElement(name = "NextSport")
@@ -84,10 +84,10 @@ public class MultiSportSessionT {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link Date }
      *     
      */
-    public XMLGregorianCalendar getId() {
+    public Date getId() {
         return id;
     }
 
@@ -96,10 +96,10 @@ public class MultiSportSessionT {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link Date }
      *     
      */
-    public void setId(XMLGregorianCalendar value) {
+    public void setId(Date value) {
         this.id = value;
     }
 

@@ -33,7 +33,7 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
-import javax.xml.datatype.XMLGregorianCalendar;
+import java.util.Date;
 
 
 /**
@@ -77,7 +77,7 @@ public class TrackpointT {
 
     @XmlElement(name = "Time", required = true)
     @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar time;
+    protected Date time;
     @XmlElement(name = "Position")
     protected PositionT position;
     @XmlElement(name = "AltitudeMeters")
@@ -98,10 +98,10 @@ public class TrackpointT {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link Date }
      *     
      */
-    public XMLGregorianCalendar getTime() {
+    public Date getTime() {
         return time;
     }
 
@@ -110,10 +110,10 @@ public class TrackpointT {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link Date }
      *     
      */
-    public void setTime(XMLGregorianCalendar value) {
+    public void setTime(Date value) {
         this.time = value;
     }
 

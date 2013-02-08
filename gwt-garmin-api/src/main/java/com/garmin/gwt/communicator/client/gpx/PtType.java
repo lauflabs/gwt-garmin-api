@@ -33,7 +33,7 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
-import javax.xml.datatype.XMLGregorianCalendar;
+import java.util.Date;
 
 
 /**
@@ -72,7 +72,7 @@ public class PtType {
 	@XmlSchemaType(name = "ele")
 	protected double elevation;
 	@XmlSchemaType(name = "dateTime")
-	protected XMLGregorianCalendar time;
+	protected Date time;
 	@XmlAttribute(name = "lat", required = true)
 	protected double latitude;
 	@XmlAttribute(name = "lon", required = true)
@@ -107,10 +107,10 @@ public class PtType {
 	 * 
 	 * @return
 	 *     possible object is
-	 *     {@link XMLGregorianCalendar }
+	 *     {@link Date }
 	 * 
 	 */
-	public XMLGregorianCalendar getTime() {
+	public Date getTime() {
 		return time;
 	}
 
@@ -119,10 +119,10 @@ public class PtType {
 	 * 
 	 * @param value
 	 *     allowed object is
-	 *     {@link XMLGregorianCalendar }
+	 *     {@link Date }
 	 * 
 	 */
-	public void setTime(XMLGregorianCalendar value) {
+	public void setTime(Date value) {
 		time = value;
 	}
 

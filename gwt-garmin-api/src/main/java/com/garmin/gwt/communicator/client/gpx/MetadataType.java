@@ -34,7 +34,7 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
-import javax.xml.datatype.XMLGregorianCalendar;
+import java.util.Date;
 
 
 /**
@@ -89,7 +89,7 @@ public class MetadataType {
     protected CopyrightType copyright;
     protected List<LinkType> link;
     @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar time;
+    protected Date time;
     protected String keywords;
     protected BoundsType bounds;
     protected ExtensionsType extensions;
@@ -224,10 +224,10 @@ public class MetadataType {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link Date }
      *     
      */
-    public XMLGregorianCalendar getTime() {
+    public Date getTime() {
         return time;
     }
 
@@ -236,10 +236,10 @@ public class MetadataType {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link Date }
      *     
      */
-    public void setTime(XMLGregorianCalendar value) {
+    public void setTime(Date value) {
         this.time = value;
     }
 

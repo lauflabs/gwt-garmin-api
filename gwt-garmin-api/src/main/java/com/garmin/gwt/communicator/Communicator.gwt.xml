@@ -19,6 +19,11 @@
 		class="com.garmin.gwt.communicator.client.plugin.DevicePluginImpl">
 		<when-type-is class="com.garmin.gwt.communicator.client.plugin.DevicePlugin" />
 	</replace-with>
+	
+	<!-- JAXB parser generator -->
+	<generate-with class="com.garmin.gwt.communicator.generator.JAXBParserGenerator">
+		<when-type-assignable class="com.garmin.gwt.communicator.client.jaxb.JAXBParserFactory" />
+	</generate-with>
 
 	<!-- translate the client to javascript -->
 	<source path='client' />

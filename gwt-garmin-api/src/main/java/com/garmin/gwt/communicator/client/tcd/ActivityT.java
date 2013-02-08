@@ -36,7 +36,7 @@ import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
-import javax.xml.datatype.XMLGregorianCalendar;
+import java.util.Date;
 
 /**
  * <p>
@@ -73,7 +73,7 @@ public class ActivityT {
 
 	@XmlElement(name = "Id", required = true)
 	@XmlSchemaType(name = "dateTime")
-	protected XMLGregorianCalendar id;
+	protected Date id;
 	@XmlElement(name = "Lap", required = true)
 	protected List<ActivityLapT> lap;
 	@XmlElement(name = "Notes")
@@ -90,10 +90,10 @@ public class ActivityT {
 	/**
 	 * Gets the value of the id property.
 	 * 
-	 * @return possible object is {@link XMLGregorianCalendar }
+	 * @return possible object is {@link Date }
 	 * 
 	 */
-	public XMLGregorianCalendar getId() {
+	public Date getId() {
 		return id;
 	}
 
@@ -101,10 +101,10 @@ public class ActivityT {
 	 * Sets the value of the id property.
 	 * 
 	 * @param value
-	 *            allowed object is {@link XMLGregorianCalendar }
+	 *            allowed object is {@link Date }
 	 * 
 	 */
-	public void setId(XMLGregorianCalendar value) {
+	public void setId(Date value) {
 		id = value;
 	}
 

@@ -34,7 +34,7 @@ import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
-import javax.xml.datatype.XMLGregorianCalendar;
+import java.util.Date;
 
 
 /**
@@ -67,7 +67,7 @@ public class WeekT {
     protected String notes;
     @XmlAttribute(name = "StartDay", required = true)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar startDay;
+    protected Date startDay;
 
     /**
      * Gets the value of the notes property.
@@ -98,10 +98,10 @@ public class WeekT {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link Date }
      *     
      */
-    public XMLGregorianCalendar getStartDay() {
+    public Date getStartDay() {
         return startDay;
     }
 
@@ -110,10 +110,10 @@ public class WeekT {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link Date }
      *     
      */
-    public void setStartDay(XMLGregorianCalendar value) {
+    public void setStartDay(Date value) {
         this.startDay = value;
     }
 

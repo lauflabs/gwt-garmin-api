@@ -36,7 +36,7 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
-import javax.xml.datatype.XMLGregorianCalendar;
+import java.util.Date;
 
 
 /**
@@ -108,7 +108,7 @@ public class WptType {
 
 	protected double ele;
 	@XmlSchemaType(name = "dateTime")
-	protected XMLGregorianCalendar time;
+	protected Date time;
 	protected double magvar;
 	protected double geoidheight;
 	protected String name;
@@ -161,10 +161,10 @@ public class WptType {
 	 * 
 	 * @return
 	 *     possible object is
-	 *     {@link XMLGregorianCalendar }
+	 *     {@link Date }
 	 * 
 	 */
-	public XMLGregorianCalendar getTime() {
+	public Date getTime() {
 		return time;
 	}
 
@@ -173,10 +173,10 @@ public class WptType {
 	 * 
 	 * @param value
 	 *     allowed object is
-	 *     {@link XMLGregorianCalendar }
+	 *     {@link Date }
 	 * 
 	 */
-	public void setTime(XMLGregorianCalendar value) {
+	public void setTime(Date value) {
 		time = value;
 	}
 

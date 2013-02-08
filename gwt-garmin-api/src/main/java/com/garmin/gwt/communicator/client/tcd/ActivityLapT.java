@@ -36,7 +36,7 @@ import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
-import javax.xml.datatype.XMLGregorianCalendar;
+import java.util.Date;
 
 
 /**
@@ -114,7 +114,7 @@ public class ActivityLapT {
     protected ExtensionsT extensions;
     @XmlAttribute(name = "StartTime", required = true)
     @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar startTime;
+    protected Date startTime;
 
     /**
      * Gets the value of the totalTimeSeconds property.
@@ -390,10 +390,10 @@ public class ActivityLapT {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link Date }
      *     
      */
-    public XMLGregorianCalendar getStartTime() {
+    public Date getStartTime() {
         return startTime;
     }
 
@@ -402,10 +402,10 @@ public class ActivityLapT {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link Date }
      *     
      */
-    public void setStartTime(XMLGregorianCalendar value) {
+    public void setStartTime(Date value) {
         this.startTime = value;
     }
 

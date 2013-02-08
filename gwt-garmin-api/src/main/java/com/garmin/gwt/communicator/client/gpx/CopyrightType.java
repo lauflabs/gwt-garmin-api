@@ -33,7 +33,7 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
-import javax.xml.datatype.XMLGregorianCalendar;
+import java.util.Date;
 
 
 /**
@@ -70,7 +70,7 @@ import javax.xml.datatype.XMLGregorianCalendar;
 public class CopyrightType {
 
     @XmlSchemaType(name = "gYear")
-    protected XMLGregorianCalendar year;
+    protected Date year;
     @XmlSchemaType(name = "anyURI")
     protected String license;
     @XmlAttribute(name = "author", required = true)
@@ -81,10 +81,10 @@ public class CopyrightType {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link Date }
      *     
      */
-    public XMLGregorianCalendar getYear() {
+    public Date getYear() {
         return year;
     }
 
@@ -93,10 +93,10 @@ public class CopyrightType {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link Date }
      *     
      */
-    public void setYear(XMLGregorianCalendar value) {
+    public void setYear(Date value) {
         this.year = value;
     }
 

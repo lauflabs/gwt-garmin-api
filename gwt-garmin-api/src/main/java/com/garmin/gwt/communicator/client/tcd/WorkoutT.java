@@ -38,7 +38,7 @@ import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.CollapsedStringAdapter;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
+import java.util.Date;
 
 
 /**
@@ -84,7 +84,7 @@ public class WorkoutT {
     protected List<AbstractStepT> step;
     @XmlElement(name = "ScheduledOn")
     @XmlSchemaType(name = "date")
-    protected List<XMLGregorianCalendar> scheduledOn;
+    protected List<Date> scheduledOn;
     @XmlElement(name = "Notes")
     protected String notes;
     @XmlElement(name = "Creator")
@@ -165,13 +165,13 @@ public class WorkoutT {
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link XMLGregorianCalendar }
+     * {@link Date }
      * 
      * 
      */
-    public List<XMLGregorianCalendar> getScheduledOn() {
+    public List<Date> getScheduledOn() {
         if (scheduledOn == null) {
-            scheduledOn = new ArrayList<XMLGregorianCalendar>();
+            scheduledOn = new ArrayList<Date>();
         }
         return this.scheduledOn;
     }
