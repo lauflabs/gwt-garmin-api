@@ -123,10 +123,10 @@ public class GpxParserFactoryGwtTest extends AbstractGarminGWTTest {
 		ArrayList<TrackSegment> segments = track.getTrkseg();
 		Assert.assertEquals("segments missing", 6, segments.size());
 
-		ArrayList<WayPoint> wayPoints = segments.get(0).getTrackPoints();
-		Assert.assertEquals("waypoints missing", 428, wayPoints.size());
+		ArrayList<TrackPoint> trackPoints = segments.get(0).getTrackPoints();
+		Assert.assertEquals("waypoints missing", 428, trackPoints.size());
 
-		WayPoint point = wayPoints.get(0);
+		TrackPoint point = trackPoints.get(0);
 		double precision = 1e-4;
 		Assert.assertEquals("bad latitude", 40.6536d, point.getLatitude(),precision);
 		Assert.assertEquals("bad longitude", -73.96741d, point.getLongitude(),precision);

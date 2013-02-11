@@ -20,13 +20,11 @@ package com.garmin.gwt.communicator.client.base;
  * #L%
  */
 
-import com.garmin.gwt.communicator.client.request.FitnessDataPluginRequest;
-import com.garmin.gwt.communicator.client.request.GpsDataPluginRequest;
 
 /**
  * Types returned from various requests.
  * 
- * @see {@links GpsDataPluginRequest}
+ * @see {@links GpxDataPluginRequest}
  * @see {@links FitnessDataPluginRequest}
  * 
  * @author Joseph Lust

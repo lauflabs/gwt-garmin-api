@@ -27,7 +27,7 @@ import javax.xml.bind.annotation.XmlElement;
 
 
 @XmlAccessorType(XmlAccessType.FIELD)
-public class WayPoint {
+public class TrackPoint {
 
 	@XmlElement(name="ele")
 	protected double elevation;
@@ -41,129 +41,18 @@ public class WayPoint {
 	@XmlAttribute(name = "lon", required = true)
 	protected double longitude;
 
-	@XmlElement(name = "name")
-	protected String name;
-
-	@XmlElement(name = "link")
-	protected Link link;
-
-	@XmlElement(name = "type")
-	protected String type;
-
-	@XmlElement(name = "vdop")
-	protected double vdop;
-
-	@XmlElement(name = "hdop")
-	protected double hdop;
-
-	@XmlElement(name = "pdop")
-	protected double pdop;
-
-	@XmlElement(name = "sat")
-	protected int satelliteCount;
-
 	//@XmlElement(name="extensions")
 	protected ExtensionsType extensions;
-
 
 	/* (non-Javadoc)
 	 * @see java.lang.Object#toString()
 	 */
 	@Override
 	public String toString() {
-		return "WayPoint [elevation=" + elevation + ", "
+		return "TrackPoint [elevation=" + elevation + ", "
 				+ (time != null ? "time=" + time + ", " : "") + "latitude="
 				+ latitude + ", longitude=" + longitude + ", "
-				+ (name != null ? "name=" + name + ", " : "")
-				+ (link != null ? "link=" + link + ", " : "")
-				+ (type != null ? "type=" + type + ", " : "") + "vdop=" + vdop
-				+ ", hdop=" + hdop + ", pdop=" + pdop + ", satelliteCount="
-				+ satelliteCount + ", "
 				+ (extensions != null ? "extensions=" + extensions : "") + "]";
-	}
-
-	/**
-	 * @return the link
-	 */
-	public final Link getLink() {
-		return link;
-	}
-
-	/**
-	 * @param link the link to set
-	 */
-	public final void setLink(Link link) {
-		this.link = link;
-	}
-
-	/**
-	 * @return the type
-	 */
-	public final String getType() {
-		return type;
-	}
-
-	/**
-	 * @param type the type to set
-	 */
-	public final void setType(String type) {
-		this.type = type;
-	}
-
-	/**
-	 * @return the vdop
-	 */
-	public final double getVdop() {
-		return vdop;
-	}
-
-	/**
-	 * @param vdop the vdop to set
-	 */
-	public final void setVdop(double vdop) {
-		this.vdop = vdop;
-	}
-
-	/**
-	 * @return the hdop
-	 */
-	public final double getHdop() {
-		return hdop;
-	}
-
-	/**
-	 * @param hdop the hdop to set
-	 */
-	public final void setHdop(double hdop) {
-		this.hdop = hdop;
-	}
-
-	/**
-	 * @return the pdop
-	 */
-	public final double getPdop() {
-		return pdop;
-	}
-
-	/**
-	 * @param pdop the pdop to set
-	 */
-	public final void setPdop(double pdop) {
-		this.pdop = pdop;
-	}
-
-	/**
-	 * @return the satelliteCount
-	 */
-	public final int getSatelliteCount() {
-		return satelliteCount;
-	}
-
-	/**
-	 * @param satelliteCount the satelliteCount to set
-	 */
-	public final void setSatelliteCount(int satelliteCount) {
-		this.satelliteCount = satelliteCount;
 	}
 
 	/**
@@ -204,8 +93,8 @@ public class WayPoint {
 	/**
 	 * @param latitude the latitude to set
 	 */
-	public final void setLatitude(double latatiude) {
-		latitude = latatiude;
+	public final void setLatitude(double latitude) {
+		this.latitude = latitude;
 	}
 
 	/**
@@ -235,21 +124,6 @@ public class WayPoint {
 	public final void setExtensions(ExtensionsType extensions) {
 		this.extensions = extensions;
 	}
-
-	/**
-	 * @return the name
-	 */
-	public final String getName() {
-		return name;
-	}
-
-	/**
-	 * @param name the name to set
-	 */
-	public final void setName(String name) {
-		this.name = name;
-	}
-
 
 
 }

@@ -22,10 +22,12 @@ package com.garmin.gwt.communicator.testing.client;
 
 import com.garmin.gwt.communicator.client.base.Device;
 import com.garmin.gwt.communicator.client.base.KeyPair;
+import com.garmin.gwt.communicator.client.gpx.Gpx;
+import com.garmin.gwt.communicator.client.gpx.MetaData;
 import com.garmin.gwt.communicator.client.plugin.DevicePlugin;
 import com.garmin.gwt.communicator.client.request.FindDevicesPluginRequest;
 import com.garmin.gwt.communicator.client.request.FitnessDataPluginRequest;
-import com.garmin.gwt.communicator.client.request.GpsDataPluginRequest;
+import com.garmin.gwt.communicator.client.request.GpxDataPluginRequest;
 import com.garmin.gwt.communicator.client.request.RequestCallback;
 import com.garmin.gwt.communicator.client.request.TransferProgress;
 import com.google.gwt.core.client.EntryPoint;
@@ -210,7 +212,7 @@ public class Showcase implements EntryPoint {
 		});
 		addWidget(button);
 
-		button = new Button("Get Gps Data XML");
+		button = new Button("Get Parsed GPX Data");
 		button.addClickHandler(new ClickHandler() {
 			@Override
 			public void onClick(ClickEvent event) {
@@ -291,11 +293,32 @@ public class Showcase implements EntryPoint {
 		Device targetDevice = new Device("Foo", 0);
 
 		// save reference if you want to cancel()
-		new GpsDataPluginRequest(plugin, targetDevice, new RequestCallback<String>() {
+		new GpxDataPluginRequest(plugin, targetDevice, new RequestCallback<Gpx>() {
 
 			@Override
-			public void onSuccess(String result) {
-				displayToConsole(result);
+			public void onSuccess(Gpx result) {
+
+				String out = "Creator: "+result.getCreator()+"\n";
+				out += "Version: "+result.getVersion() +"\n";
+				out += "Tracks: "+result.getTracks().size() +"\n";
+				out += "Routes: "+result.getRoutes().size() +"\n";
+				out += "WayPoints: "+result.getWayPoints().size() +"\n";
+
+				MetaData meta = result.getMetadata();
+				if((meta!=null) && (meta.getName()!=null)) {
+					out += "Name: "+meta.getName()+"\n";
+				}
+				if((meta!=null) && (meta.getLink()!=null)) {
+					out += "Link: "+meta.getLink()+"\n";
+				}
+				if((meta!=null) && (meta.getAuthor()!=null)) {
+					out += "Author: "+meta.getAuthor()+"\n";
+				}
+				if((meta!=null) && (meta.getCopyright()!=null)) {
+					out += "Copyright: "+meta.getCopyright()+"\n";
+				}
+
+				displayToConsole(out);
 			}
 
 			@Override

@@ -30,7 +30,7 @@ import javax.xml.bind.annotation.XmlElement;
 public class TrackSegment {
 
 	@XmlElement(name="trkpt")
-	protected ArrayList<WayPoint> trackPoints;
+	protected ArrayList<TrackPoint> trackPoints;
 
 	//@XmlElement(name="extensions")
 	protected ExtensionsType extensions;
@@ -38,14 +38,14 @@ public class TrackSegment {
 	/**
 	 * @return the trackPoints
 	 */
-	public final ArrayList<WayPoint> getTrackPoints() {
+	public final ArrayList<TrackPoint> getTrackPoints() {
 		return trackPoints;
 	}
 
 	/**
 	 * @param trackPoints the trackPoints to set
 	 */
-	public final void setTrackPoints(ArrayList<WayPoint> trackPoints) {
+	public final void setTrackPoints(ArrayList<TrackPoint> trackPoints) {
 		this.trackPoints = trackPoints;
 	}
 

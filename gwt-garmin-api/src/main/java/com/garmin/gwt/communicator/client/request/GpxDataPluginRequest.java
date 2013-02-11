@@ -21,9 +21,14 @@ package com.garmin.gwt.communicator.client.request;
  */
 
 
+import java.util.Date;
+
 import com.garmin.gwt.communicator.client.base.Device;
 import com.garmin.gwt.communicator.client.base.FinishStatusType;
+import com.garmin.gwt.communicator.client.gpx.Gpx;
+import com.garmin.gwt.communicator.client.gpx.GpxParserFactory;
 import com.garmin.gwt.communicator.client.plugin.DevicePlugin;
+import com.google.gwt.core.shared.GWT;
 
 
 /**
@@ -33,7 +38,9 @@ import com.garmin.gwt.communicator.client.plugin.DevicePlugin;
  * @author Joseph Lust
  * 
  */
-public final class GpsDataPluginRequest extends AbstractPluginRequest<String> {
+public final class GpxDataPluginRequest extends AbstractPluginRequest<Gpx> {
+
+	GpxParserFactory parserFactory = GWT.create(GpxParserFactory.class);
 
 	Device targetDevice;
 
@@ -46,7 +53,7 @@ public final class GpsDataPluginRequest extends AbstractPluginRequest<String> {
 	 * @param targetDevice from {@links DevicePlugin}
 	 * @param callback
 	 */
-	public GpsDataPluginRequest(DevicePlugin plugin, Device targetDevice, RequestCallback<String> callback) {
+	public GpxDataPluginRequest(DevicePlugin plugin, Device targetDevice, RequestCallback<Gpx> callback) {
 		super();
 		this.targetDevice = targetDevice;
 		setPlugin(plugin);
@@ -77,8 +84,25 @@ public final class GpsDataPluginRequest extends AbstractPluginRequest<String> {
 	}
 
 	@Override
-	protected String getRequestResult() {
+	protected Gpx getRequestResult() {
 		setRunning(false);
-		return getPlugin().getGpsXml();
+		String xml = getPlugin().getGpsXml();
+
+		// parsing could take a while, instrument
+		// run if in DevMode only, otherwise skipped
+		if(GWT.isClient()) {
+			long startTime = (new Date()).getTime();
+			GWT.log("Starting Gpx XML parse...");
+
+			Gpx gpxObj = parserFactory.create().parse(xml);
+
+			long duration = (new Date()).getTime()-startTime;
+			GWT.log("Completed Gpx XML parse in: "+duration+"ms");
+
+			return gpxObj;
+		}
+		else {
+			return parserFactory.create().parse(xml);
+		}
 	}
 }
