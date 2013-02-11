@@ -20,23 +20,58 @@ package com.garmin.gwt.communicator.client.gpx;
  * #L%
  */
 
-import java.util.ArrayList;
-
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAnyElement;
+import javax.xml.bind.annotation.XmlAttribute;
 
 @XmlAccessorType(XmlAccessType.FIELD)
-public class ExtensionsType {
+public class Email {
 
-	@XmlAnyElement(lax = true)
-	protected ArrayList<Object> any;
+	@XmlAttribute(name = "id", required = true)
+	protected String id;
 
-	public ArrayList<Object> getAny() {
-		if (any == null) {
-			any = new ArrayList<Object>();
-		}
-		return any;
+	@XmlAttribute(name = "domain", required = true)
+	protected String domain;
+
+	/**
+	 * @return the id
+	 */
+	public final String getId() {
+		return id;
+	}
+
+	/**
+	 * @param id
+	 *            the id to set
+	 */
+	public final void setId(String id) {
+		this.id = id;
+	}
+
+	/**
+	 * @return the domain
+	 */
+	public final String getDomain() {
+		return domain;
+	}
+
+	/**
+	 * @param domain
+	 *            the domain to set
+	 */
+	public final void setDomain(String domain) {
+		this.domain = domain;
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		return "Email [" + (id != null ? "id=" + id + ", " : "")
+				+ (domain != null ? "domain=" + domain : "") + "]";
 	}
 
 }

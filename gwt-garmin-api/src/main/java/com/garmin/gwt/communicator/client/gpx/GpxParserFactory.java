@@ -26,5 +26,5 @@ import com.garmin.gwt.communicator.client.jaxb.JAXBParserFactory;
 
 
 
-@JAXBBindings(value=Gpx.class, objects={Track.class,TrackSegment.class,WayPoint.class,Route.class})
+@JAXBBindings(value=Gpx.class, objects={Link.class,Track.class,TrackSegment.class,WayPoint.class,Route.class,Bounds.class,Copyright.class,Person.class,MetaData.class,Email.class})
 public interface GpxParserFactory extends JAXBParserFactory<Gpx>{}

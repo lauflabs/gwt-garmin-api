@@ -20,23 +20,53 @@ package com.garmin.gwt.communicator.client.gpx;
  * #L%
  */
 
-import java.util.ArrayList;
-
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAnyElement;
+import javax.xml.bind.annotation.XmlElement;
+
 
 @XmlAccessorType(XmlAccessType.FIELD)
-public class ExtensionsType {
+public class Person {
 
-	@XmlAnyElement(lax = true)
-	protected ArrayList<Object> any;
+	@XmlElement(name="name")
+	protected String name;
 
-	public ArrayList<Object> getAny() {
-		if (any == null) {
-			any = new ArrayList<Object>();
-		}
-		return any;
+	@XmlElement(name="email")
+	protected Email email;
+
+	/**
+	 * @return the name
+	 */
+	public final String getName() {
+		return name;
 	}
+	/**
+	 * @param name the name to set
+	 */
+	public final void setName(String name) {
+		this.name = name;
+	}
+	/**
+	 * @return the email
+	 */
+	public final Email getEmail() {
+		return email;
+	}
+	/**
+	 * @param email the email to set
+	 */
+	public final void setEmail(Email email) {
+		this.email = email;
+	}
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		return "Person [" + (name != null ? "name=" + name + ", " : "")
+				+ (email != null ? "email=" + email : "") + "]";
+	}
+
+
 
 }
