@@ -43,7 +43,7 @@ public final class CommunicatorPlugin extends JavaScriptObject {
 	static final String OBJECT_TYPE = "application/vnd-garmin.mygarmin";
 
 	/**
-	 * See {@link #newInstance()}
+	 * See {@links #newInstance()}
 	 */
 	protected CommunicatorPlugin() {
 
@@ -153,9 +153,9 @@ public final class CommunicatorPlugin extends JavaScriptObject {
 
 	/**
 	 * Initiates a find Gps devices action on the plugin.<br>
-	 * Poll with {@link #finishFindDevices()} to determine when the plugin has
+	 * Poll with {@links #finishFindDevices()} to determine when the plugin has
 	 * completed this action.<br>
-	 * Use {@link #devicesXmlString()} to inspect XML contents for and array of
+	 * Use {@links #devicesXmlString()} to inspect XML contents for and array of
 	 * Device nodes.<br/>
 	 * 
 	 * @since 2.0.0.4
@@ -201,7 +201,7 @@ public final class CommunicatorPlugin extends JavaScriptObject {
 
 	/**
 	 * Returns information about the specified Device indicated by the device
-	 * Number. See the {@link #devicesXmlString} for available devices. Refer to
+	 * Number. See the {@links #devicesXmlString} for available devices. Refer to
 	 * the <a href=
 	 * "http://developer.garmin.com/schemas/device/v2/xmlspy/index.html#Link04DDFE88"
 	 * >Devices_t</a> element in the Device XML schema for what is included in

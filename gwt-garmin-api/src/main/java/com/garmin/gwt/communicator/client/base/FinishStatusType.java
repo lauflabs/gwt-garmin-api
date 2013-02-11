@@ -26,8 +26,8 @@ import com.garmin.gwt.communicator.client.request.GpsDataPluginRequest;
 /**
  * Types returned from various requests.
  * 
- * @see {@link GpsDataPluginRequest}
- * @see {@link FitnessDataPluginRequest}
+ * @see {@links GpsDataPluginRequest}
+ * @see {@links FitnessDataPluginRequest}
  * 
  * @author Joseph Lust
  *

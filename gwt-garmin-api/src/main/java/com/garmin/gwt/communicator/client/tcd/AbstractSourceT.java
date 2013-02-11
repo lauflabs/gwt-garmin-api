@@ -75,7 +75,7 @@ public abstract class AbstractSourceT {
      * 
      * @return
      *     possible object is
-     *     {@link String }
+     *     {@links String }
      *     
      */
     public String getName() {
@@ -87,7 +87,7 @@ public abstract class AbstractSourceT {
      * 
      * @param value
      *     allowed object is
-     *     {@link String }
+     *     {@links String }
      *     
      */
     public void setName(String value) {

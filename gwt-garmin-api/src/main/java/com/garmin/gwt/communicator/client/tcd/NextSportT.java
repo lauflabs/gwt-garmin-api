@@ -71,7 +71,7 @@ public class NextSportT {
      * 
      * @return
      *     possible object is
-     *     {@link ActivityLapT }
+     *     {@links ActivityLapT }
      *     
      */
     public ActivityLapT getTransition() {
@@ -83,7 +83,7 @@ public class NextSportT {
      * 
      * @param value
      *     allowed object is
-     *     {@link ActivityLapT }
+     *     {@links ActivityLapT }
      *     
      */
     public void setTransition(ActivityLapT value) {
@@ -95,7 +95,7 @@ public class NextSportT {
      * 
      * @return
      *     possible object is
-     *     {@link ActivityT }
+     *     {@links ActivityT }
      *     
      */
     public ActivityT getActivity() {
@@ -107,7 +107,7 @@ public class NextSportT {
      * 
      * @param value
      *     allowed object is
-     *     {@link ActivityT }
+     *     {@links ActivityT }
      *     
      */
     public void setActivity(ActivityT value) {

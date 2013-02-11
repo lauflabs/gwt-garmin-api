@@ -81,7 +81,7 @@ public class PlanT {
      * 
      * @return
      *     possible object is
-     *     {@link String }
+     *     {@links String }
      *     
      */
     public String getName() {
@@ -93,7 +93,7 @@ public class PlanT {
      * 
      * @param value
      *     allowed object is
-     *     {@link String }
+     *     {@links String }
      *     
      */
     public void setName(String value) {
@@ -105,7 +105,7 @@ public class PlanT {
      * 
      * @return
      *     possible object is
-     *     {@link ExtensionsT }
+     *     {@links ExtensionsT }
      *     
      */
     public ExtensionsT getExtensions() {
@@ -117,7 +117,7 @@ public class PlanT {
      * 
      * @param value
      *     allowed object is
-     *     {@link ExtensionsT }
+     *     {@links ExtensionsT }
      *     
      */
     public void setExtensions(ExtensionsT value) {
@@ -129,7 +129,7 @@ public class PlanT {
      * 
      * @return
      *     possible object is
-     *     {@link TrainingTypeT }
+     *     {@links TrainingTypeT }
      *     
      */
     public TrainingTypeT getType() {
@@ -141,7 +141,7 @@ public class PlanT {
      * 
      * @param value
      *     allowed object is
-     *     {@link TrainingTypeT }
+     *     {@links TrainingTypeT }
      *     
      */
     public void setType(TrainingTypeT value) {

@@ -73,7 +73,7 @@ public class UnlockCodeT {
      * 
      * @return
      *     possible object is
-     *     {@link String }
+     *     {@links String }
      *     
      */
     public String getCode() {
@@ -85,7 +85,7 @@ public class UnlockCodeT {
      * 
      * @param value
      *     allowed object is
-     *     {@link String }
+     *     {@links String }
      *     
      */
     public void setCode(String value) {
@@ -97,7 +97,7 @@ public class UnlockCodeT {
      * 
      * @return
      *     possible object is
-     *     {@link String }
+     *     {@links String }
      *     
      */
     public String getComment() {
@@ -109,7 +109,7 @@ public class UnlockCodeT {
      * 
      * @param value
      *     allowed object is
-     *     {@link String }
+     *     {@links String }
      *     
      */
     public void setComment(String value) {

@@ -69,7 +69,7 @@ public class SpeedT
      * 
      * @return
      *     possible object is
-     *     {@link ZoneT }
+     *     {@links ZoneT }
      *     
      */
     public ZoneT getSpeedZone() {
@@ -81,7 +81,7 @@ public class SpeedT
      * 
      * @param value
      *     allowed object is
-     *     {@link ZoneT }
+     *     {@links ZoneT }
      *     
      */
     public void setSpeedZone(ZoneT value) {

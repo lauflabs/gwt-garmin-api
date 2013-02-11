@@ -98,7 +98,7 @@ public class TrackpointT {
      * 
      * @return
      *     possible object is
-     *     {@link Date }
+     *     {@links Date }
      *     
      */
     public Date getTime() {
@@ -110,7 +110,7 @@ public class TrackpointT {
      * 
      * @param value
      *     allowed object is
-     *     {@link Date }
+     *     {@links Date }
      *     
      */
     public void setTime(Date value) {
@@ -122,7 +122,7 @@ public class TrackpointT {
      * 
      * @return
      *     possible object is
-     *     {@link PositionT }
+     *     {@links PositionT }
      *     
      */
     public PositionT getPosition() {
@@ -134,7 +134,7 @@ public class TrackpointT {
      * 
      * @param value
      *     allowed object is
-     *     {@link PositionT }
+     *     {@links PositionT }
      *     
      */
     public void setPosition(PositionT value) {
@@ -146,7 +146,7 @@ public class TrackpointT {
      * 
      * @return
      *     possible object is
-     *     {@link Double }
+     *     {@links Double }
      *     
      */
     public Double getAltitudeMeters() {
@@ -158,7 +158,7 @@ public class TrackpointT {
      * 
      * @param value
      *     allowed object is
-     *     {@link Double }
+     *     {@links Double }
      *     
      */
     public void setAltitudeMeters(Double value) {
@@ -170,7 +170,7 @@ public class TrackpointT {
      * 
      * @return
      *     possible object is
-     *     {@link Double }
+     *     {@links Double }
      *     
      */
     public Double getDistanceMeters() {
@@ -182,7 +182,7 @@ public class TrackpointT {
      * 
      * @param value
      *     allowed object is
-     *     {@link Double }
+     *     {@links Double }
      *     
      */
     public void setDistanceMeters(Double value) {
@@ -194,7 +194,7 @@ public class TrackpointT {
      * 
      * @return
      *     possible object is
-     *     {@link HeartRateInBeatsPerMinuteT }
+     *     {@links HeartRateInBeatsPerMinuteT }
      *     
      */
     public HeartRateInBeatsPerMinuteT getHeartRateBpm() {
@@ -206,7 +206,7 @@ public class TrackpointT {
      * 
      * @param value
      *     allowed object is
-     *     {@link HeartRateInBeatsPerMinuteT }
+     *     {@links HeartRateInBeatsPerMinuteT }
      *     
      */
     public void setHeartRateBpm(HeartRateInBeatsPerMinuteT value) {
@@ -218,7 +218,7 @@ public class TrackpointT {
      * 
      * @return
      *     possible object is
-     *     {@link Short }
+     *     {@links Short }
      *     
      */
     public Short getCadence() {
@@ -230,7 +230,7 @@ public class TrackpointT {
      * 
      * @param value
      *     allowed object is
-     *     {@link Short }
+     *     {@links Short }
      *     
      */
     public void setCadence(Short value) {
@@ -242,7 +242,7 @@ public class TrackpointT {
      * 
      * @return
      *     possible object is
-     *     {@link SensorStateT }
+     *     {@links SensorStateT }
      *     
      */
     public SensorStateT getSensorState() {
@@ -254,7 +254,7 @@ public class TrackpointT {
      * 
      * @param value
      *     allowed object is
-     *     {@link SensorStateT }
+     *     {@links SensorStateT }
      *     
      */
     public void setSensorState(SensorStateT value) {
@@ -266,7 +266,7 @@ public class TrackpointT {
      * 
      * @return
      *     possible object is
-     *     {@link ExtensionsT }
+     *     {@links ExtensionsT }
      *     
      */
     public ExtensionsT getExtensions() {
@@ -278,7 +278,7 @@ public class TrackpointT {
      * 
      * @param value
      *     allowed object is
-     *     {@link ExtensionsT }
+     *     {@links ExtensionsT }
      *     
      */
     public void setExtensions(ExtensionsT value) {

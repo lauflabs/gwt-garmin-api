@@ -83,7 +83,7 @@ public class BuildT {
      * 
      * @return
      *     possible object is
-     *     {@link VersionT }
+     *     {@links VersionT }
      *     
      */
     public VersionT getVersion() {
@@ -95,7 +95,7 @@ public class BuildT {
      * 
      * @param value
      *     allowed object is
-     *     {@link VersionT }
+     *     {@links VersionT }
      *     
      */
     public void setVersion(VersionT value) {
@@ -107,7 +107,7 @@ public class BuildT {
      * 
      * @return
      *     possible object is
-     *     {@link BuildTypeT }
+     *     {@links BuildTypeT }
      *     
      */
     public BuildTypeT getType() {
@@ -119,7 +119,7 @@ public class BuildT {
      * 
      * @param value
      *     allowed object is
-     *     {@link BuildTypeT }
+     *     {@links BuildTypeT }
      *     
      */
     public void setType(BuildTypeT value) {
@@ -131,7 +131,7 @@ public class BuildT {
      * 
      * @return
      *     possible object is
-     *     {@link String }
+     *     {@links String }
      *     
      */
     public String getTime() {
@@ -143,7 +143,7 @@ public class BuildT {
      * 
      * @param value
      *     allowed object is
-     *     {@link String }
+     *     {@links String }
      *     
      */
     public void setTime(String value) {
@@ -155,7 +155,7 @@ public class BuildT {
      * 
      * @return
      *     possible object is
-     *     {@link String }
+     *     {@links String }
      *     
      */
     public String getBuilder() {
@@ -167,7 +167,7 @@ public class BuildT {
      * 
      * @param value
      *     allowed object is
-     *     {@link String }
+     *     {@links String }
      *     
      */
     public void setBuilder(String value) {

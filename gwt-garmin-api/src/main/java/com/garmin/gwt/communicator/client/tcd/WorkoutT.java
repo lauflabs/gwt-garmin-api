@@ -99,7 +99,7 @@ public class WorkoutT {
      * 
      * @return
      *     possible object is
-     *     {@link String }
+     *     {@links String }
      *     
      */
     public String getName() {
@@ -111,7 +111,7 @@ public class WorkoutT {
      * 
      * @param value
      *     allowed object is
-     *     {@link String }
+     *     {@links String }
      *     
      */
     public void setName(String value) {
@@ -136,7 +136,7 @@ public class WorkoutT {
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link AbstractStepT }
+     * {@links AbstractStepT }
      * 
      * 
      */
@@ -165,7 +165,7 @@ public class WorkoutT {
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link Date }
+     * {@links Date }
      * 
      * 
      */
@@ -181,7 +181,7 @@ public class WorkoutT {
      * 
      * @return
      *     possible object is
-     *     {@link String }
+     *     {@links String }
      *     
      */
     public String getNotes() {
@@ -193,7 +193,7 @@ public class WorkoutT {
      * 
      * @param value
      *     allowed object is
-     *     {@link String }
+     *     {@links String }
      *     
      */
     public void setNotes(String value) {
@@ -205,7 +205,7 @@ public class WorkoutT {
      * 
      * @return
      *     possible object is
-     *     {@link AbstractSourceT }
+     *     {@links AbstractSourceT }
      *     
      */
     public AbstractSourceT getCreator() {
@@ -217,7 +217,7 @@ public class WorkoutT {
      * 
      * @param value
      *     allowed object is
-     *     {@link AbstractSourceT }
+     *     {@links AbstractSourceT }
      *     
      */
     public void setCreator(AbstractSourceT value) {
@@ -229,7 +229,7 @@ public class WorkoutT {
      * 
      * @return
      *     possible object is
-     *     {@link ExtensionsT }
+     *     {@links ExtensionsT }
      *     
      */
     public ExtensionsT getExtensions() {
@@ -241,7 +241,7 @@ public class WorkoutT {
      * 
      * @param value
      *     allowed object is
-     *     {@link ExtensionsT }
+     *     {@links ExtensionsT }
      *     
      */
     public void setExtensions(ExtensionsT value) {
@@ -253,7 +253,7 @@ public class WorkoutT {
      * 
      * @return
      *     possible object is
-     *     {@link SportT }
+     *     {@links SportT }
      *     
      */
     public SportT getSport() {
@@ -265,7 +265,7 @@ public class WorkoutT {
      * 
      * @param value
      *     allowed object is
-     *     {@link SportT }
+     *     {@links SportT }
      *     
      */
     public void setSport(SportT value) {

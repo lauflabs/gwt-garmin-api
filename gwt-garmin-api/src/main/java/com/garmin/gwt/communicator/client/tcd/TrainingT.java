@@ -75,7 +75,7 @@ public class TrainingT {
      * 
      * @return
      *     possible object is
-     *     {@link QuickWorkoutT }
+     *     {@links QuickWorkoutT }
      *     
      */
     public QuickWorkoutT getQuickWorkoutResults() {
@@ -87,7 +87,7 @@ public class TrainingT {
      * 
      * @param value
      *     allowed object is
-     *     {@link QuickWorkoutT }
+     *     {@links QuickWorkoutT }
      *     
      */
     public void setQuickWorkoutResults(QuickWorkoutT value) {
@@ -99,7 +99,7 @@ public class TrainingT {
      * 
      * @return
      *     possible object is
-     *     {@link PlanT }
+     *     {@links PlanT }
      *     
      */
     public PlanT getPlan() {
@@ -111,7 +111,7 @@ public class TrainingT {
      * 
      * @param value
      *     allowed object is
-     *     {@link PlanT }
+     *     {@links PlanT }
      *     
      */
     public void setPlan(PlanT value) {

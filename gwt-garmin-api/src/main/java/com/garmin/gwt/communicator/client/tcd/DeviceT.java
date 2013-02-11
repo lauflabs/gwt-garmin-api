@@ -116,7 +116,7 @@ public class DeviceT
      * 
      * @return
      *     possible object is
-     *     {@link VersionT }
+     *     {@links VersionT }
      *     
      */
     public VersionT getVersion() {
@@ -128,7 +128,7 @@ public class DeviceT
      * 
      * @param value
      *     allowed object is
-     *     {@link VersionT }
+     *     {@links VersionT }
      *     
      */
     public void setVersion(VersionT value) {

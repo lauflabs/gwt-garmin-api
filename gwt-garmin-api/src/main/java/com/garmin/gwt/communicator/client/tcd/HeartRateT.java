@@ -69,7 +69,7 @@ public class HeartRateT
      * 
      * @return
      *     possible object is
-     *     {@link ZoneT }
+     *     {@links ZoneT }
      *     
      */
     public ZoneT getHeartRateZone() {
@@ -81,7 +81,7 @@ public class HeartRateT
      * 
      * @param value
      *     allowed object is
-     *     {@link ZoneT }
+     *     {@links ZoneT }
      *     
      */
     public void setHeartRateZone(ZoneT value) {

@@ -105,7 +105,7 @@ public class KmlGenerator extends HttpServlet {
 	}
 
 	/**
-	 * get the network link
+	 * get the network links
 	 * @param sb
 	 * @param i
 	 */

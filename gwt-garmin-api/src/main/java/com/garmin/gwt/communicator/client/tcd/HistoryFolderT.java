@@ -102,7 +102,7 @@ public class HistoryFolderT {
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link HistoryFolderT }
+     * {@links HistoryFolderT }
      * 
      * 
      */
@@ -131,7 +131,7 @@ public class HistoryFolderT {
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link ActivityReferenceT }
+     * {@links ActivityReferenceT }
      * 
      * 
      */
@@ -160,7 +160,7 @@ public class HistoryFolderT {
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link WeekT }
+     * {@links WeekT }
      * 
      * 
      */
@@ -176,7 +176,7 @@ public class HistoryFolderT {
      * 
      * @return
      *     possible object is
-     *     {@link String }
+     *     {@links String }
      *     
      */
     public String getNotes() {
@@ -188,7 +188,7 @@ public class HistoryFolderT {
      * 
      * @param value
      *     allowed object is
-     *     {@link String }
+     *     {@links String }
      *     
      */
     public void setNotes(String value) {
@@ -200,7 +200,7 @@ public class HistoryFolderT {
      * 
      * @return
      *     possible object is
-     *     {@link ExtensionsT }
+     *     {@links ExtensionsT }
      *     
      */
     public ExtensionsT getExtensions() {
@@ -212,7 +212,7 @@ public class HistoryFolderT {
      * 
      * @param value
      *     allowed object is
-     *     {@link ExtensionsT }
+     *     {@links ExtensionsT }
      *     
      */
     public void setExtensions(ExtensionsT value) {
@@ -224,7 +224,7 @@ public class HistoryFolderT {
      * 
      * @return
      *     possible object is
-     *     {@link String }
+     *     {@links String }
      *     
      */
     public String getName() {
@@ -236,7 +236,7 @@ public class HistoryFolderT {
      * 
      * @param value
      *     allowed object is
-     *     {@link String }
+     *     {@links String }
      *     
      */
     public void setName(String value) {

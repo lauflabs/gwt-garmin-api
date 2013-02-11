@@ -98,7 +98,7 @@ public class CoursePointT {
      * 
      * @return
      *     possible object is
-     *     {@link String }
+     *     {@links String }
      *     
      */
     public String getName() {
@@ -110,7 +110,7 @@ public class CoursePointT {
      * 
      * @param value
      *     allowed object is
-     *     {@link String }
+     *     {@links String }
      *     
      */
     public void setName(String value) {
@@ -122,7 +122,7 @@ public class CoursePointT {
      * 
      * @return
      *     possible object is
-     *     {@link Date }
+     *     {@links Date }
      *     
      */
     public Date getTime() {
@@ -134,7 +134,7 @@ public class CoursePointT {
      * 
      * @param value
      *     allowed object is
-     *     {@link Date }
+     *     {@links Date }
      *     
      */
     public void setTime(Date value) {
@@ -146,7 +146,7 @@ public class CoursePointT {
      * 
      * @return
      *     possible object is
-     *     {@link PositionT }
+     *     {@links PositionT }
      *     
      */
     public PositionT getPosition() {
@@ -158,7 +158,7 @@ public class CoursePointT {
      * 
      * @param value
      *     allowed object is
-     *     {@link PositionT }
+     *     {@links PositionT }
      *     
      */
     public void setPosition(PositionT value) {
@@ -170,7 +170,7 @@ public class CoursePointT {
      * 
      * @return
      *     possible object is
-     *     {@link Double }
+     *     {@links Double }
      *     
      */
     public Double getAltitudeMeters() {
@@ -182,7 +182,7 @@ public class CoursePointT {
      * 
      * @param value
      *     allowed object is
-     *     {@link Double }
+     *     {@links Double }
      *     
      */
     public void setAltitudeMeters(Double value) {
@@ -194,7 +194,7 @@ public class CoursePointT {
      * 
      * @return
      *     possible object is
-     *     {@link String }
+     *     {@links String }
      *     
      */
     public String getPointType() {
@@ -206,7 +206,7 @@ public class CoursePointT {
      * 
      * @param value
      *     allowed object is
-     *     {@link String }
+     *     {@links String }
      *     
      */
     public void setPointType(String value) {
@@ -218,7 +218,7 @@ public class CoursePointT {
      * 
      * @return
      *     possible object is
-     *     {@link String }
+     *     {@links String }
      *     
      */
     public String getNotes() {
@@ -230,7 +230,7 @@ public class CoursePointT {
      * 
      * @param value
      *     allowed object is
-     *     {@link String }
+     *     {@links String }
      *     
      */
     public void setNotes(String value) {
@@ -242,7 +242,7 @@ public class CoursePointT {
      * 
      * @return
      *     possible object is
-     *     {@link ExtensionsT }
+     *     {@links ExtensionsT }
      *     
      */
     public ExtensionsT getExtensions() {
@@ -254,7 +254,7 @@ public class CoursePointT {
      * 
      * @param value
      *     allowed object is
-     *     {@link ExtensionsT }
+     *     {@links ExtensionsT }
      *     
      */
     public void setExtensions(ExtensionsT value) {

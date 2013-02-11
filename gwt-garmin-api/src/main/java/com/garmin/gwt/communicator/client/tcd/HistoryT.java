@@ -83,7 +83,7 @@ public class HistoryT {
      * 
      * @return
      *     possible object is
-     *     {@link HistoryFolderT }
+     *     {@links HistoryFolderT }
      *     
      */
     public HistoryFolderT getRunning() {
@@ -95,7 +95,7 @@ public class HistoryT {
      * 
      * @param value
      *     allowed object is
-     *     {@link HistoryFolderT }
+     *     {@links HistoryFolderT }
      *     
      */
     public void setRunning(HistoryFolderT value) {
@@ -107,7 +107,7 @@ public class HistoryT {
      * 
      * @return
      *     possible object is
-     *     {@link HistoryFolderT }
+     *     {@links HistoryFolderT }
      *     
      */
     public HistoryFolderT getBiking() {
@@ -119,7 +119,7 @@ public class HistoryT {
      * 
      * @param value
      *     allowed object is
-     *     {@link HistoryFolderT }
+     *     {@links HistoryFolderT }
      *     
      */
     public void setBiking(HistoryFolderT value) {
@@ -131,7 +131,7 @@ public class HistoryT {
      * 
      * @return
      *     possible object is
-     *     {@link HistoryFolderT }
+     *     {@links HistoryFolderT }
      *     
      */
     public HistoryFolderT getOther() {
@@ -143,7 +143,7 @@ public class HistoryT {
      * 
      * @param value
      *     allowed object is
-     *     {@link HistoryFolderT }
+     *     {@links HistoryFolderT }
      *     
      */
     public void setOther(HistoryFolderT value) {
@@ -155,7 +155,7 @@ public class HistoryT {
      * 
      * @return
      *     possible object is
-     *     {@link MultiSportFolderT }
+     *     {@links MultiSportFolderT }
      *     
      */
     public MultiSportFolderT getMultiSport() {
@@ -167,7 +167,7 @@ public class HistoryT {
      * 
      * @param value
      *     allowed object is
-     *     {@link MultiSportFolderT }
+     *     {@links MultiSportFolderT }
      *     
      */
     public void setMultiSport(MultiSportFolderT value) {
@@ -179,7 +179,7 @@ public class HistoryT {
      * 
      * @return
      *     possible object is
-     *     {@link ExtensionsT }
+     *     {@links ExtensionsT }
      *     
      */
     public ExtensionsT getExtensions() {
@@ -191,7 +191,7 @@ public class HistoryT {
      * 
      * @param value
      *     allowed object is
-     *     {@link ExtensionsT }
+     *     {@links ExtensionsT }
      *     
      */
     public void setExtensions(ExtensionsT value) {

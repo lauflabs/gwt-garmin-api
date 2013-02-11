@@ -40,7 +40,7 @@ import com.google.gwt.xml.client.XMLParser;
 public final class ParseUtils {
 
 	/**
-	 * Parse the DeviceXml string into an array of {@link Device} objects
+	 * Parse the DeviceXml string into an array of {@links Device} objects
 	 * 
 	 * @param progressXml
 	 * @return empty array if none parsed
@@ -133,7 +133,7 @@ public final class ParseUtils {
 	}
 
 	/**
-	 * Parse the DeviceXml string into an array of {@link Device} objects
+	 * Parse the DeviceXml string into an array of {@links Device} objects
 	 * 
 	 * @param deviceXml
 	 * @return empty array if none parsed

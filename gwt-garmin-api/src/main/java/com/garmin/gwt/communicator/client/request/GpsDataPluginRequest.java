@@ -43,7 +43,7 @@ public final class GpsDataPluginRequest extends AbstractPluginRequest<String> {
 	 * take a while to download it all.
 	 * 
 	 * @param plugin DevicePlugin instance in use
-	 * @param targetDevice from {@link DevicePlugin}
+	 * @param targetDevice from {@links DevicePlugin}
 	 * @param callback
 	 */
 	public GpsDataPluginRequest(DevicePlugin plugin, Device targetDevice, RequestCallback<String> callback) {

@@ -70,7 +70,7 @@ public class EmailType {
      * 
      * @return
      *     possible object is
-     *     {@link String }
+     *     {@links String }
      *     
      */
     public String getId() {
@@ -82,7 +82,7 @@ public class EmailType {
      * 
      * @param value
      *     allowed object is
-     *     {@link String }
+     *     {@links String }
      *     
      */
     public void setId(String value) {
@@ -94,7 +94,7 @@ public class EmailType {
      * 
      * @return
      *     possible object is
-     *     {@link String }
+     *     {@links String }
      *     
      */
     public String getDomain() {
@@ -106,7 +106,7 @@ public class EmailType {
      * 
      * @param value
      *     allowed object is
-     *     {@link String }
+     *     {@links String }
      *     
      */
     public void setDomain(String value) {

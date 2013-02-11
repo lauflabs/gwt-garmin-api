@@ -94,7 +94,7 @@ public class WorkoutFolderT {
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link WorkoutFolderT }
+     * {@links WorkoutFolderT }
      * 
      * 
      */
@@ -123,7 +123,7 @@ public class WorkoutFolderT {
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link NameKeyReferenceT }
+     * {@links NameKeyReferenceT }
      * 
      * 
      */
@@ -139,7 +139,7 @@ public class WorkoutFolderT {
      * 
      * @return
      *     possible object is
-     *     {@link ExtensionsT }
+     *     {@links ExtensionsT }
      *     
      */
     public ExtensionsT getExtensions() {
@@ -151,7 +151,7 @@ public class WorkoutFolderT {
      * 
      * @param value
      *     allowed object is
-     *     {@link ExtensionsT }
+     *     {@links ExtensionsT }
      *     
      */
     public void setExtensions(ExtensionsT value) {
@@ -163,7 +163,7 @@ public class WorkoutFolderT {
      * 
      * @return
      *     possible object is
-     *     {@link String }
+     *     {@links String }
      *     
      */
     public String getName() {
@@ -175,7 +175,7 @@ public class WorkoutFolderT {
      * 
      * @param value
      *     allowed object is
-     *     {@link String }
+     *     {@links String }
      *     
      */
     public void setName(String value) {

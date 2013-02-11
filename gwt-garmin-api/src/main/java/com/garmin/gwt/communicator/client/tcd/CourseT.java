@@ -96,7 +96,7 @@ public class CourseT {
      * 
      * @return
      *     possible object is
-     *     {@link String }
+     *     {@links String }
      *     
      */
     public String getName() {
@@ -108,7 +108,7 @@ public class CourseT {
      * 
      * @param value
      *     allowed object is
-     *     {@link String }
+     *     {@links String }
      *     
      */
     public void setName(String value) {
@@ -133,7 +133,7 @@ public class CourseT {
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link CourseLapT }
+     * {@links CourseLapT }
      * 
      * 
      */
@@ -162,7 +162,7 @@ public class CourseT {
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link TrackT }
+     * {@links TrackT }
      * 
      * 
      */
@@ -178,7 +178,7 @@ public class CourseT {
      * 
      * @return
      *     possible object is
-     *     {@link String }
+     *     {@links String }
      *     
      */
     public String getNotes() {
@@ -190,7 +190,7 @@ public class CourseT {
      * 
      * @param value
      *     allowed object is
-     *     {@link String }
+     *     {@links String }
      *     
      */
     public void setNotes(String value) {
@@ -215,7 +215,7 @@ public class CourseT {
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link CoursePointT }
+     * {@links CoursePointT }
      * 
      * 
      */
@@ -231,7 +231,7 @@ public class CourseT {
      * 
      * @return
      *     possible object is
-     *     {@link AbstractSourceT }
+     *     {@links AbstractSourceT }
      *     
      */
     public AbstractSourceT getCreator() {
@@ -243,7 +243,7 @@ public class CourseT {
      * 
      * @param value
      *     allowed object is
-     *     {@link AbstractSourceT }
+     *     {@links AbstractSourceT }
      *     
      */
     public void setCreator(AbstractSourceT value) {
@@ -255,7 +255,7 @@ public class CourseT {
      * 
      * @return
      *     possible object is
-     *     {@link ExtensionsT }
+     *     {@links ExtensionsT }
      *     
      */
     public ExtensionsT getExtensions() {
@@ -267,7 +267,7 @@ public class CourseT {
      * 
      * @param value
      *     allowed object is
-     *     {@link ExtensionsT }
+     *     {@links ExtensionsT }
      *     
      */
     public void setExtensions(ExtensionsT value) {

@@ -76,7 +76,7 @@ public class SpecificationT {
      * 
      * @return
      *     possible object is
-     *     {@link String }
+     *     {@links String }
      *     
      */
     public String getIdentifier() {
@@ -88,7 +88,7 @@ public class SpecificationT {
      * 
      * @param value
      *     allowed object is
-     *     {@link String }
+     *     {@links String }
      *     
      */
     public void setIdentifier(String value) {
@@ -100,7 +100,7 @@ public class SpecificationT {
      * 
      * @return
      *     possible object is
-     *     {@link String }
+     *     {@links String }
      *     
      */
     public String getDocumentation() {
@@ -112,7 +112,7 @@ public class SpecificationT {
      * 
      * @param value
      *     allowed object is
-     *     {@link String }
+     *     {@links String }
      *     
      */
     public void setDocumentation(String value) {

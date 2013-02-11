@@ -71,7 +71,7 @@ public class CoursesT {
      * 
      * @return
      *     possible object is
-     *     {@link CourseFolderT }
+     *     {@links CourseFolderT }
      *     
      */
     public CourseFolderT getCourseFolder() {
@@ -83,7 +83,7 @@ public class CoursesT {
      * 
      * @param value
      *     allowed object is
-     *     {@link CourseFolderT }
+     *     {@links CourseFolderT }
      *     
      */
     public void setCourseFolder(CourseFolderT value) {
@@ -95,7 +95,7 @@ public class CoursesT {
      * 
      * @return
      *     possible object is
-     *     {@link ExtensionsT }
+     *     {@links ExtensionsT }
      *     
      */
     public ExtensionsT getExtensions() {
@@ -107,7 +107,7 @@ public class CoursesT {
      * 
      * @param value
      *     allowed object is
-     *     {@link ExtensionsT }
+     *     {@links ExtensionsT }
      *     
      */
     public void setExtensions(ExtensionsT value) {

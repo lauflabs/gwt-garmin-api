@@ -23,12 +23,12 @@ package com.garmin.gwt.communicator.client.xml;
 import com.garmin.gwt.communicator.client.gpx.ExtensionsType;
 import com.garmin.gwt.communicator.client.gpx.Gpx;
 import com.garmin.gwt.communicator.client.gpx.MetadataType;
-import com.garmin.gwt.communicator.client.gpx.RteType;
-import com.garmin.gwt.communicator.client.gpx.TrkType;
-import com.garmin.gwt.communicator.client.gpx.WptType;
+import com.garmin.gwt.communicator.client.gpx.Route;
+import com.garmin.gwt.communicator.client.gpx.Track;
+import com.garmin.gwt.communicator.client.gpx.WayPoint;
 import com.garmin.gwt.communicator.client.jaxb.JAXBBindings;
 import com.garmin.gwt.communicator.client.jaxb.JAXBParserFactory;
 
 
-@JAXBBindings(value=Gpx.class, objects={WptType.class, RteType.class,TrkType.class,ExtensionsType.class,String.class,MetadataType.class})
+@JAXBBindings(value=Gpx.class, objects={WayPoint.class, Route.class,Track.class,ExtensionsType.class,String.class,MetadataType.class})
 public interface GpxParserFactory extends JAXBParserFactory<Gpx	>{}

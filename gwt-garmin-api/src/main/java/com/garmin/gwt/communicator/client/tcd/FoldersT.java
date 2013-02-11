@@ -75,7 +75,7 @@ public class FoldersT {
      * 
      * @return
      *     possible object is
-     *     {@link HistoryT }
+     *     {@links HistoryT }
      *     
      */
     public HistoryT getHistory() {
@@ -87,7 +87,7 @@ public class FoldersT {
      * 
      * @param value
      *     allowed object is
-     *     {@link HistoryT }
+     *     {@links HistoryT }
      *     
      */
     public void setHistory(HistoryT value) {
@@ -99,7 +99,7 @@ public class FoldersT {
      * 
      * @return
      *     possible object is
-     *     {@link WorkoutsT }
+     *     {@links WorkoutsT }
      *     
      */
     public WorkoutsT getWorkouts() {
@@ -111,7 +111,7 @@ public class FoldersT {
      * 
      * @param value
      *     allowed object is
-     *     {@link WorkoutsT }
+     *     {@links WorkoutsT }
      *     
      */
     public void setWorkouts(WorkoutsT value) {
@@ -123,7 +123,7 @@ public class FoldersT {
      * 
      * @return
      *     possible object is
-     *     {@link CoursesT }
+     *     {@links CoursesT }
      *     
      */
     public CoursesT getCourses() {
@@ -135,7 +135,7 @@ public class FoldersT {
      * 
      * @param value
      *     allowed object is
-     *     {@link CoursesT }
+     *     {@links CoursesT }
      *     
      */
     public void setCourses(CoursesT value) {

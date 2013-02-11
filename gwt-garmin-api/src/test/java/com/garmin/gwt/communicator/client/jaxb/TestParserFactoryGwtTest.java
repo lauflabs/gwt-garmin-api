@@ -35,81 +35,86 @@ public class TestParserFactoryGwtTest extends GWTTestCase {
 	}
 
 	@Override
+	protected boolean supportsAsync() {
+		return false;
+	}
+
+	@Override
 	protected void gwtSetUp() throws Exception {
 		super.gwtSetUp();
 		p = GWT.create(TestParserFactory.class);
 	}
 
 	public void testParseRoot() {
-		MututalTests.testParseRoot(p);
+		SharedTests.testParseRoot(p);
 	}
 
 	public void testParseBadRoot() {
-		MututalTests.testParseBadRoot(p);
+		SharedTests.testParseBadRoot(p);
 	}
 
 	public void testParseMisnamedRoot() {
-		MututalTests.testParseMisnamedRoot(p);
+		SharedTests.testParseMisnamedRoot(p);
 	}
 
 	public void testParsePublicAttribute() {
-		MututalTests.testParsePublicAttribute(p);
+		SharedTests.testParsePublicAttribute(p);
 	}
 
 	public void testParseRenamedProtectedAttribute() {
-		MututalTests.testParseRenamedProtectedAttribute(p);
+		SharedTests.testParseRenamedProtectedAttribute(p);
 	}
 
 	public void testParsePrivateAttribute() {
-		MututalTests.testParsePrivateAttribute(p);
+		SharedTests.testParsePrivateAttribute(p);
 	}
 
 	public void testParseTypedAttribute() {
-		MututalTests.testParseTypedAttribute(p);
+		SharedTests.testParseTypedAttribute(p);
 	}
 
 	public void testParseSubObjectAttribute() {
-		MututalTests.testParseSubObjectAttribute(p);
+		SharedTests.testParseSubObjectAttribute(p);
 	}
 
 	public void testParseSubObjectList() {
-		MututalTests.testParseSubObjectList(p);
+		SharedTests.testParseSubObjectList(p);
 	}
 
 	public void testParseSubObjectPolymorphicList() {
-		MututalTests.testParseSubObjectPolymorphicList(p);
+		SharedTests.testParseSubObjectPolymorphicList(p);
 	}
 
 	public void testParseTransientAttribute() {
-		MututalTests.testParseTransientAttribute(p);
+		SharedTests.testParseTransientAttribute(p);
 	}
 
 	public void testParseValueAttribute() {
-		MututalTests.testParseValueAttribute(p);
+		SharedTests.testParseValueAttribute(p);
 	}
 
 	public void testParseNamedSubObjectPolymorphicList() {
-		MututalTests.testParseNamedSubObjectPolymorphicList(p);
+		SharedTests.testParseNamedSubObjectPolymorphicList(p);
 	}
 
 	public void testParseStringElement() {
-		MututalTests.testParseStringElement(p);
+		SharedTests.testParseStringElement(p);
 	}
 
 	public void testParseElementEnum() {
-		MututalTests.testParseElementEnum(p);
+		SharedTests.testParseElementEnum(p);
 	}
 
 	public void testParseAttributeEnum() {
-		MututalTests.testParseAttributeEnum(p);
+		SharedTests.testParseAttributeEnum(p);
 	}
 
 	public void testPolymprohicElement() {
-		MututalTests.testPolymprohicElement(p);
+		SharedTests.testPolymprohicElement(p);
 	}
 
 	public void testListStringElement() {
-		MututalTests.testListStringElement(p);
+		SharedTests.testListStringElement(p);
 	}
 
 }

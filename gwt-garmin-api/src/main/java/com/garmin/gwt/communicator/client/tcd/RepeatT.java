@@ -104,7 +104,7 @@ public class RepeatT
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link AbstractStepT }
+     * {@links AbstractStepT }
      * 
      * 
      */

@@ -69,7 +69,7 @@ public class HeartRateAboveT
      * 
      * @return
      *     possible object is
-     *     {@link HeartRateValueT }
+     *     {@links HeartRateValueT }
      *     
      */
     public HeartRateValueT getHeartRate() {
@@ -81,7 +81,7 @@ public class HeartRateAboveT
      * 
      * @param value
      *     allowed object is
-     *     {@link HeartRateValueT }
+     *     {@links HeartRateValueT }
      *     
      */
     public void setHeartRate(HeartRateValueT value) {

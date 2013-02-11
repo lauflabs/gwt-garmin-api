@@ -77,7 +77,7 @@ public class CustomSpeedZoneT
      * 
      * @return
      *     possible object is
-     *     {@link SpeedTypeT }
+     *     {@links SpeedTypeT }
      *     
      */
     public SpeedTypeT getViewAs() {
@@ -89,7 +89,7 @@ public class CustomSpeedZoneT
      * 
      * @param value
      *     allowed object is
-     *     {@link SpeedTypeT }
+     *     {@links SpeedTypeT }
      *     
      */
     public void setViewAs(SpeedTypeT value) {

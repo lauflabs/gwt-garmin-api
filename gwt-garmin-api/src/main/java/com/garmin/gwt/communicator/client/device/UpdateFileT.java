@@ -92,7 +92,7 @@ public class UpdateFileT {
      * 
      * @return
      *     possible object is
-     *     {@link String }
+     *     {@links String }
      *     
      */
     public String getPartNumber() {
@@ -104,7 +104,7 @@ public class UpdateFileT {
      * 
      * @param value
      *     allowed object is
-     *     {@link String }
+     *     {@links String }
      *     
      */
     public void setPartNumber(String value) {
@@ -116,7 +116,7 @@ public class UpdateFileT {
      * 
      * @return
      *     possible object is
-     *     {@link VersionT }
+     *     {@links VersionT }
      *     
      */
     public VersionT getVersion() {
@@ -128,7 +128,7 @@ public class UpdateFileT {
      * 
      * @param value
      *     allowed object is
-     *     {@link VersionT }
+     *     {@links VersionT }
      *     
      */
     public void setVersion(VersionT value) {
@@ -140,7 +140,7 @@ public class UpdateFileT {
      * 
      * @return
      *     possible object is
-     *     {@link String }
+     *     {@links String }
      *     
      */
     public String getDescription() {
@@ -152,7 +152,7 @@ public class UpdateFileT {
      * 
      * @param value
      *     allowed object is
-     *     {@link String }
+     *     {@links String }
      *     
      */
     public void setDescription(String value) {
@@ -164,7 +164,7 @@ public class UpdateFileT {
      * 
      * @return
      *     possible object is
-     *     {@link String }
+     *     {@links String }
      *     
      */
     public String getPath() {
@@ -176,7 +176,7 @@ public class UpdateFileT {
      * 
      * @param value
      *     allowed object is
-     *     {@link String }
+     *     {@links String }
      *     
      */
     public void setPath(String value) {
@@ -188,7 +188,7 @@ public class UpdateFileT {
      * 
      * @return
      *     possible object is
-     *     {@link String }
+     *     {@links String }
      *     
      */
     public String getFileName() {
@@ -200,7 +200,7 @@ public class UpdateFileT {
      * 
      * @param value
      *     allowed object is
-     *     {@link String }
+     *     {@links String }
      *     
      */
     public void setFileName(String value) {

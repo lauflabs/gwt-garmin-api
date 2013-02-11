@@ -71,7 +71,7 @@ public class OutputFromUnitT {
      * 
      * @return
      *     possible object is
-     *     {@link SpecificationT }
+     *     {@links SpecificationT }
      *     
      */
     public SpecificationT getSpecification() {
@@ -83,7 +83,7 @@ public class OutputFromUnitT {
      * 
      * @param value
      *     allowed object is
-     *     {@link SpecificationT }
+     *     {@links SpecificationT }
      *     
      */
     public void setSpecification(SpecificationT value) {
@@ -95,7 +95,7 @@ public class OutputFromUnitT {
      * 
      * @return
      *     possible object is
-     *     {@link FileT }
+     *     {@links FileT }
      *     
      */
     public FileT getFile() {
@@ -107,7 +107,7 @@ public class OutputFromUnitT {
      * 
      * @param value
      *     allowed object is
-     *     {@link FileT }
+     *     {@links FileT }
      *     
      */
     public void setFile(FileT value) {

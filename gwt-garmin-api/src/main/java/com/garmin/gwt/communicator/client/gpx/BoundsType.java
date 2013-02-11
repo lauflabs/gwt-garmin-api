@@ -36,7 +36,7 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * 
- * 	 Two lat/lon pairs defining the extent of an element.
+ * 	 Two latitude/longitude pairs defining the extent of an element.
  * 
  * 
  * <p>Java class for boundsType complex type.
@@ -76,7 +76,7 @@ public class BoundsType {
 	 * 
 	 * @return
 	 *     possible object is
-	 *     {@link double }
+	 *     {@links double }
 	 * 
 	 */
 	public double getMinlat() {
@@ -88,7 +88,7 @@ public class BoundsType {
 	 * 
 	 * @param value
 	 *     allowed object is
-	 *     {@link double }
+	 *     {@links double }
 	 * 
 	 */
 	public void setMinlat(double value) {
@@ -100,7 +100,7 @@ public class BoundsType {
 	 * 
 	 * @return
 	 *     possible object is
-	 *     {@link double }
+	 *     {@links double }
 	 * 
 	 */
 	public double getMinlon() {
@@ -112,7 +112,7 @@ public class BoundsType {
 	 * 
 	 * @param value
 	 *     allowed object is
-	 *     {@link double }
+	 *     {@links double }
 	 * 
 	 */
 	public void setMinlon(double value) {
@@ -124,7 +124,7 @@ public class BoundsType {
 	 * 
 	 * @return
 	 *     possible object is
-	 *     {@link double }
+	 *     {@links double }
 	 * 
 	 */
 	public double getMaxlat() {
@@ -136,7 +136,7 @@ public class BoundsType {
 	 * 
 	 * @param value
 	 *     allowed object is
-	 *     {@link double }
+	 *     {@links double }
 	 * 
 	 */
 	public void setMaxlat(double value) {
@@ -148,7 +148,7 @@ public class BoundsType {
 	 * 
 	 * @return
 	 *     possible object is
-	 *     {@link double }
+	 *     {@links double }
 	 * 
 	 */
 	public double getMaxlon() {
@@ -160,7 +160,7 @@ public class BoundsType {
 	 * 
 	 * @param value
 	 *     allowed object is
-	 *     {@link double }
+	 *     {@links double }
 	 * 
 	 */
 	public void setMaxlon(double value) {

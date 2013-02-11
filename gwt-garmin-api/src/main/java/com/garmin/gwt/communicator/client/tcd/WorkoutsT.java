@@ -79,7 +79,7 @@ public class WorkoutsT {
      * 
      * @return
      *     possible object is
-     *     {@link WorkoutFolderT }
+     *     {@links WorkoutFolderT }
      *     
      */
     public WorkoutFolderT getRunning() {
@@ -91,7 +91,7 @@ public class WorkoutsT {
      * 
      * @param value
      *     allowed object is
-     *     {@link WorkoutFolderT }
+     *     {@links WorkoutFolderT }
      *     
      */
     public void setRunning(WorkoutFolderT value) {
@@ -103,7 +103,7 @@ public class WorkoutsT {
      * 
      * @return
      *     possible object is
-     *     {@link WorkoutFolderT }
+     *     {@links WorkoutFolderT }
      *     
      */
     public WorkoutFolderT getBiking() {
@@ -115,7 +115,7 @@ public class WorkoutsT {
      * 
      * @param value
      *     allowed object is
-     *     {@link WorkoutFolderT }
+     *     {@links WorkoutFolderT }
      *     
      */
     public void setBiking(WorkoutFolderT value) {
@@ -127,7 +127,7 @@ public class WorkoutsT {
      * 
      * @return
      *     possible object is
-     *     {@link WorkoutFolderT }
+     *     {@links WorkoutFolderT }
      *     
      */
     public WorkoutFolderT getOther() {
@@ -139,7 +139,7 @@ public class WorkoutsT {
      * 
      * @param value
      *     allowed object is
-     *     {@link WorkoutFolderT }
+     *     {@links WorkoutFolderT }
      *     
      */
     public void setOther(WorkoutFolderT value) {
@@ -151,7 +151,7 @@ public class WorkoutsT {
      * 
      * @return
      *     possible object is
-     *     {@link ExtensionsT }
+     *     {@links ExtensionsT }
      *     
      */
     public ExtensionsT getExtensions() {
@@ -163,7 +163,7 @@ public class WorkoutsT {
      * 
      * @param value
      *     allowed object is
-     *     {@link ExtensionsT }
+     *     {@links ExtensionsT }
      *     
      */
     public void setExtensions(ExtensionsT value) {

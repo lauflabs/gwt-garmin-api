@@ -74,7 +74,7 @@ public class WeekT {
      * 
      * @return
      *     possible object is
-     *     {@link String }
+     *     {@links String }
      *     
      */
     public String getNotes() {
@@ -86,7 +86,7 @@ public class WeekT {
      * 
      * @param value
      *     allowed object is
-     *     {@link String }
+     *     {@links String }
      *     
      */
     public void setNotes(String value) {
@@ -98,7 +98,7 @@ public class WeekT {
      * 
      * @return
      *     possible object is
-     *     {@link Date }
+     *     {@links Date }
      *     
      */
     public Date getStartDay() {
@@ -110,7 +110,7 @@ public class WeekT {
      * 
      * @param value
      *     allowed object is
-     *     {@link Date }
+     *     {@links Date }
      *     
      */
     public void setStartDay(Date value) {

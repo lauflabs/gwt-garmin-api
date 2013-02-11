@@ -153,7 +153,7 @@ public class ActivityLapT {
      * 
      * @return
      *     possible object is
-     *     {@link Double }
+     *     {@links Double }
      *     
      */
     public Double getMaximumSpeed() {
@@ -165,7 +165,7 @@ public class ActivityLapT {
      * 
      * @param value
      *     allowed object is
-     *     {@link Double }
+     *     {@links Double }
      *     
      */
     public void setMaximumSpeed(Double value) {
@@ -193,7 +193,7 @@ public class ActivityLapT {
      * 
      * @return
      *     possible object is
-     *     {@link HeartRateInBeatsPerMinuteT }
+     *     {@links HeartRateInBeatsPerMinuteT }
      *     
      */
     public HeartRateInBeatsPerMinuteT getAverageHeartRateBpm() {
@@ -205,7 +205,7 @@ public class ActivityLapT {
      * 
      * @param value
      *     allowed object is
-     *     {@link HeartRateInBeatsPerMinuteT }
+     *     {@links HeartRateInBeatsPerMinuteT }
      *     
      */
     public void setAverageHeartRateBpm(HeartRateInBeatsPerMinuteT value) {
@@ -217,7 +217,7 @@ public class ActivityLapT {
      * 
      * @return
      *     possible object is
-     *     {@link HeartRateInBeatsPerMinuteT }
+     *     {@links HeartRateInBeatsPerMinuteT }
      *     
      */
     public HeartRateInBeatsPerMinuteT getMaximumHeartRateBpm() {
@@ -229,7 +229,7 @@ public class ActivityLapT {
      * 
      * @param value
      *     allowed object is
-     *     {@link HeartRateInBeatsPerMinuteT }
+     *     {@links HeartRateInBeatsPerMinuteT }
      *     
      */
     public void setMaximumHeartRateBpm(HeartRateInBeatsPerMinuteT value) {
@@ -241,7 +241,7 @@ public class ActivityLapT {
      * 
      * @return
      *     possible object is
-     *     {@link IntensityT }
+     *     {@links IntensityT }
      *     
      */
     public IntensityT getIntensity() {
@@ -253,7 +253,7 @@ public class ActivityLapT {
      * 
      * @param value
      *     allowed object is
-     *     {@link IntensityT }
+     *     {@links IntensityT }
      *     
      */
     public void setIntensity(IntensityT value) {
@@ -265,7 +265,7 @@ public class ActivityLapT {
      * 
      * @return
      *     possible object is
-     *     {@link Short }
+     *     {@links Short }
      *     
      */
     public Short getCadence() {
@@ -277,7 +277,7 @@ public class ActivityLapT {
      * 
      * @param value
      *     allowed object is
-     *     {@link Short }
+     *     {@links Short }
      *     
      */
     public void setCadence(Short value) {
@@ -289,7 +289,7 @@ public class ActivityLapT {
      * 
      * @return
      *     possible object is
-     *     {@link TriggerMethodT }
+     *     {@links TriggerMethodT }
      *     
      */
     public TriggerMethodT getTriggerMethod() {
@@ -301,7 +301,7 @@ public class ActivityLapT {
      * 
      * @param value
      *     allowed object is
-     *     {@link TriggerMethodT }
+     *     {@links TriggerMethodT }
      *     
      */
     public void setTriggerMethod(TriggerMethodT value) {
@@ -326,7 +326,7 @@ public class ActivityLapT {
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link TrackT }
+     * {@links TrackT }
      * 
      * 
      */
@@ -342,7 +342,7 @@ public class ActivityLapT {
      * 
      * @return
      *     possible object is
-     *     {@link String }
+     *     {@links String }
      *     
      */
     public String getNotes() {
@@ -354,7 +354,7 @@ public class ActivityLapT {
      * 
      * @param value
      *     allowed object is
-     *     {@link String }
+     *     {@links String }
      *     
      */
     public void setNotes(String value) {
@@ -366,7 +366,7 @@ public class ActivityLapT {
      * 
      * @return
      *     possible object is
-     *     {@link ExtensionsT }
+     *     {@links ExtensionsT }
      *     
      */
     public ExtensionsT getExtensions() {
@@ -378,7 +378,7 @@ public class ActivityLapT {
      * 
      * @param value
      *     allowed object is
-     *     {@link ExtensionsT }
+     *     {@links ExtensionsT }
      *     
      */
     public void setExtensions(ExtensionsT value) {
@@ -390,7 +390,7 @@ public class ActivityLapT {
      * 
      * @return
      *     possible object is
-     *     {@link Date }
+     *     {@links Date }
      *     
      */
     public Date getStartTime() {
@@ -402,7 +402,7 @@ public class ActivityLapT {
      * 
      * @param value
      *     allowed object is
-     *     {@link Date }
+     *     {@links Date }
      *     
      */
     public void setStartTime(Date value) {

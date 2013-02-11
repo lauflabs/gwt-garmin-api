@@ -35,9 +35,9 @@ public abstract class AbstractGarminGWTTest extends GWTTestCase {
 	private int asyncDelayMs = 30000;
 	private final double equalsEpsilon = 1e-3;
 	/**
-	 * Runs the test with the given libraries loaded and fails if not complete by {@link #getAsyncDelayMs()}.<br>
+	 * Runs the test with the given libraries loaded and fails if not complete by {@links #getAsyncDelayMs()}.<br>
 	 * <br>
-	 * <b>NOTE:</b> You must call {@link #finishTest()} or test will fail.
+	 * <b>NOTE:</b> You must call {@links #finishTest()} or test will fail.
 	 * 
 	 * @param test code to run
 	 * @param libs libraries to have loaded
@@ -79,7 +79,7 @@ public abstract class AbstractGarminGWTTest extends GWTTestCase {
 	/** HELPERS **/
 
 	/**
-	 * Assert that two {@link LatLng} are equal within {@link #getEqualsEpsilon()} .
+	 * Assert that two {@links LatLng} are equal within {@links #getEqualsEpsilon()} .
 	 * 
 	 * @param expected
 	 * @param actual

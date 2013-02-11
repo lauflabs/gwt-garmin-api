@@ -139,7 +139,7 @@ public class CourseLapT {
      * 
      * @return
      *     possible object is
-     *     {@link PositionT }
+     *     {@links PositionT }
      *     
      */
     public PositionT getBeginPosition() {
@@ -151,7 +151,7 @@ public class CourseLapT {
      * 
      * @param value
      *     allowed object is
-     *     {@link PositionT }
+     *     {@links PositionT }
      *     
      */
     public void setBeginPosition(PositionT value) {
@@ -163,7 +163,7 @@ public class CourseLapT {
      * 
      * @return
      *     possible object is
-     *     {@link Double }
+     *     {@links Double }
      *     
      */
     public Double getBeginAltitudeMeters() {
@@ -175,7 +175,7 @@ public class CourseLapT {
      * 
      * @param value
      *     allowed object is
-     *     {@link Double }
+     *     {@links Double }
      *     
      */
     public void setBeginAltitudeMeters(Double value) {
@@ -187,7 +187,7 @@ public class CourseLapT {
      * 
      * @return
      *     possible object is
-     *     {@link PositionT }
+     *     {@links PositionT }
      *     
      */
     public PositionT getEndPosition() {
@@ -199,7 +199,7 @@ public class CourseLapT {
      * 
      * @param value
      *     allowed object is
-     *     {@link PositionT }
+     *     {@links PositionT }
      *     
      */
     public void setEndPosition(PositionT value) {
@@ -211,7 +211,7 @@ public class CourseLapT {
      * 
      * @return
      *     possible object is
-     *     {@link Double }
+     *     {@links Double }
      *     
      */
     public Double getEndAltitudeMeters() {
@@ -223,7 +223,7 @@ public class CourseLapT {
      * 
      * @param value
      *     allowed object is
-     *     {@link Double }
+     *     {@links Double }
      *     
      */
     public void setEndAltitudeMeters(Double value) {
@@ -235,7 +235,7 @@ public class CourseLapT {
      * 
      * @return
      *     possible object is
-     *     {@link HeartRateInBeatsPerMinuteT }
+     *     {@links HeartRateInBeatsPerMinuteT }
      *     
      */
     public HeartRateInBeatsPerMinuteT getAverageHeartRateBpm() {
@@ -247,7 +247,7 @@ public class CourseLapT {
      * 
      * @param value
      *     allowed object is
-     *     {@link HeartRateInBeatsPerMinuteT }
+     *     {@links HeartRateInBeatsPerMinuteT }
      *     
      */
     public void setAverageHeartRateBpm(HeartRateInBeatsPerMinuteT value) {
@@ -259,7 +259,7 @@ public class CourseLapT {
      * 
      * @return
      *     possible object is
-     *     {@link HeartRateInBeatsPerMinuteT }
+     *     {@links HeartRateInBeatsPerMinuteT }
      *     
      */
     public HeartRateInBeatsPerMinuteT getMaximumHeartRateBpm() {
@@ -271,7 +271,7 @@ public class CourseLapT {
      * 
      * @param value
      *     allowed object is
-     *     {@link HeartRateInBeatsPerMinuteT }
+     *     {@links HeartRateInBeatsPerMinuteT }
      *     
      */
     public void setMaximumHeartRateBpm(HeartRateInBeatsPerMinuteT value) {
@@ -283,7 +283,7 @@ public class CourseLapT {
      * 
      * @return
      *     possible object is
-     *     {@link IntensityT }
+     *     {@links IntensityT }
      *     
      */
     public IntensityT getIntensity() {
@@ -295,7 +295,7 @@ public class CourseLapT {
      * 
      * @param value
      *     allowed object is
-     *     {@link IntensityT }
+     *     {@links IntensityT }
      *     
      */
     public void setIntensity(IntensityT value) {
@@ -307,7 +307,7 @@ public class CourseLapT {
      * 
      * @return
      *     possible object is
-     *     {@link Short }
+     *     {@links Short }
      *     
      */
     public Short getCadence() {
@@ -319,7 +319,7 @@ public class CourseLapT {
      * 
      * @param value
      *     allowed object is
-     *     {@link Short }
+     *     {@links Short }
      *     
      */
     public void setCadence(Short value) {
@@ -331,7 +331,7 @@ public class CourseLapT {
      * 
      * @return
      *     possible object is
-     *     {@link ExtensionsT }
+     *     {@links ExtensionsT }
      *     
      */
     public ExtensionsT getExtensions() {
@@ -343,7 +343,7 @@ public class CourseLapT {
      * 
      * @param value
      *     allowed object is
-     *     {@link ExtensionsT }
+     *     {@links ExtensionsT }
      *     
      */
     public void setExtensions(ExtensionsT value) {

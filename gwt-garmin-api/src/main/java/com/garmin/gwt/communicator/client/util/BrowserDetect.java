@@ -32,7 +32,7 @@ import com.google.gwt.core.client.JavaScriptObject;
  */
 public final class BrowserDetect extends JavaScriptObject {
 	/**
-	 * See {@link #newInstance()}
+	 * See {@links #newInstance()}
 	 */
 	protected BrowserDetect() {}
 

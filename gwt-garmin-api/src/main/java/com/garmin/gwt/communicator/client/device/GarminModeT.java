@@ -77,7 +77,7 @@ public class GarminModeT {
      * 
      * @return
      *     possible object is
-     *     {@link ProtocolsT }
+     *     {@links ProtocolsT }
      *     
      */
     public ProtocolsT getProtocols() {
@@ -89,7 +89,7 @@ public class GarminModeT {
      * 
      * @param value
      *     allowed object is
-     *     {@link ProtocolsT }
+     *     {@links ProtocolsT }
      *     
      */
     public void setProtocols(ProtocolsT value) {
@@ -114,7 +114,7 @@ public class GarminModeT {
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link MemoryRegionT }
+     * {@links MemoryRegionT }
      * 
      * 
      */
@@ -130,7 +130,7 @@ public class GarminModeT {
      * 
      * @return
      *     possible object is
-     *     {@link ExtensionsT }
+     *     {@links ExtensionsT }
      *     
      */
     public ExtensionsT getExtensions() {
@@ -142,7 +142,7 @@ public class GarminModeT {
      * 
      * @param value
      *     allowed object is
-     *     {@link ExtensionsT }
+     *     {@links ExtensionsT }
      *     
      */
     public void setExtensions(ExtensionsT value) {

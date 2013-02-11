@@ -81,7 +81,7 @@ public class CopyrightType {
      * 
      * @return
      *     possible object is
-     *     {@link Date }
+     *     {@links Date }
      *     
      */
     public Date getYear() {
@@ -93,7 +93,7 @@ public class CopyrightType {
      * 
      * @param value
      *     allowed object is
-     *     {@link Date }
+     *     {@links Date }
      *     
      */
     public void setYear(Date value) {
@@ -105,7 +105,7 @@ public class CopyrightType {
      * 
      * @return
      *     possible object is
-     *     {@link String }
+     *     {@links String }
      *     
      */
     public String getLicense() {
@@ -117,7 +117,7 @@ public class CopyrightType {
      * 
      * @param value
      *     allowed object is
-     *     {@link String }
+     *     {@links String }
      *     
      */
     public void setLicense(String value) {
@@ -129,7 +129,7 @@ public class CopyrightType {
      * 
      * @return
      *     possible object is
-     *     {@link String }
+     *     {@links String }
      *     
      */
     public String getAuthor() {
@@ -141,7 +141,7 @@ public class CopyrightType {
      * 
      * @param value
      *     allowed object is
-     *     {@link String }
+     *     {@links String }
      *     
      */
     public void setAuthor(String value) {

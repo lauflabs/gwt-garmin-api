@@ -86,7 +86,7 @@ public class ActivityListT {
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link ActivityT }
+     * {@links ActivityT }
      * 
      * 
      */
@@ -115,7 +115,7 @@ public class ActivityListT {
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link MultiSportSessionT }
+     * {@links MultiSportSessionT }
      * 
      * 
      */

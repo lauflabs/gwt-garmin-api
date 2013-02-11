@@ -84,7 +84,7 @@ public class MultiSportSessionT {
      * 
      * @return
      *     possible object is
-     *     {@link Date }
+     *     {@links Date }
      *     
      */
     public Date getId() {
@@ -96,7 +96,7 @@ public class MultiSportSessionT {
      * 
      * @param value
      *     allowed object is
-     *     {@link Date }
+     *     {@links Date }
      *     
      */
     public void setId(Date value) {
@@ -108,7 +108,7 @@ public class MultiSportSessionT {
      * 
      * @return
      *     possible object is
-     *     {@link FirstSportT }
+     *     {@links FirstSportT }
      *     
      */
     public FirstSportT getFirstSport() {
@@ -120,7 +120,7 @@ public class MultiSportSessionT {
      * 
      * @param value
      *     allowed object is
-     *     {@link FirstSportT }
+     *     {@links FirstSportT }
      *     
      */
     public void setFirstSport(FirstSportT value) {
@@ -145,7 +145,7 @@ public class MultiSportSessionT {
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link NextSportT }
+     * {@links NextSportT }
      * 
      * 
      */
@@ -161,7 +161,7 @@ public class MultiSportSessionT {
      * 
      * @return
      *     possible object is
-     *     {@link String }
+     *     {@links String }
      *     
      */
     public String getNotes() {
@@ -173,7 +173,7 @@ public class MultiSportSessionT {
      * 
      * @param value
      *     allowed object is
-     *     {@link String }
+     *     {@links String }
      *     
      */
     public void setNotes(String value) {

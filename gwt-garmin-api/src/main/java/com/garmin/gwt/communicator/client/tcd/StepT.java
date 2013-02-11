@@ -84,7 +84,7 @@ public class StepT
      * 
      * @return
      *     possible object is
-     *     {@link String }
+     *     {@links String }
      *     
      */
     public String getName() {
@@ -96,7 +96,7 @@ public class StepT
      * 
      * @param value
      *     allowed object is
-     *     {@link String }
+     *     {@links String }
      *     
      */
     public void setName(String value) {
@@ -108,7 +108,7 @@ public class StepT
      * 
      * @return
      *     possible object is
-     *     {@link DurationT }
+     *     {@links DurationT }
      *     
      */
     public DurationT getDuration() {
@@ -120,7 +120,7 @@ public class StepT
      * 
      * @param value
      *     allowed object is
-     *     {@link DurationT }
+     *     {@links DurationT }
      *     
      */
     public void setDuration(DurationT value) {
@@ -132,7 +132,7 @@ public class StepT
      * 
      * @return
      *     possible object is
-     *     {@link IntensityT }
+     *     {@links IntensityT }
      *     
      */
     public IntensityT getIntensity() {
@@ -144,7 +144,7 @@ public class StepT
      * 
      * @param value
      *     allowed object is
-     *     {@link IntensityT }
+     *     {@links IntensityT }
      *     
      */
     public void setIntensity(IntensityT value) {
@@ -156,7 +156,7 @@ public class StepT
      * 
      * @return
      *     possible object is
-     *     {@link TargetT }
+     *     {@links TargetT }
      *     
      */
     public TargetT getTarget() {
@@ -168,7 +168,7 @@ public class StepT
      * 
      * @param value
      *     allowed object is
-     *     {@link TargetT }
+     *     {@links TargetT }
      *     
      */
     public void setTarget(TargetT value) {

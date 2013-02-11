@@ -116,7 +116,7 @@ public class VersionT {
      * 
      * @return
      *     possible object is
-     *     {@link Integer }
+     *     {@links Integer }
      *     
      */
     public Integer getBuildMajor() {
@@ -128,7 +128,7 @@ public class VersionT {
      * 
      * @param value
      *     allowed object is
-     *     {@link Integer }
+     *     {@links Integer }
      *     
      */
     public void setBuildMajor(Integer value) {
@@ -140,7 +140,7 @@ public class VersionT {
      * 
      * @return
      *     possible object is
-     *     {@link Integer }
+     *     {@links Integer }
      *     
      */
     public Integer getBuildMinor() {
@@ -152,7 +152,7 @@ public class VersionT {
      * 
      * @param value
      *     allowed object is
-     *     {@link Integer }
+     *     {@links Integer }
      *     
      */
     public void setBuildMinor(Integer value) {

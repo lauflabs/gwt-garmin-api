@@ -90,7 +90,7 @@ public class ActivityT {
 	/**
 	 * Gets the value of the id property.
 	 * 
-	 * @return possible object is {@link Date }
+	 * @return possible object is {@links Date }
 	 * 
 	 */
 	public Date getId() {
@@ -101,7 +101,7 @@ public class ActivityT {
 	 * Sets the value of the id property.
 	 * 
 	 * @param value
-	 *            allowed object is {@link Date }
+	 *            allowed object is {@links Date }
 	 * 
 	 */
 	public void setId(Date value) {
@@ -127,7 +127,7 @@ public class ActivityT {
 	 * 
 	 * <p>
 	 * Objects of the following type(s) are allowed in the list
-	 * {@link ActivityLapT }
+	 * {@links ActivityLapT }
 	 * 
 	 * 
 	 */
@@ -141,7 +141,7 @@ public class ActivityT {
 	/**
 	 * Gets the value of the notes property.
 	 * 
-	 * @return possible object is {@link String }
+	 * @return possible object is {@links String }
 	 * 
 	 */
 	public String getNotes() {
@@ -152,7 +152,7 @@ public class ActivityT {
 	 * Sets the value of the notes property.
 	 * 
 	 * @param value
-	 *            allowed object is {@link String }
+	 *            allowed object is {@links String }
 	 * 
 	 */
 	public void setNotes(String value) {
@@ -162,7 +162,7 @@ public class ActivityT {
 	/**
 	 * Gets the value of the training property.
 	 * 
-	 * @return possible object is {@link TrainingT }
+	 * @return possible object is {@links TrainingT }
 	 * 
 	 */
 	public TrainingT getTraining() {
@@ -173,7 +173,7 @@ public class ActivityT {
 	 * Sets the value of the training property.
 	 * 
 	 * @param value
-	 *            allowed object is {@link TrainingT }
+	 *            allowed object is {@links TrainingT }
 	 * 
 	 */
 	public void setTraining(TrainingT value) {
@@ -183,7 +183,7 @@ public class ActivityT {
 	/**
 	 * Gets the value of the creator property.
 	 * 
-	 * @return possible object is {@link AbstractSourceT }
+	 * @return possible object is {@links AbstractSourceT }
 	 * 
 	 */
 	public AbstractSourceT getCreator() {
@@ -194,7 +194,7 @@ public class ActivityT {
 	 * Sets the value of the creator property.
 	 * 
 	 * @param value
-	 *            allowed object is {@link AbstractSourceT }
+	 *            allowed object is {@links AbstractSourceT }
 	 * 
 	 */
 	public void setCreator(AbstractSourceT value) {
@@ -204,7 +204,7 @@ public class ActivityT {
 	/**
 	 * Gets the value of the extensions property.
 	 * 
-	 * @return possible object is {@link ExtensionsT }
+	 * @return possible object is {@links ExtensionsT }
 	 * 
 	 */
 	public ExtensionsT getExtensions() {
@@ -215,7 +215,7 @@ public class ActivityT {
 	 * Sets the value of the extensions property.
 	 * 
 	 * @param value
-	 *            allowed object is {@link ExtensionsT }
+	 *            allowed object is {@links ExtensionsT }
 	 * 
 	 */
 	public void setExtensions(ExtensionsT value) {
@@ -225,7 +225,7 @@ public class ActivityT {
 	/**
 	 * Gets the value of the sport property.
 	 * 
-	 * @return possible object is {@link SportT }
+	 * @return possible object is {@links SportT }
 	 * 
 	 */
 	public SportT getSport() {
@@ -236,7 +236,7 @@ public class ActivityT {
 	 * Sets the value of the sport property.
 	 * 
 	 * @param value
-	 *            allowed object is {@link SportT }
+	 *            allowed object is {@links SportT }
 	 * 
 	 */
 	public void setSport(SportT value) {

@@ -87,7 +87,7 @@ public class LocationT {
      * 
      * @return
      *     possible object is
-     *     {@link String }
+     *     {@links String }
      *     
      */
     public String getPath() {
@@ -99,7 +99,7 @@ public class LocationT {
      * 
      * @param value
      *     allowed object is
-     *     {@link String }
+     *     {@links String }
      *     
      */
     public void setPath(String value) {
@@ -111,7 +111,7 @@ public class LocationT {
      * 
      * @return
      *     possible object is
-     *     {@link String }
+     *     {@links String }
      *     
      */
     public String getBaseName() {
@@ -123,7 +123,7 @@ public class LocationT {
      * 
      * @param value
      *     allowed object is
-     *     {@link String }
+     *     {@links String }
      *     
      */
     public void setBaseName(String value) {
@@ -135,7 +135,7 @@ public class LocationT {
      * 
      * @return
      *     possible object is
-     *     {@link String }
+     *     {@links String }
      *     
      */
     public String getFileExtension() {
@@ -147,7 +147,7 @@ public class LocationT {
      * 
      * @param value
      *     allowed object is
-     *     {@link String }
+     *     {@links String }
      *     
      */
     public void setFileExtension(String value) {
@@ -159,7 +159,7 @@ public class LocationT {
      * 
      * @return
      *     possible object is
-     *     {@link ExtensionsT }
+     *     {@links ExtensionsT }
      *     
      */
     public ExtensionsT getExtensions() {
@@ -171,7 +171,7 @@ public class LocationT {
      * 
      * @param value
      *     allowed object is
-     *     {@link ExtensionsT }
+     *     {@links ExtensionsT }
      *     
      */
     public void setExtensions(ExtensionsT value) {

@@ -61,7 +61,7 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "Protocols_t", propOrder = {
-    "link",
+    "links",
     "application",
     "transport"
 })
@@ -75,11 +75,11 @@ public class ProtocolsT {
     protected ProtocolT transport;
 
     /**
-     * Gets the value of the link property.
+     * Gets the value of the links property.
      * 
      * @return
      *     possible object is
-     *     {@link ProtocolT }
+     *     {@links ProtocolT }
      *     
      */
     public ProtocolT getLink() {
@@ -87,11 +87,11 @@ public class ProtocolsT {
     }
 
     /**
-     * Sets the value of the link property.
+     * Sets the value of the links property.
      * 
      * @param value
      *     allowed object is
-     *     {@link ProtocolT }
+     *     {@links ProtocolT }
      *     
      */
     public void setLink(ProtocolT value) {
@@ -116,7 +116,7 @@ public class ProtocolsT {
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link AppProtocolT }
+     * {@links AppProtocolT }
      * 
      * 
      */
@@ -132,7 +132,7 @@ public class ProtocolsT {
      * 
      * @return
      *     possible object is
-     *     {@link ProtocolT }
+     *     {@links ProtocolT }
      *     
      */
     public ProtocolT getTransport() {
@@ -144,7 +144,7 @@ public class ProtocolsT {
      * 
      * @param value
      *     allowed object is
-     *     {@link ProtocolT }
+     *     {@links ProtocolT }
      *     
      */
     public void setTransport(ProtocolT value) {

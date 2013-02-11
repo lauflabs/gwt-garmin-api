@@ -67,7 +67,7 @@ public class FirstSportT {
      * 
      * @return
      *     possible object is
-     *     {@link ActivityT }
+     *     {@links ActivityT }
      *     
      */
     public ActivityT getActivity() {
@@ -79,7 +79,7 @@ public class FirstSportT {
      * 
      * @param value
      *     allowed object is
-     *     {@link ActivityT }
+     *     {@links ActivityT }
      *     
      */
     public void setActivity(ActivityT value) {

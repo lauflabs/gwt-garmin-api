@@ -39,7 +39,7 @@ public interface DevicePlugin {
 	 * 
 	 * @since Minimum plugin version 2.0.0.4
 	 * @param keyPairs
-	 *            array of {@link KeyPair}
+	 *            array of {@links KeyPair}
 	 * @return whether unlock was successful
 	 */
 	boolean unlock(KeyPair[] keyPairs);
@@ -115,9 +115,9 @@ public interface DevicePlugin {
 
 	/**
 	 * Initiates a find GPS devices action on the plugin.<br>
-	 * Poll with {@link #finishFindDevices()} to determine when the plugin has
+	 * Poll with {@links #finishFindDevices()} to determine when the plugin has
 	 * completed this action.<br>
-	 * Use {@link #getDevicesXml()} to inspect XML contents for and array
+	 * Use {@links #getDevicesXml()} to inspect XML contents for and array
 	 * of Device nodes.<br/>
 	 * 
 	 * @since 2.0.0.4
@@ -154,7 +154,7 @@ public interface DevicePlugin {
 
 	/**
 	 * Returns information about the specified Device indicated by the device
-	 * Number. See the {@link #devicesXmlString} for available devices. Refer to
+	 * Number. See the {@links #devicesXmlString} for available devices. Refer to
 	 * the <a href=
 	 * "http://developer.garmin.com/schemas/device/v2/xmlspy/index.html#Link04DDFE88"
 	 * >Devices_t</a> element in the Device XML schema for what is included in
@@ -168,8 +168,8 @@ public interface DevicePlugin {
 	String getDeviceDescriptionXml(Device device);
 
 	/**
-	 * Parses {@link #getDevicesXml} values into a Device array, then calls
-	 * {@link #getDeviceDescriptionXml} to get the complete description of each
+	 * Parses {@links #getDevicesXml} values into a Device array, then calls
+	 * {@links #getDeviceDescriptionXml} to get the complete description of each
 	 * Device.
 	 * 
 	 * @return empty array if no devices found
@@ -190,7 +190,7 @@ public interface DevicePlugin {
 	 * 
 	 * @since 2.0.0.4
 	 * @param device
-	 *            from {{@link #getDevices()}
+	 *            from {{@links #getDevices()}
 	 */
 	void startReadFromGps(Device device);
 
@@ -219,7 +219,7 @@ public interface DevicePlugin {
 	 * @since 2.2.0.1 for FitnessWorkouts, FitnessUserProfile, FitnessCourses
 	 * 
 	 * @param device
-	 *            from {{@link #getDevices()}
+	 *            from {{@links #getDevices()}
 	 * @param dataTypeName
 	 *            a fitness datatype from the <a
 	 *            href="http://developer.garmin.com/schemas/device/v2">Garmin

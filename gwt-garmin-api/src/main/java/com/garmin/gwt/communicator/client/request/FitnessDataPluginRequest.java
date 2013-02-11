@@ -43,7 +43,7 @@ AbstractPluginRequest<String> {
 	 * take a while to download it all.
 	 * 
 	 * @param plugin DevicePlugin instance in use
-	 * @param targetDevice from {@link DevicePlugin}
+	 * @param targetDevice from {@links DevicePlugin}
 	 * @param fitnessDataType
 	 * @param callback
 	 */

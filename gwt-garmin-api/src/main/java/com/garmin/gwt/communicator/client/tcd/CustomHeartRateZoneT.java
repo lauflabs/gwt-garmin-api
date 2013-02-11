@@ -73,7 +73,7 @@ public class CustomHeartRateZoneT
      * 
      * @return
      *     possible object is
-     *     {@link HeartRateValueT }
+     *     {@links HeartRateValueT }
      *     
      */
     public HeartRateValueT getLow() {
@@ -85,7 +85,7 @@ public class CustomHeartRateZoneT
      * 
      * @param value
      *     allowed object is
-     *     {@link HeartRateValueT }
+     *     {@links HeartRateValueT }
      *     
      */
     public void setLow(HeartRateValueT value) {
@@ -97,7 +97,7 @@ public class CustomHeartRateZoneT
      * 
      * @return
      *     possible object is
-     *     {@link HeartRateValueT }
+     *     {@links HeartRateValueT }
      *     
      */
     public HeartRateValueT getHigh() {
@@ -109,7 +109,7 @@ public class CustomHeartRateZoneT
      * 
      * @param value
      *     allowed object is
-     *     {@link HeartRateValueT }
+     *     {@links HeartRateValueT }
      *     
      */
     public void setHigh(HeartRateValueT value) {

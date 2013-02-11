@@ -104,7 +104,7 @@ public class DeviceT {
      * 
      * @return
      *     possible object is
-     *     {@link ModelT }
+     *     {@links ModelT }
      *     
      */
     public ModelT getModel() {
@@ -116,7 +116,7 @@ public class DeviceT {
      * 
      * @param value
      *     allowed object is
-     *     {@link ModelT }
+     *     {@links ModelT }
      *     
      */
     public void setModel(ModelT value) {
@@ -144,7 +144,7 @@ public class DeviceT {
      * 
      * @return
      *     possible object is
-     *     {@link String }
+     *     {@links String }
      *     
      */
     public String getRegistrationCode() {
@@ -156,7 +156,7 @@ public class DeviceT {
      * 
      * @param value
      *     allowed object is
-     *     {@link String }
+     *     {@links String }
      *     
      */
     public void setRegistrationCode(String value) {
@@ -181,7 +181,7 @@ public class DeviceT {
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link UnlockCodeT }
+     * {@links UnlockCodeT }
      * 
      * 
      */
@@ -197,7 +197,7 @@ public class DeviceT {
      * 
      * @return
      *     possible object is
-     *     {@link String }
+     *     {@links String }
      *     
      */
     public String getDisplayName() {
@@ -209,7 +209,7 @@ public class DeviceT {
      * 
      * @param value
      *     allowed object is
-     *     {@link String }
+     *     {@links String }
      *     
      */
     public void setDisplayName(String value) {
@@ -221,7 +221,7 @@ public class DeviceT {
      * 
      * @return
      *     possible object is
-     *     {@link MassStorageModeT }
+     *     {@links MassStorageModeT }
      *     
      */
     public MassStorageModeT getMassStorageMode() {
@@ -233,7 +233,7 @@ public class DeviceT {
      * 
      * @param value
      *     allowed object is
-     *     {@link MassStorageModeT }
+     *     {@links MassStorageModeT }
      *     
      */
     public void setMassStorageMode(MassStorageModeT value) {
@@ -245,7 +245,7 @@ public class DeviceT {
      * 
      * @return
      *     possible object is
-     *     {@link GarminModeT }
+     *     {@links GarminModeT }
      *     
      */
     public GarminModeT getGarminMode() {
@@ -257,7 +257,7 @@ public class DeviceT {
      * 
      * @param value
      *     allowed object is
-     *     {@link GarminModeT }
+     *     {@links GarminModeT }
      *     
      */
     public void setGarminMode(GarminModeT value) {
@@ -269,7 +269,7 @@ public class DeviceT {
      * 
      * @return
      *     possible object is
-     *     {@link ExtensionsT }
+     *     {@links ExtensionsT }
      *     
      */
     public ExtensionsT getExtensions() {
@@ -281,7 +281,7 @@ public class DeviceT {
      * 
      * @param value
      *     allowed object is
-     *     {@link ExtensionsT }
+     *     {@links ExtensionsT }
      *     
      */
     public void setExtensions(ExtensionsT value) {

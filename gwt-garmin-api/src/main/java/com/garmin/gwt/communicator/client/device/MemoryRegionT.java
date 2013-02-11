@@ -116,7 +116,7 @@ public class MemoryRegionT {
      * 
      * @return
      *     possible object is
-     *     {@link VersionT }
+     *     {@links VersionT }
      *     
      */
     public VersionT getVersion() {
@@ -128,7 +128,7 @@ public class MemoryRegionT {
      * 
      * @param value
      *     allowed object is
-     *     {@link VersionT }
+     *     {@links VersionT }
      *     
      */
     public void setVersion(VersionT value) {
@@ -140,7 +140,7 @@ public class MemoryRegionT {
      * 
      * @return
      *     possible object is
-     *     {@link String }
+     *     {@links String }
      *     
      */
     public String getDescription() {
@@ -152,7 +152,7 @@ public class MemoryRegionT {
      * 
      * @param value
      *     allowed object is
-     *     {@link String }
+     *     {@links String }
      *     
      */
     public void setDescription(String value) {
@@ -164,7 +164,7 @@ public class MemoryRegionT {
      * 
      * @return
      *     possible object is
-     *     {@link String }
+     *     {@links String }
      *     
      */
     public String getPartNumber() {
@@ -176,7 +176,7 @@ public class MemoryRegionT {
      * 
      * @param value
      *     allowed object is
-     *     {@link String }
+     *     {@links String }
      *     
      */
     public void setPartNumber(String value) {
@@ -188,7 +188,7 @@ public class MemoryRegionT {
      * 
      * @return
      *     possible object is
-     *     {@link Boolean }
+     *     {@links Boolean }
      *     
      */
     public Boolean isIsErased() {
@@ -200,7 +200,7 @@ public class MemoryRegionT {
      * 
      * @param value
      *     allowed object is
-     *     {@link Boolean }
+     *     {@links Boolean }
      *     
      */
     public void setIsErased(Boolean value) {
@@ -212,7 +212,7 @@ public class MemoryRegionT {
      * 
      * @return
      *     possible object is
-     *     {@link Boolean }
+     *     {@links Boolean }
      *     
      */
     public Boolean isIsRemoved() {
@@ -224,7 +224,7 @@ public class MemoryRegionT {
      * 
      * @param value
      *     allowed object is
-     *     {@link Boolean }
+     *     {@links Boolean }
      *     
      */
     public void setIsRemoved(Boolean value) {
@@ -236,7 +236,7 @@ public class MemoryRegionT {
      * 
      * @return
      *     possible object is
-     *     {@link Boolean }
+     *     {@links Boolean }
      *     
      */
     public Boolean isIsUserUpdateable() {
@@ -248,7 +248,7 @@ public class MemoryRegionT {
      * 
      * @param value
      *     allowed object is
-     *     {@link Boolean }
+     *     {@links Boolean }
      *     
      */
     public void setIsUserUpdateable(Boolean value) {
@@ -260,7 +260,7 @@ public class MemoryRegionT {
      * 
      * @return
      *     possible object is
-     *     {@link ExtensionsT }
+     *     {@links ExtensionsT }
      *     
      */
     public ExtensionsT getExtensions() {
@@ -272,7 +272,7 @@ public class MemoryRegionT {
      * 
      * @param value
      *     allowed object is
-     *     {@link ExtensionsT }
+     *     {@links ExtensionsT }
      *     
      */
     public void setExtensions(ExtensionsT value) {

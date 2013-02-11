@@ -75,7 +75,7 @@ public class FileT {
      * 
      * @return
      *     possible object is
-     *     {@link SpecificationT }
+     *     {@links SpecificationT }
      *     
      */
     public SpecificationT getSpecification() {
@@ -87,7 +87,7 @@ public class FileT {
      * 
      * @param value
      *     allowed object is
-     *     {@link SpecificationT }
+     *     {@links SpecificationT }
      *     
      */
     public void setSpecification(SpecificationT value) {
@@ -99,7 +99,7 @@ public class FileT {
      * 
      * @return
      *     possible object is
-     *     {@link LocationT }
+     *     {@links LocationT }
      *     
      */
     public LocationT getLocation() {
@@ -111,7 +111,7 @@ public class FileT {
      * 
      * @param value
      *     allowed object is
-     *     {@link LocationT }
+     *     {@links LocationT }
      *     
      */
     public void setLocation(LocationT value) {
@@ -123,7 +123,7 @@ public class FileT {
      * 
      * @return
      *     possible object is
-     *     {@link TransferDirectionT }
+     *     {@links TransferDirectionT }
      *     
      */
     public TransferDirectionT getTransferDirection() {
@@ -135,7 +135,7 @@ public class FileT {
      * 
      * @param value
      *     allowed object is
-     *     {@link TransferDirectionT }
+     *     {@links TransferDirectionT }
      *     
      */
     public void setTransferDirection(TransferDirectionT value) {

@@ -71,7 +71,7 @@ public final class FindDevicesPluginRequest extends AbstractPluginRequest<Device
 	}
 
 	/**
-	 * Call {@link DevicePlugin#getDeviceDescriptionXml(Device)} for each Device.
+	 * Call {@links DevicePlugin#getDeviceDescriptionXml(Device)} for each Device.
 	 * @param devices
 	 * @return EMPTY array EMPTY array provided
 	 */

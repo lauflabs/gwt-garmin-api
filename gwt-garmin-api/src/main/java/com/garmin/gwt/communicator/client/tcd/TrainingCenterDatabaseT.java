@@ -87,7 +87,7 @@ public class TrainingCenterDatabaseT {
      * 
      * @return
      *     possible object is
-     *     {@link FoldersT }
+     *     {@links FoldersT }
      *     
      */
     public FoldersT getFolders() {
@@ -99,7 +99,7 @@ public class TrainingCenterDatabaseT {
      * 
      * @param value
      *     allowed object is
-     *     {@link FoldersT }
+     *     {@links FoldersT }
      *     
      */
     public void setFolders(FoldersT value) {
@@ -111,7 +111,7 @@ public class TrainingCenterDatabaseT {
      * 
      * @return
      *     possible object is
-     *     {@link ActivityListT }
+     *     {@links ActivityListT }
      *     
      */
     public ActivityListT getActivities() {
@@ -123,7 +123,7 @@ public class TrainingCenterDatabaseT {
      * 
      * @param value
      *     allowed object is
-     *     {@link ActivityListT }
+     *     {@links ActivityListT }
      *     
      */
     public void setActivities(ActivityListT value) {
@@ -135,7 +135,7 @@ public class TrainingCenterDatabaseT {
      * 
      * @return
      *     possible object is
-     *     {@link WorkoutListT }
+     *     {@links WorkoutListT }
      *     
      */
     public WorkoutListT getWorkouts() {
@@ -147,7 +147,7 @@ public class TrainingCenterDatabaseT {
      * 
      * @param value
      *     allowed object is
-     *     {@link WorkoutListT }
+     *     {@links WorkoutListT }
      *     
      */
     public void setWorkouts(WorkoutListT value) {
@@ -159,7 +159,7 @@ public class TrainingCenterDatabaseT {
      * 
      * @return
      *     possible object is
-     *     {@link CourseListT }
+     *     {@links CourseListT }
      *     
      */
     public CourseListT getCourses() {
@@ -171,7 +171,7 @@ public class TrainingCenterDatabaseT {
      * 
      * @param value
      *     allowed object is
-     *     {@link CourseListT }
+     *     {@links CourseListT }
      *     
      */
     public void setCourses(CourseListT value) {
@@ -183,7 +183,7 @@ public class TrainingCenterDatabaseT {
      * 
      * @return
      *     possible object is
-     *     {@link AbstractSourceT }
+     *     {@links AbstractSourceT }
      *     
      */
     public AbstractSourceT getAuthor() {
@@ -195,7 +195,7 @@ public class TrainingCenterDatabaseT {
      * 
      * @param value
      *     allowed object is
-     *     {@link AbstractSourceT }
+     *     {@links AbstractSourceT }
      *     
      */
     public void setAuthor(AbstractSourceT value) {
@@ -207,7 +207,7 @@ public class TrainingCenterDatabaseT {
      * 
      * @return
      *     possible object is
-     *     {@link ExtensionsT }
+     *     {@links ExtensionsT }
      *     
      */
     public ExtensionsT getExtensions() {
@@ -219,7 +219,7 @@ public class TrainingCenterDatabaseT {
      * 
      * @param value
      *     allowed object is
-     *     {@link ExtensionsT }
+     *     {@links ExtensionsT }
      *     
      */
     public void setExtensions(ExtensionsT value) {

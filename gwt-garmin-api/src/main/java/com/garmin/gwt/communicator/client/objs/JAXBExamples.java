@@ -37,8 +37,8 @@ public class JAXBExamples implements EntryPoint {
 		TestParserFactory p = GWT.create(TestParserFactory.class);
 		TestBean bean = p.create().parse("<TestBean />");
 		System.out.println(bean);
-		//		Element ele;
-		//		ele.hasAttribute(name)
+		//		Element elevation;
+		//		elevation.hasAttribute(name)
 
 	}
 

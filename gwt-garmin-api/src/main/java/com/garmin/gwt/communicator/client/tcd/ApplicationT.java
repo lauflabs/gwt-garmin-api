@@ -83,7 +83,7 @@ public class ApplicationT
      * 
      * @return
      *     possible object is
-     *     {@link BuildT }
+     *     {@links BuildT }
      *     
      */
     public BuildT getBuild() {
@@ -95,7 +95,7 @@ public class ApplicationT
      * 
      * @param value
      *     allowed object is
-     *     {@link BuildT }
+     *     {@links BuildT }
      *     
      */
     public void setBuild(BuildT value) {
@@ -107,7 +107,7 @@ public class ApplicationT
      * 
      * @return
      *     possible object is
-     *     {@link String }
+     *     {@links String }
      *     
      */
     public String getLangID() {
@@ -119,7 +119,7 @@ public class ApplicationT
      * 
      * @param value
      *     allowed object is
-     *     {@link String }
+     *     {@links String }
      *     
      */
     public void setLangID(String value) {
@@ -131,7 +131,7 @@ public class ApplicationT
      * 
      * @return
      *     possible object is
-     *     {@link String }
+     *     {@links String }
      *     
      */
     public String getPartNumber() {
@@ -143,7 +143,7 @@ public class ApplicationT
      * 
      * @param value
      *     allowed object is
-     *     {@link String }
+     *     {@links String }
      *     
      */
     public void setPartNumber(String value) {

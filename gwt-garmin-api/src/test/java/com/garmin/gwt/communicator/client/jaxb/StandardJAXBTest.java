@@ -23,8 +23,6 @@ package com.garmin.gwt.communicator.client.jaxb;
 
 import java.io.StringReader;
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
@@ -69,116 +67,91 @@ public class StandardJAXBTest {
 
 	@Test
 	public void testParseRoot() {
-		MututalTests.testParseRoot(p);
+		SharedTests.testParseRoot(p);
 	}
 
 	@Test
 	public void testParseBadRoot() {
-		MututalTests.testParseBadRoot(p);
+		SharedTests.testParseBadRoot(p);
 	}
 
 	@Test
 	public void testParseMisnamedRoot() {
-		MututalTests.testParseMisnamedRoot(p);
+		SharedTests.testParseMisnamedRoot(p);
 	}
 
 	@Test
 	public void testParsePublicAttribute() {
-		MututalTests.testParsePublicAttribute(p);
+		SharedTests.testParsePublicAttribute(p);
 	}
 
 	@Test
 	public void testParseRenamedProtectedAttribute() {
-		MututalTests.testParseRenamedProtectedAttribute(p);
+		SharedTests.testParseRenamedProtectedAttribute(p);
 	}
 
 	@Test
 	public void testParsePrivateAttribute() {
-		MututalTests.testParsePrivateAttribute(p);
+		SharedTests.testParsePrivateAttribute(p);
 	}
 
 	@Test
 	public void testParseTypedAttribute() {
-		MututalTests.testParseTypedAttribute(p);
+		SharedTests.testParseTypedAttribute(p);
 	}
 
 	@Test
 	public void testParseSubObjectAttribute() {
-		MututalTests.testParseSubObjectAttribute(p);
+		SharedTests.testParseSubObjectAttribute(p);
 	}
 
 	@Test
 	public void testParseSubObjectList() {
-		MututalTests.testParseSubObjectList(p);
+		SharedTests.testParseSubObjectList(p);
 	}
 
 	@Test
 	public void testParseSubObjectPolymorphicList() {
-		MututalTests.testParseSubObjectPolymorphicList(p);
+		SharedTests.testParseSubObjectPolymorphicList(p);
 	}
 
 	@Test
 	public void testParseTransientAttribute() {
-		MututalTests.testParseTransientAttribute(p);
+		SharedTests.testParseTransientAttribute(p);
 	}
 
 	@Test
 	public void testParseValueAttribute() {
-		MututalTests.testParseValueAttribute(p);
+		SharedTests.testParseValueAttribute(p);
 	}
 
 	@Test
 	public void testParseNamedSubObjectPolymorphicList() {
-		MututalTests.testParseNamedSubObjectPolymorphicList(p);
+		SharedTests.testParseNamedSubObjectPolymorphicList(p);
 	}
 
 	@Test
 	public void testParseStringElement() {
-		MututalTests.testParseStringElement(p);
+		SharedTests.testParseStringElement(p);
 	}
 
 	@Test
 	public void testParseElementEnum() {
-		MututalTests.testParseElementEnum(p);
+		SharedTests.testParseElementEnum(p);
 	}
 
 	@Test
 	public void testParseAttributeEnum() {
-		MututalTests.testParseAttributeEnum(p);
+		SharedTests.testParseAttributeEnum(p);
 	}
 
 	@Test
 	public void testPolymprohicElement() {
-		MututalTests.testPolymprohicElement(p);
+		SharedTests.testPolymprohicElement(p);
 	}
 
 	@Test
 	public void testListStringElement() {
-		MututalTests.testListStringElement(p);
+		SharedTests.testListStringElement(p);
 	}
-
-
-	public static void main(String[] args) throws Exception {
-
-		//		TestBean bean = new TestBean();
-		//		bean.stringsList = new ArrayList<String>();
-		//		bean.stringsList.add("test");
-		//		bean.stringsList.add("test2");
-		//		bean.stringsList.add("test3");
-		//
-		//		JAXBBindings bindings = TestParserFactory.class.getAnnotation(JAXBBindings.class);
-		//		ArrayList<Class<?>> binds = new ArrayList<Class<?>>();
-		//		binds.add(bindings.value());
-		//
-		//		for(Class<?> c: bindings.objects()) {
-		//			binds.add(c);
-		//		}
-		//
-		//		final JAXBContext context = JAXBContext.newInstance(binds.toArray(new Class<?>[0]));
-		//		context.createMarshaller().marshal(bean, new OutputStreamWriter(System.out));
-
-		System.out.println(Collection.class.isAssignableFrom(List.class));
-
-	}
-
 }

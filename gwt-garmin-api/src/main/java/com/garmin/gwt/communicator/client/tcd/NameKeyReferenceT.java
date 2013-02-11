@@ -70,7 +70,7 @@ public class NameKeyReferenceT {
      * 
      * @return
      *     possible object is
-     *     {@link String }
+     *     {@links String }
      *     
      */
     public String getId() {
@@ -82,7 +82,7 @@ public class NameKeyReferenceT {
      * 
      * @param value
      *     allowed object is
-     *     {@link String }
+     *     {@links String }
      *     
      */
     public void setId(String value) {

@@ -90,7 +90,7 @@ public class MassStorageModeT {
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link DataTypeT }
+     * {@links DataTypeT }
      * 
      * 
      */
@@ -119,7 +119,7 @@ public class MassStorageModeT {
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link UpdateFileT }
+     * {@links UpdateFileT }
      * 
      * 
      */
@@ -135,7 +135,7 @@ public class MassStorageModeT {
      * 
      * @return
      *     possible object is
-     *     {@link ExtensionsT }
+     *     {@links ExtensionsT }
      *     
      */
     public ExtensionsT getExtensions() {
@@ -147,7 +147,7 @@ public class MassStorageModeT {
      * 
      * @param value
      *     allowed object is
-     *     {@link ExtensionsT }
+     *     {@links ExtensionsT }
      *     
      */
     public void setExtensions(ExtensionsT value) {

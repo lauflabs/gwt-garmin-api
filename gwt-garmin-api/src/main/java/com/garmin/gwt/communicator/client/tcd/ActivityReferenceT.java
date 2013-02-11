@@ -70,7 +70,7 @@ public class ActivityReferenceT {
      * 
      * @return
      *     possible object is
-     *     {@link Date }
+     *     {@links Date }
      *     
      */
     public Date getId() {
@@ -82,7 +82,7 @@ public class ActivityReferenceT {
      * 
      * @param value
      *     allowed object is
-     *     {@link Date }
+     *     {@links Date }
      *     
      */
     public void setId(Date value) {
