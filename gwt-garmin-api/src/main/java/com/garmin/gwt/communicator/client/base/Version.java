@@ -26,10 +26,15 @@ package com.garmin.gwt.communicator.client.base;
  * @author Joseph Lust
  */
 public final class Version {
-	private int versionMajor;
-	private int versionMinor;
-	private int buildMajor;
-	private int buildMinor;
+
+	private static final int THOUSAND = 1000;
+	private static final int MILLION = THOUSAND * THOUSAND;
+	private static final int BILLION = THOUSAND * MILLION;
+
+	private final int versionMajor;
+	private final int versionMinor;
+	private final int buildMajor;
+	private final int buildMinor;
 
 	/**
 	 * @param versionMajor
@@ -37,8 +42,8 @@ public final class Version {
 	 * @param buildMajor
 	 * @param buildMinor
 	 */
-	public Version(int versionMajor, int versionMinor, int buildMajor,
-			int buildMinor) {
+	public Version(final int versionMajor, final int versionMinor, final int buildMajor,
+			final int buildMinor) {
 		super();
 		this.versionMajor = versionMajor;
 		this.versionMinor = versionMinor;
@@ -52,7 +57,7 @@ public final class Version {
 	 * @param versions
 	 *            four elements, cannot be null
 	 */
-	public Version(int[] versions) {
+	public Version(final int[] versions) {
 		super();
 		assert versions.length == 4 : "Versions array must have four elements";
 		versionMajor = versions[0];
@@ -67,7 +72,7 @@ public final class Version {
 	 * @param target
 	 * @return true if this version is older
 	 */
-	public final boolean isVersionOlderThan(Version target) {
+	public final boolean isVersionOlderThan(final Version target) {
 		// throw NPE on NULL input
 		return toDouble()<target.toDouble();
 	}
@@ -116,7 +121,10 @@ public final class Version {
 	 * @return
 	 */
 	public double toDouble() {
-		return (versionMajor*1e9)+(versionMinor*1e6)+(buildMajor*1e3)+buildMinor;
+		return (versionMajor * BILLION) 
+				+ (versionMinor * MILLION) 
+				+ (buildMajor * THOUSAND)
+				+ buildMinor;
 	}
 
 	/**

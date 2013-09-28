@@ -41,7 +41,7 @@ import com.google.gwt.user.client.ui.RootPanel;
 import com.google.gwt.user.client.ui.TextArea;
 import com.google.gwt.user.client.ui.Widget;
 
-public class Showcase implements EntryPoint {
+public final class Showcase implements EntryPoint {
 
 	private TextArea console;
 	private final String testContainer = "content";
@@ -67,7 +67,7 @@ public class Showcase implements EntryPoint {
 	}
 
 	private void conditionallyLoadScreen() {
-		boolean hasPlugin = pluginDetect();
+		final boolean hasPlugin = pluginDetect();
 		if(hasPlugin) {
 			loadScreen();
 		}
@@ -77,7 +77,7 @@ public class Showcase implements EntryPoint {
 	}
 
 	private void installPluginScreen() {
-		HTML html = new HTML("<b>:(</b> Garmin Communicator is <b>NOT</b> <u>installed</u> OR is not <u>enabled</u>.<br/>Please visit the <a target='_blank' href=\"http://www.garmin.com/products/communicator/\">Garmin Communicator Site</a> to install<br>OR click the browser prompt to allow the plugin to load for this site");
+		final HTML html = new HTML("<b>:(</b> Garmin Communicator is <b>NOT</b> <u>installed</u> OR is not <u>enabled</u>.<br/>Please visit the <a target='_blank' href=\"http://www.garmin.com/products/communicator/\">Garmin Communicator Site</a> to install<br>OR click the browser prompt to allow the plugin to load for this site");
 		addWidget(html);
 	}
 
@@ -85,7 +85,7 @@ public class Showcase implements EntryPoint {
 		try {
 			return plugin.unlock(keys);
 		}
-		catch(Exception e) {
+		catch(final Exception e) {
 			return false;
 		}
 
@@ -95,7 +95,7 @@ public class Showcase implements EntryPoint {
 	 * Show basic controls to test functionality
 	 */
 	private void loadScreen() {
-		HTML html = new HTML("Version Feature Tests<br/>");
+		final HTML html = new HTML("Version Feature Tests<br/>");
 		addWidget(html);
 
 		console = new TextArea();
@@ -104,8 +104,8 @@ public class Showcase implements EntryPoint {
 		Button button = new Button("Plugin Version");
 		button.addClickHandler(new ClickHandler() {
 			@Override
-			public void onClick(ClickEvent event) {
-				String version = plugin.getPluginVersionString();
+			public void onClick(final ClickEvent event) {
+				final String version = plugin.getPluginVersionString();
 				displayToConsole("Installed plugin version: " + version);
 			}
 		});
@@ -114,8 +114,8 @@ public class Showcase implements EntryPoint {
 		button = new Button("Plugin Version XML");
 		button.addClickHandler(new ClickHandler() {
 			@Override
-			public void onClick(ClickEvent event) {
-				String version = plugin.getVersionXml();
+			public void onClick(final ClickEvent event) {
+				final String version = plugin.getVersionXml();
 				displayToConsole("Installed plugin version: " + version);
 			}
 		});
@@ -124,9 +124,9 @@ public class Showcase implements EntryPoint {
 		button = new Button("Plugin Version Array");
 		button.addClickHandler(new ClickHandler() {
 			@Override
-			public void onClick(ClickEvent event) {
-				int[] versions = plugin.getPluginVersion().toArray();
-				String version = "[" + versions[0] + "," + versions[1] + ","
+			public void onClick(final ClickEvent event) {
+				final int[] versions = plugin.getPluginVersion().toArray();
+				final String version = "[" + versions[0] + "," + versions[1] + ","
 						+ versions[2] + "," + versions[3] + "]";
 				displayToConsole(version);
 			}
@@ -136,7 +136,7 @@ public class Showcase implements EntryPoint {
 		button = new Button("Plugin Latest Version");
 		button.addClickHandler(new ClickHandler() {
 			@Override
-			public void onClick(ClickEvent event) {
+			public void onClick(final ClickEvent event) {
 				displayToConsole(plugin.getLatestPluginVersion().toString());
 			}
 		});
@@ -145,7 +145,7 @@ public class Showcase implements EntryPoint {
 		button = new Button("Plugin Required Version");
 		button.addClickHandler(new ClickHandler() {
 			@Override
-			public void onClick(ClickEvent event) {
+			public void onClick(final ClickEvent event) {
 				displayToConsole(plugin.getRequiredPluginVersion().toString());
 			}
 		});
@@ -154,23 +154,23 @@ public class Showcase implements EntryPoint {
 		button = new Button("Unlock");
 		button.addClickHandler(new ClickHandler() {
 			@Override
-			public void onClick(ClickEvent event) {
+			public void onClick(final ClickEvent event) {
 				plugin.unlock(new KeyPair[] {});
-				String message = (plugin.isUnlocked()) ? "Unlocked!"
+				final String message = (plugin.isUnlocked()) ? "Unlocked!"
 						: "Still LOCKED!";
 				displayToConsole(message);
 			}
 		});
 		addWidget(button);
 
-		HTML html2 = new HTML("<br/>Load Data Tests<br/>");
+		final HTML html2 = new HTML("<br/>Load Data Tests<br/>");
 		addWidget(html2);
 
 
 		button = new Button("Get Progress XML");
 		button.addClickHandler(new ClickHandler() {
 			@Override
-			public void onClick(ClickEvent event) {
+			public void onClick(final ClickEvent event) {
 				displayToConsole(plugin.getProgressXml());
 			}
 		});
@@ -179,7 +179,7 @@ public class Showcase implements EntryPoint {
 		button = new Button("Get Progress");
 		button.addClickHandler(new ClickHandler() {
 			@Override
-			public void onClick(ClickEvent event) {
+			public void onClick(final ClickEvent event) {
 				displayToConsole(plugin.getProgress().toString());
 			}
 		});
@@ -188,7 +188,7 @@ public class Showcase implements EntryPoint {
 		button = new Button("Device list XML");
 		button.addClickHandler(new ClickHandler() {
 			@Override
-			public void onClick(ClickEvent event) {
+			public void onClick(final ClickEvent event) {
 				testReadFromDeviceXml();
 			}
 		});
@@ -197,7 +197,7 @@ public class Showcase implements EntryPoint {
 		button = new Button("Device descriptsion XML");
 		button.addClickHandler(new ClickHandler() {
 			@Override
-			public void onClick(ClickEvent event) {
+			public void onClick(final ClickEvent event) {
 				testReadDeviceDescriptionXml();
 			}
 		});
@@ -206,7 +206,7 @@ public class Showcase implements EntryPoint {
 		button = new Button("Device list");
 		button.addClickHandler(new ClickHandler() {
 			@Override
-			public void onClick(ClickEvent event) {
+			public void onClick(final ClickEvent event) {
 				testReadFromDevice();
 			}
 		});
@@ -215,7 +215,7 @@ public class Showcase implements EntryPoint {
 		button = new Button("Get Parsed GPX Data");
 		button.addClickHandler(new ClickHandler() {
 			@Override
-			public void onClick(ClickEvent event) {
+			public void onClick(final ClickEvent event) {
 				testReadGpsData();
 			}
 		});
@@ -224,7 +224,7 @@ public class Showcase implements EntryPoint {
 		button = new Button("Get Fitness Data XML");
 		button.addClickHandler(new ClickHandler() {
 			@Override
-			public void onClick(ClickEvent event) {
+			public void onClick(final ClickEvent event) {
 				testReadFitnessData();
 			}
 		});
@@ -245,8 +245,8 @@ public class Showcase implements EntryPoint {
 			@Override
 			public void run() {
 				if(plugin.finishFindDevices()) {
-					this.cancel();
-					String deviceXml = plugin.getDevicesXml();
+					cancel();
+					final String deviceXml = plugin.getDevicesXml();
 					displayToConsole( deviceXml );
 				}
 			}
@@ -260,8 +260,8 @@ public class Showcase implements EntryPoint {
 			displayToConsole("failed to unlock plugin!");
 		}
 
-		Device fooDevice = new Device("Foo Device", 0);
-		String deviceXml = plugin.getDeviceDescriptionXml(fooDevice);
+		final Device fooDevice = new Device("Foo Device", 0);
+		final String deviceXml = plugin.getDeviceDescriptionXml(fooDevice);
 		displayToConsole( deviceXml );
 	}
 
@@ -271,7 +271,7 @@ public class Showcase implements EntryPoint {
 		new FindDevicesPluginRequest(plugin, new RequestCallback<Device[]>() {
 
 			@Override
-			public void onSuccess(Device[] result) {
+			public void onSuccess(final Device[] result) {
 				displayDevices(result);
 			}
 
@@ -281,7 +281,7 @@ public class Showcase implements EntryPoint {
 			}
 
 			@Override
-			public void onProgress(TransferProgress progress) {
+			public void onProgress(final TransferProgress progress) {
 				displayToConsole("Loading Device data "+progress.getPercentage());
 			}
 
@@ -290,13 +290,13 @@ public class Showcase implements EntryPoint {
 
 	private void testReadGpsData() {
 
-		Device targetDevice = new Device("Foo", 0);
+		final Device targetDevice = new Device("Foo", 0);
 
 		// save reference if you want to cancel()
 		new GpxDataPluginRequest(plugin, targetDevice, new RequestCallback<Gpx>() {
 
 			@Override
-			public void onSuccess(Gpx result) {
+			public void onSuccess(final Gpx result) {
 
 				String out = "Creator: "+result.getCreator()+"\n";
 				out += "Version: "+result.getVersion() +"\n";
@@ -304,7 +304,7 @@ public class Showcase implements EntryPoint {
 				out += "Routes: "+result.getRoutes().size() +"\n";
 				out += "WayPoints: "+result.getWayPoints().size() +"\n";
 
-				MetaData meta = result.getMetadata();
+				final MetaData meta = result.getMetadata();
 				if((meta!=null) && (meta.getName()!=null)) {
 					out += "Name: "+meta.getName()+"\n";
 				}
@@ -327,7 +327,7 @@ public class Showcase implements EntryPoint {
 			}
 
 			@Override
-			public void onProgress(TransferProgress progress) {
+			public void onProgress(final TransferProgress progress) {
 				displayToConsole("Loading GPS data "+progress.getPercentage());
 			}
 
@@ -336,13 +336,13 @@ public class Showcase implements EntryPoint {
 
 	private void testReadFitnessData() {
 
-		Device targetDevice = new Device("Foo", 0);
+		final Device targetDevice = new Device("Foo", 0);
 
 		// save reference if you want to cancel()
 		new FitnessDataPluginRequest(plugin, targetDevice, "training" ,new RequestCallback<String>() {
 
 			@Override
-			public void onSuccess(String result) {
+			public void onSuccess(final String result) {
 				displayToConsole(result);
 			}
 
@@ -352,20 +352,20 @@ public class Showcase implements EntryPoint {
 			}
 
 			@Override
-			public void onProgress(TransferProgress progress) {
+			public void onProgress(final TransferProgress progress) {
 				displayToConsole("Loading Fitness data "+progress.getPercentage());
 			}
 
 		});
 	}
 
-	private void displayToConsole(String msg) {
+	private void displayToConsole(final String msg) {
 		console.setText(msg);
 	}
 
-	private void displayDevices(Device[] devices) {
+	private void displayDevices(final Device[] devices) {
 		String out = "";
-		for(Device d : devices) {
+		for(final Device d : devices) {
 			out += d.toString() + "\n";
 		}
 		displayToConsole(out);
@@ -376,7 +376,7 @@ public class Showcase implements EntryPoint {
 	 * 
 	 * @param widget
 	 */
-	private void addWidget(Widget widget) {
+	private void addWidget(final Widget widget) {
 		RootPanel.get(testContainer).add(widget);
 	}
 

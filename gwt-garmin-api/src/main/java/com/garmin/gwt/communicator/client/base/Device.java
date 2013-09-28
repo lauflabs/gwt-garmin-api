@@ -26,7 +26,7 @@ package com.garmin.gwt.communicator.client.base;
  * @author Joseph Lust
  * 
  */
-public class Device {
+public final class Device {
 
 	private String displayName;
 	private int deviceNumber;
@@ -61,9 +61,9 @@ public class Device {
 	 * @param registrationCode
 	 * @param unlockCode
 	 */
-	public Device(String displayName, int deviceNumber, Model model, long id,
-			String registrationCode, String unlockCode) {
-		//TODO use a builder pattern?
+	public Device(final String displayName, final int deviceNumber, final Model model, final long id,
+			final String registrationCode, final String unlockCode) {
+		// TODO use a builder pattern or fluent interface?
 		super();
 		this.displayName = displayName;
 		this.deviceNumber = deviceNumber;
@@ -76,21 +76,21 @@ public class Device {
 	/**
 	 * @return the displayName
 	 */
-	public final String getDisplayName() {
+	public String getDisplayName() {
 		return displayName;
 	}
 
 	/**
 	 * @return the deviceNumber
 	 */
-	public final int getDeviceNumber() {
+	public int getDeviceNumber() {
 		return deviceNumber;
 	}
 
 	/**
 	 * @return the model
 	 */
-	public final Model getModel() {
+	public Model getModel() {
 		return model;
 	}
 
@@ -99,7 +99,7 @@ public class Device {
 	 * <b>NOTE:</b> will be 0 if not present on the XML description
 	 * @return the id, or ZERO
 	 */
-	public final long getId() {
+	public long getId() {
 		return id;
 	}
 
@@ -108,7 +108,7 @@ public class Device {
 	 * <b>NOTE:</b> will EMPTY if not present on the XML description
 	 * @return the registrationCode, or EMPTY
 	 */
-	public final String getRegistrationCode() {
+	public String getRegistrationCode() {
 		return registrationCode;
 	}
 
@@ -117,7 +117,7 @@ public class Device {
 	 * <b>NOTE:</b> will EMPTY if not present on the XML description
 	 * @return the unlockCode, or EMPTY
 	 */
-	public final String getUnlockCode() {
+	public String getUnlockCode() {
 		return unlockCode;
 	}
 

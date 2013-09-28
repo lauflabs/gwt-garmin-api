@@ -46,22 +46,22 @@ public final class ParseUtils {
 	 * @return empty array if none parsed
 	 */
 	public static TransferProgress parseProgressXml(final String progressXml) {
-		Document dom = XMLParser.parse(progressXml);
+		final Document dom = XMLParser.parse(progressXml);
 
 		/** Title **/
-		Node titleNode = dom.getElementsByTagName("Title").item(0);
-		String title = ((Element) titleNode).getFirstChild().getNodeValue();
+		final Node titleNode = dom.getElementsByTagName("Title").item(0);
+		final String title = ((Element) titleNode).getFirstChild().getNodeValue();
 
 		/** Percentage **/
 		int percentage = 0;
 		boolean hasPercentage = false;
 
-		NodeList progressBarNodeList = dom.getElementsByTagName("ProgressBar");
+		final NodeList progressBarNodeList = dom.getElementsByTagName("ProgressBar");
 		// not sure why the API reference impl does this check, so doing it for
 		// safety sake
 		if (progressBarNodeList.getLength() > 0) {
-			Node progressBarNode = progressBarNodeList.item(0);
-			String progressType = ((Element) progressBarNode)
+			final Node progressBarNode = progressBarNodeList.item(0);
+			final String progressType = ((Element) progressBarNode)
 					.getAttribute("Type");
 
 			// two possible type of processes, if neither, is NULL
@@ -78,16 +78,16 @@ public final class ParseUtils {
 		/** Text **/
 		String textArray[] = new String[] {};
 
-		ArrayList<String> textList = new ArrayList<String>();
-		NodeList textNodeList = dom.getElementsByTagName("Text");
+		final ArrayList<String> textList = new ArrayList<String>();
+		final NodeList textNodeList = dom.getElementsByTagName("Text");
 
 		if (textNodeList.getLength() > 0) { // for speed during rapid calls
 
 			for (int n = 0; n < textNodeList.getLength(); n++) {
 
-				Node textNode = textNodeList.item(n);
+				final Node textNode = textNodeList.item(n);
 				if (textNode.hasChildNodes()) {
-					String nodeText = textNode.getFirstChild().getNodeValue();
+					final String nodeText = textNode.getFirstChild().getNodeValue();
 					if (!nodeText.isEmpty()) {
 						textList.add(nodeText);
 					}
@@ -112,22 +112,22 @@ public final class ParseUtils {
 	 *            description to add to the device
 	 * @return POJO, or NPE if invalid input provided
 	 */
-	public final static Device parseDeviceDescriptionXml(final Device device,
+	public static Device parseDeviceDescriptionXml(final Device device,
 			final String deviceDescriptionXml) {
 
-		Document dom = XMLParser.parse(deviceDescriptionXml);
+		final Document dom = XMLParser.parse(deviceDescriptionXml);
 
-		long id = getNodeValueLong(dom, "Id");
-		String registrationCode = getNodeValueStringConditionally(dom, "RegistrationCode");
-		String unlockCode	 = getNodeValueStringConditionally(dom, "Code");
+		final long id = getNodeValueLong(dom, "Id");
+		final String registrationCode = getNodeValueStringConditionally(dom, "RegistrationCode");
+		final String unlockCode	 = getNodeValueStringConditionally(dom, "Code");
 
 		// model information
-		String partNumber = getNodeValueStringConditionally(dom, "PartNumber");
-		long softwareVersion = getNodeValueLong(dom, "SoftwareVersion");
-		String description = getNodeValueStringConditionally(dom, "Description");
-		String extensions = getNodeValueStringConditionally(dom, "Extensions");
+		final String partNumber = getNodeValueStringConditionally(dom, "PartNumber");
+		final long softwareVersion = getNodeValueLong(dom, "SoftwareVersion");
+		final String description = getNodeValueStringConditionally(dom, "Description");
+		final String extensions = getNodeValueStringConditionally(dom, "Extensions");
 
-		Model model = new Model(partNumber, softwareVersion, description, extensions);
+		final Model model = new Model(partNumber, softwareVersion, description, extensions);
 
 		return new Device(device.getDisplayName(), device.getDeviceNumber(), model, id, registrationCode, unlockCode);
 	}
@@ -140,24 +140,24 @@ public final class ParseUtils {
 	 */
 	public final static Device[] parseDeviceXml(final String deviceXml) {
 
-		ArrayList<Device> deviceList = new ArrayList<Device>();
+		final ArrayList<Device> deviceList = new ArrayList<Device>();
 
 		// ensure no one sent an incomplete response to us - fail graceful
 		if ((deviceXml != null) && !deviceXml.isEmpty()) {
 
-			Document dom = XMLParser.parse(deviceXml);
+			final Document dom = XMLParser.parse(deviceXml);
 
-			NodeList deviceNodes = dom.getElementsByTagName("Device");
+			final NodeList deviceNodes = dom.getElementsByTagName("Device");
 			for (int n = 0; n < deviceNodes.getLength(); n++) {
 
-				Node deviceNode = deviceNodes.item(n);
+				final Node deviceNode = deviceNodes.item(n);
 
 				// these items will always be there
-				String displayName = getNodeAttributeString(deviceNode,
+				final String displayName = getNodeAttributeString(deviceNode,
 						"DisplayName");
-				int deviceNumber = getNodeAttributeInt(deviceNode, "Number");
+				final int deviceNumber = getNodeAttributeInt(deviceNode, "Number");
 
-				Device device = new Device(displayName, deviceNumber);
+				final Device device = new Device(displayName, deviceNumber);
 				deviceList.add(device);
 			}
 
@@ -246,9 +246,9 @@ public final class ParseUtils {
 	 * @param tagname
 	 * @return string value
 	 */
-	protected static String getNodeValueString(Document dom, String tagname) {
-		Node node = dom.getElementsByTagName(tagname).item(0);
-		String value = ((Element) node).getFirstChild().getNodeValue();
+	protected static String getNodeValueString(final Document dom, final String tagname) {
+		final Node node = dom.getElementsByTagName(tagname).item(0);
+		final String value = ((Element) node).getFirstChild().getNodeValue();
 		return value;
 	}
 
@@ -259,7 +259,7 @@ public final class ParseUtils {
 	 * @param tagname
 	 * @return integer value
 	 */
-	public static int getNodeValueInt(Document dom, String tagname) {
+	public static int getNodeValueInt(final Document dom, final String tagname) {
 		return Integer.parseInt(getNodeValueString(dom, tagname));
 	}
 
@@ -270,7 +270,7 @@ public final class ParseUtils {
 	 * @param tagname
 	 * @return double value
 	 */
-	protected static long getNodeValueLong(Document dom, String tagname) {
+	protected static long getNodeValueLong(final Document dom, final String tagname) {
 		return Long.parseLong(getNodeValueString(dom, tagname));
 	}
 
@@ -281,12 +281,12 @@ public final class ParseUtils {
 	 * @param tagname
 	 * @return contents, or EMPTY string
 	 */
-	protected static String getNodeValueStringConditionally(Document dom,
-			String tagname) {
-		NodeList nodeList = dom.getElementsByTagName(tagname);
+	protected static String getNodeValueStringConditionally(final Document dom,
+			final String tagname) {
+		final NodeList nodeList = dom.getElementsByTagName(tagname);
 		if(nodeList.getLength()>0) {
-			Node node = nodeList.item(0);
-			String value = ((Element) node).getFirstChild().getNodeValue();
+			final Node node = nodeList.item(0);
+			final String value = ((Element) node).getFirstChild().getNodeValue();
 			return value;
 		}
 		return "";
@@ -297,7 +297,7 @@ public final class ParseUtils {
 	 * @param node
 	 * @param tagname
 	 */
-	protected static String getNodeAttributeString(Node node, String tagname) {
+	protected static String getNodeAttributeString(final Node node, final String tagname) {
 		return ((Element) node).getAttribute(tagname);
 	}
 
@@ -307,7 +307,7 @@ public final class ParseUtils {
 	 * @param node
 	 * @param tagname
 	 */
-	protected static int getNodeAttributeInt(Node node, String tagname) {
+	protected static int getNodeAttributeInt(final Node node, final String tagname) {
 		return Integer.parseInt(((Element) node).getAttribute(tagname));
 	}
 }

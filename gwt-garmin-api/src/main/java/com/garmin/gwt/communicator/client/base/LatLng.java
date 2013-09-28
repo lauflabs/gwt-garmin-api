@@ -22,32 +22,32 @@ package com.garmin.gwt.communicator.client.base;
 
 
 /**
- * A point on a two-dimensional plane. <br>
+ * A point in spherical coordinates. <br>
  */
-public class LatLng {
-	
+public final class LatLng {
+
 	/**
 	 * @param latitude
 	 * @param longitude
 	 */
-	public LatLng(double latitude, double longitude) {
+	public LatLng(final double latitude, final double longitude) {
 		super();
 		this.latitude = latitude;
 		this.longitude = longitude;
 	}
-	private double latitude;
-	private double longitude;
-	
+	private final double latitude;
+	private final double longitude;
+
 	/**
 	 * @return the latitude
 	 */
-	public final double getLatitude() {
+	public double getLatitude() {
 		return latitude;
 	}
 	/**
 	 * @return the longitude
 	 */
-	public final double getLongitude() {
+	public double getLongitude() {
 		return longitude;
-	}	
+	}
 }

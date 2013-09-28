@@ -29,7 +29,7 @@ package com.garmin.gwt.communicator.client.base;
  * @author Joseph Lust
  * 
  */
-public class Model {
+public final class Model {
 
 	private String partNumber;
 	private long softwareVersion; // unsigned int
@@ -58,28 +58,28 @@ public class Model {
 	/**
 	 * @return the partNumber
 	 */
-	public final String getPartNumber() {
+	public String getPartNumber() {
 		return partNumber;
 	}
 
 	/**
 	 * @return the softwareVersion
 	 */
-	public final long getSoftwareVersion() {
+	public long getSoftwareVersion() {
 		return softwareVersion;
 	}
 
 	/**
 	 * @return the description
 	 */
-	public final String getDescription() {
+	public String getDescription() {
 		return description;
 	}
 
 	/**
 	 * @return the extensions
 	 */
-	public final String getExtensions() {
+	public String getExtensions() {
 		return extensions;
 	}
 

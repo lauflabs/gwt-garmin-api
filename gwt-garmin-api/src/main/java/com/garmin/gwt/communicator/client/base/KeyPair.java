@@ -28,16 +28,16 @@ package com.garmin.gwt.communicator.client.base;
  * @author Joseph Lust
  * 
  */
-public class KeyPair {
+public final class KeyPair {
 
-	private String url;
-	private String key;
+	private final String url;
+	private final String key;
 
 	/**
 	 * @param url
 	 * @param key
 	 */
-	public KeyPair(String url, String key) {
+	public KeyPair(final String url, final String key) {
 		super();
 		this.url = url;
 		this.key = key;
@@ -46,14 +46,14 @@ public class KeyPair {
 	/**
 	 * @return the url
 	 */
-	public final String getUrl() {
+	public String getUrl() {
 		return url;
 	}
 
 	/**
 	 * @return the key
 	 */
-	public final String getKey() {
+	public String getKey() {
 		return key;
 	}
 

@@ -23,6 +23,7 @@ package com.garmin.gwt.communicator.client.objs;
 
 import javax.xml.bind.annotation.XmlType;
 
+// TODO clean out these test objects now that JAXB parsing setup is complete
 @XmlType
 public abstract class TestAbstObject {
 
